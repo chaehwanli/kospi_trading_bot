@@ -9,11 +9,9 @@ APP_SECRET = os.getenv("APP_SECRET", "")
 ACCOUNT_NO = os.getenv("ACCOUNT_NO", "") # Without hyphen usually, or as API expects
 MODE = os.getenv("MODE", "PAPER") # PROD or PAPER
 
-# URLs (Placeholder for Kiwoom REST API or KIS API)
-# Note: Kiwoom standardly uses OCX on Windows. On Linux, this usually implies KIS (Korea Investment) or a bridge.
-# Defaulting to KIS URLs as they are Linux-compatible and REST-based, assuming user might mean KIS or a Kiwoom Bridge.
-URL_REAL = "https://openapi.koreainvestment.com:9443"
-URL_PAPER = "https://openapivts.koreainvestment.com:29443"
+# Kiwoom REST API URLs
+URL_REAL = "https://api.kiwoom.com"
+URL_PAPER = "https://mockapi.kiwoom.com"
 
 BASE_URL = URL_PAPER if MODE == "PAPER" else URL_REAL
 
