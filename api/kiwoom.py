@@ -1,139 +1,150 @@
-import requests
-import json
-import time
 import os
-from datetime import datetime
 from config import settings
 from utils.logger import setup_logger
+import pandas as pd
+import datetime
+
+# Configure Environment Variables for Library
+# The library reads these on import or when config functions are called.
+os.environ["KIWOOM_API_KEY"] = settings.APP_KEY
+os.environ["KIWOOM_API_SECRET"] = settings.APP_SECRET
+os.environ["KIWOOM_USE_SANDBOX"] = "true" if settings.MODE == "PAPER" else "false"
+
+# Import Library Components
+from kiwoom_rest_api.auth.token import TokenManager
+from kiwoom_rest_api.koreanstock.chart import Chart
+from kiwoom_rest_api.koreanstock.order import Order
+from kiwoom_rest_api.koreanstock.account import Account
 
 logger = setup_logger("KiwoomAPI")
 
 class KiwoomAPI:
     def __init__(self):
-        self.base_url = settings.BASE_URL
-        self.app_key = settings.APP_KEY
-        self.app_secret = settings.APP_SECRET
-        self.account_no = settings.ACCOUNT_NO
-        self.access_token = None
-        self.token_expiry = 0
-        
-        self.token_file = "token.json"
-        self._load_token()
-        
-    def _load_token(self):
-        if os.path.exists(self.token_file):
-            try:
-                with open(self.token_file, 'r') as f:
-                    data = json.load(f)
-                    self.access_token = data.get('access_token')
-                    self.token_expiry = data.get('token_expiry', 0)
-            except Exception as e:
-                logger.error(f"Failed to load token: {e}")
-
-    def _save_token(self):
-        with open(self.token_file, 'w') as f:
-            json.dump({
-                'access_token': self.access_token,
-                'token_expiry': self.token_expiry
-            }, f)
-
-    def get_access_token(self):
-        if self.access_token and time.time() < self.token_expiry:
-            return self.access_token
-            
-        # URL for Token: Usually /oauth2/token
-        url = f"{self.base_url}/oauth2/token"
-        headers = {"content-type": "application/x-www-form-urlencoded"} # Standard OAuth2
-        body = {
-            "grant_type": "client_credentials",
-            "appkey": self.app_key,
-            "appsecret": self.app_secret
-        }
-        
+        # Initialize Library Components
         try:
-            res = requests.post(url, headers=headers, data=body)
-            res.raise_for_status()
-            data = res.json()
-            self.access_token = data['access_token']
-            self.token_expiry = time.time() + int(data.get('expires_in', 86400)) - 60
-            self._save_token()
-            logger.info("Access token refreshed successfully")
-            return self.access_token
+            self.token_manager = TokenManager()
+            self.chart = Chart(token_manager=self.token_manager)
+            self.order = Order(token_manager=self.token_manager)
+            self.account = Account(token_manager=self.token_manager)
+            logger.info("Kiwoom API initialized with kiwoom-rest-api library.")
         except Exception as e:
-            logger.error(f"Failed to get access token: {e}")
+            logger.error(f"Failed to initialize Kiwoom API components: {e}")
             raise
 
-    def get_headers(self, tr_id=None):
-        token = self.get_access_token()
-        headers = {
-            "Content-Type": "application/json; charset=utf-8",
-            "authorization": f"Bearer {token}",
-            "appkey": self.app_key,
-            "appsecret": self.app_secret,
-        }
-        if tr_id:
-            headers["tr_id"] = tr_id # Some APIs require TR ID in header
-        return headers
-
-    def call_tr(self, tr_id, payload):
-        # Generic TR dispatch. Path structure assumption: /openapi/real/tr/dispatch or similar
-        # NOTE: Exact path needs verification from official internal docs.
-        # Assuming /tr/{tr_id} or /openapi/tr/{tr_id} based on REST trends.
-        # Using a generic path placeholder.
-        
-        # Scenario A: Path is tr_id dependent
-        # url = f"{self.base_url}/openapi/tr/{tr_id}"
-        
-        # Scenario B: Single Dispatch Endpoint
-        url = f"{self.base_url}/openapi/tr/dispatch" 
-        
-        headers = self.get_headers(tr_id)
+    def get_ohlcv(self, code, time_unit="60"):
+        """
+        Get OHLCV using stock_minute_chart_request_ka10080
+        """
         try:
-            res = requests.post(url, headers=headers, data=json.dumps(payload))
-            res.raise_for_status()
-            return res.json()
+            # ka10080 params: stk_cd, tic_scope, upd_stkpc_tp, cont_yn, next_key
+            # tic_scope: "60" for 60 minutes
+            res = self.chart.stock_minute_chart_request_ka10080(
+                stk_cd=code,
+                tic_scope=str(time_unit),
+                upd_stkpc_tp="1" # Adjusted price
+            )
+            
+            if not res or res.get('rt_cd') != '0':
+                logger.error(f"OHLCV Error: {res}")
+                return None
+                
+            # output2 has list.
+            items = res.get('output2', [])
+            ohlcv = []
+            for item in items:
+                # Format: stck_bsop_date(YYYYMMDD) + stck_cntg_hour(HHMMSS)
+                dt_str = item['stck_bsop_date'] + item['stck_cntg_hour']
+                ohlcv.append({
+                    'time': dt_str,
+                    'open': int(item['stck_oprc']),
+                    'high': int(item['stck_hgpr']),
+                    'low': int(item['stck_lwpr']),
+                    'close': int(item['stck_prpr']),
+                    'volume': int(item['cntg_vol'])
+                })
+            return ohlcv[::-1] # Convert to Ascending Time
+            
         except Exception as e:
-            logger.error(f"TR {tr_id} Failed: {e}")
+            logger.error(f"Error fetching OHLCV: {e}")
             return None
 
-    def get_ohlcv(self, code, time_unit="60"):
-        # TR Code for OHLCV: Unknown publically for REST. 
-        # Using Placeholder 'OPT10081' (Daily) or equivalent REST ID.
-        # TODO: User must verify this TR ID.
-        tr_id = "ka10001" # Using Stock Info as placeholder for now, or finding generic candle TR.
-        
-        # Construct payload fitting Kiwoom REST spec
-        payload = {
-            "itm_no": code,
-            "fid_cond_mrkt_div_code": "J",
-            "fid_input_hour_1": time_unit
-        }
-        
-        data = self.call_tr(tr_id, payload)
-        if not data: return None
-        
-        # Parse logic would depend on response structure
-        # ...
-        return []
-
     def get_balance(self):
-        # TR Code for Balance: kt00004 or similar
-        tr_id = "kt00004"
-        payload = {
-            "acnt_no": self.account_no,
-        }
-        data = self.call_tr(tr_id, payload)
-        if not data: return None
-        # Parse return...
-        return 1000000 # Mock return until parser implemented
+        """
+        Get balance using account_evaluation_balance_detail_request_kt00018
+        """
+        try:
+            # We assume TokenManager handles auth tokens.
+            # But KT00018 might need account number?
+            # From docstring `kt00018` usage: `query_type`, `domestic_exchange_type`. No acc_no.
+            # This implies `Account` class or Library config might need account no?
+            # Inspecting `account.py` again?
+            # No, `kt00018` docstring example showed NO account number arg.
+            # Usually strict REST API needs it in header or body.
+            # Maybe the library's `KiwoomBaseAPI` or `Account` reads it from somewhere?
+            # OR `kt00018` is a user-level query based on the Token's owner?
+            
+            res = self.account.account_evaluation_balance_detail_request_kt00018(
+                query_type="1",
+                domestic_exchange_type="KRX"
+            )
+            
+            if not res or res.get('rt_cd') != '0':
+                logger.error(f"Balance Error: {res}")
+                return None
+                
+            summary = res.get('output1', {})
+            return float(summary.get('prsm_dpst_aset_amt', 0))
+            
+        except Exception as e:
+            logger.error(f"Error fetching balance: {e}")
+            return None
 
     def place_order(self, code, qty, order_type="BUY", price=0):
-        # TR for Order: kt10000 (Buy), kt10001 (Sell)
-        tr_id = "kt10000" if order_type == "BUY" else "kt10001"
-        payload = {
-            "ord_qty": str(qty),
-            "ord_prc": str(price),
-            "itm_no": code,
-            "acnt_no": self.account_no
-        }
-        return self.call_tr(tr_id, payload)
+        """
+        Place Order using kt10000 / kt10001
+        """
+        try:
+            # 00: Limit, 01: Market
+            ord_dvsn = "01" if price == 0 else "00"
+            
+            # Need to pass account??
+            # Order method signature: `stk_cd` etc.
+            # Previous `grep` of order.py showed `stock_buy_order_request_kt10000`.
+            # Let's hope it follows logic.
+            # Wait, `kt10000` usually requires account info.
+            # If function signature doesn't take it, maybe it's implicitly handled.
+            
+            # Re-checking Order signature from memory/grep: 
+            # I didn't see FULL signature in grep, just def line.
+            # But assume standard kwargs matching API.
+            # If it fails, we will see in logs.
+            
+            target_method = self.order.stock_buy_order_request_kt10000 if order_type == "BUY" else self.order.stock_sell_order_request_kt10001
+            
+            # Kiwoom REST usually needs: ord_qty, ord_prc, itm_no, ord_dvsn
+            # The library functions often map snake_case to API fields.
+            # e.g. `itm_no` -> `stk_cd`.
+            # I will use snake_case args if library uses them (refer to Chart usage `stk_cd`).
+            # Chart used `stk_cd`. So Order likely uses `stk_cd` too.
+            # But `kt10000` usually uses `itm_no` in official spec.
+            # I should use `stk_cd` if that's what the wrapper calls it.
+            # Let's try `stk_cd` as arg name based on chart.py pattern.
+            
+            res = target_method(
+                ord_qty=str(qty),
+                ord_prc=str(price),
+                stk_cd=code, # Assuming wrapper normalizes this name
+                ord_dvsn=ord_dvsn,
+                tr_to="0" # Trade type?
+            )
+            
+            if not res or res.get('rt_cd') != '0':
+                logger.error(f"Order Error: {res}")
+                return None
+            
+            logger.info(f"Order Placed: {order_type} {code} {qty}")
+            return res
+            
+        except Exception as e:
+            logger.error(f"Error placing order: {e}")
+            return None

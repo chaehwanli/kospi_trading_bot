@@ -136,3 +136,17 @@ python main.py backtest
 ```bash
 python main.py bot
 ```
+##
+I have found some relevant GitHub repositories and Python packages for Kiwoom REST API usage:
+
+kiwoom-restul (Python Wrapper)
+Description: A simple wrapper for Kiwoom's RESTful API. Supports async requests.
+Key Features: Abstraction of network protocols, Async/WebSocket support.
+GitHub/PyPI: Search for kiwoom-restful on PyPI or GitHub.
+
+kiwoom-rest-api (Python Client)
+Description: Python client for accessing the Kiwoom REST API.
+GitHub/PyPI: Search for kiwoom-rest-api.
+
+Blog Resources:
+There are some Korean blog posts (Tistory) detailing token issuance and OHLCV fetching using Python requests, which might be more direct if you want to avoid 3rd party wrappers.
