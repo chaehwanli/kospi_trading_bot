@@ -45,9 +45,9 @@ def run_backtest(code):
             
         engine.run(df, code=c)
         
-def run_optimization(code, min_rsi=settings.RSI_OPTIMIZE_MIN, max_rsi=settings.RSI_OPTIMIZE_MAX, step_rsi=settings.RSI_OPTIMIZE_STEP):
+def run_rsi_optimize(code, args):
     if not code:
-        logger.error("Optimization requires a specific --code argument.")
+        logger.error("RSI Optimization requires a specific --code argument.")
         return
 
     from backtester.engine import BacktestEngine
@@ -62,40 +62,97 @@ def run_optimization(code, min_rsi=settings.RSI_OPTIMIZE_MIN, max_rsi=settings.R
         logger.error(f"No data found for {code}. Run 'data' mode first.")
         return
         
-    logger.info(f"Starting RSI Optimization for {code} (Range: {min_rsi}-{max_rsi}, Step: {step_rsi})")
+    results = [] # Initialize results list
     
-    results = []
+    # RSI Optimization
+    min_val, max_val, step_val = args.min_rsi, args.max_rsi, args.step_rsi
+    logger.info(f"Starting RSI Optimization for {code} (Range: {min_val}-{max_val}, Step: {step_val})")
     
-    # Iterate RSI Thresholds
-    for rsi_val in range(min_rsi, max_rsi + 1, step_rsi): 
+    for val in range(min_val, max_val + 1, step_val):
         strategy = RsiMacdStrategy()
-        # Pass rsi_oversold to engine (override default)
-        engine = BacktestEngine(strategy, rsi_oversold=rsi_val)
-        
-        # Run silently (no file save)
+        engine = BacktestEngine(strategy, rsi_oversold=val)
         res = engine.run(df, code=code, save_results=False)
-        
-        results.append({
-            'rsi': rsi_val,
-            'return': res['return'],
-            'trades': res['total_trades'],
-            'win': res['win_trades']
-        })
-        # logger.info(f"RSI {rsi_val}: Return {res['return']:.2f}%")
-        
+        results.append({'param': val, 'return': res['return'], 'trades': res['total_trades'], 'win': res['win_trades']})
+
     # Sort by success (Return)
     results.sort(key=lambda x: x['return'], reverse=True)
     
-    logger.info(f"\nOptimization Results for {code} (Top 10):")
-    logger.info(f"{'RSI':<5} | {'Return':<10} | {'Trades':<8} | {'Win':<5}")
-    logger.info("-" * 40)
+    logger.info(f"\nOptimization Results for {code} - Target: RSI (Top 10):")
+    logger.info(f"{'Param':<8} | {'Return':<10} | {'Trades':<8} | {'Win':<5}")
+    logger.info("-" * 45)
     
     for r in results[:10]:
-         logger.info(f"{r['rsi']:<5} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5}")
+         logger.info(f"{r['param']:<8} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5}")
          
-    best = results[0]
-    logger.info("-" * 40)
-    logger.info(f"Best RSI: {best['rsi']} (Return: {best['return']:.2f}%)")
+    if results:
+        best = results[0]
+        logger.info("-" * 45)
+        logger.info(f"Best RSI: {best['param']} (Return: {best['return']:.2f}%)")
+
+def run_pnl_maxhold_optimize(code, args):
+    if not code:
+        logger.error("PnL & MaxHold Optimization requires a specific --code argument.")
+        return
+
+    from backtester.engine import BacktestEngine
+    from strategy.rsi_macd import RsiMacdStrategy
+    from data.data_manager import DataManager
+    import numpy as np
+
+    dm = DataManager(use_api=False)
+    df = dm.load_data(code)
+    
+    if df is None:
+        logger.error(f"No data found for {code}. Run 'data' mode first.")
+        return
+        
+    logger.info(f"Starting PnL & MaxHold Optimization for {code}")
+    
+    # Ranges
+    sl_vals = np.arange(args.min_sl, args.max_sl + (args.step_sl/1000), args.step_sl)
+    tp_vals = np.arange(args.min_tp, args.max_tp + (args.step_tp/1000), args.step_tp)
+    hold_vals = range(args.min_hold, args.max_hold + 1, args.step_hold)
+    
+    total_combinations = len(sl_vals) * len(tp_vals) * len(hold_vals)
+    logger.info(f"Total Combinations to test: {total_combinations}")
+    
+    results = []
+    
+    count = 0
+    for sl in sl_vals:
+        for tp in tp_vals:
+            for hold in hold_vals:
+                sl = round(sl, 2)
+                tp = round(tp, 2)
+                
+                strategy = RsiMacdStrategy()
+                engine = BacktestEngine(strategy, stop_loss_pct=sl, take_profit_pct=tp, max_hold_days=hold)
+                res = engine.run(df, code=code, save_results=False)
+                
+                results.append({
+                    'sl': sl, 'tp': tp, 'hold': hold,
+                    'return': res['return'],
+                    'trades': res['total_trades'],
+                    'win': res['win_trades']
+                })
+                count += 1
+                if count % 100 == 0:
+                    logger.debug(f"Progress: {count}/{total_combinations}")
+                    
+    # Sort by success (Return)
+    results.sort(key=lambda x: x['return'], reverse=True)
+    
+    logger.info(f"\nOptimization Results for {code} - PnL & MaxHold (Top 50):")
+    logger.info(f"{'SL':<6} | {'TP':<6} | {'Hold':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4}")
+    logger.info("-" * 60)
+    
+    for r in results[:50]:
+         logger.info(f"{r['sl']:<6} | {r['tp']:<6} | {r['hold']:<4} | {r['return']:>7.2f}%  | {r['trades']:<6} | {r['win']:<4}")
+         
+    if results:
+        best = results[0]
+        logger.info("-" * 60)
+        logger.info(f"Best: SL={best['sl']}, TP={best['tp']}, Hold={best['hold']} (Return: {best['return']:.2f}%)")
 
 def run_bot():
     from bot.trader import TradingBot
@@ -104,15 +161,28 @@ def run_bot():
 
 def main():
     parser = argparse.ArgumentParser(description="KOSPI Trading Bot")
-    parser.add_argument("mode", choices=["bot", "backtest", "data", "optimize"], help="Operation mode")
+    parser.add_argument("mode", choices=["bot", "backtest", "data", "rsi_optimize", "pnl_maxhold_optimize"], help="Operation mode")
     parser.add_argument("--code", help="Stock code or Name (optional for data/backtest)")
     parser.add_argument("--name", help="Stock Code or Name (Available for backward compatibility)", dest="code_arg")
     parser.add_argument("--years", type=int, default=1, help="Number of years to fetch data for (default 1)")
     
-    # Optimization Arguments
-    parser.add_argument("--min-rsi", type=int, default=settings.RSI_OPTIMIZE_MIN, help=f"Minimum RSI threshold for optimization (default {settings.RSI_OPTIMIZE_MIN})")
-    parser.add_argument("--max-rsi", type=int, default=settings.RSI_OPTIMIZE_MAX, help=f"Maximum RSI threshold for optimization (default {settings.RSI_OPTIMIZE_MAX})")
-    parser.add_argument("--step-rsi", type=int, default=settings.RSI_OPTIMIZE_STEP, help=f"Step size for RSI optimization (default {settings.RSI_OPTIMIZE_STEP})")
+    # RSI Optimization
+    parser.add_argument("--min-rsi", type=int, default=settings.RSI_OPTIMIZE_MIN, help=f"Min RSI (default {settings.RSI_OPTIMIZE_MIN})")
+    parser.add_argument("--max-rsi", type=int, default=settings.RSI_OPTIMIZE_MAX, help=f"Max RSI (default {settings.RSI_OPTIMIZE_MAX})")
+    parser.add_argument("--step-rsi", type=int, default=settings.RSI_OPTIMIZE_STEP, help=f"Step RSI (default {settings.RSI_OPTIMIZE_STEP})")
+    
+    # PnL & MaxHold Optimization
+    parser.add_argument("--min-sl", type=float, default=settings.STOP_LOSS_OPT_MIN, help=f"Min Stop Loss % (default {settings.STOP_LOSS_OPT_MIN})")
+    parser.add_argument("--max-sl", type=float, default=settings.STOP_LOSS_OPT_MAX, help=f"Max Stop Loss % (default {settings.STOP_LOSS_OPT_MAX})")
+    parser.add_argument("--step-sl", type=float, default=settings.STOP_LOSS_OPT_STEP, help=f"Step Stop Loss % (default {settings.STOP_LOSS_OPT_STEP})")
+    
+    parser.add_argument("--min-tp", type=float, default=settings.TAKE_PROFIT_OPT_MIN, help=f"Min Take Profit % (default {settings.TAKE_PROFIT_OPT_MIN})")
+    parser.add_argument("--max-tp", type=float, default=settings.TAKE_PROFIT_OPT_MAX, help=f"Max Take Profit % (default {settings.TAKE_PROFIT_OPT_MAX})")
+    parser.add_argument("--step-tp", type=float, default=settings.TAKE_PROFIT_OPT_STEP, help=f"Step Take Profit % (default {settings.TAKE_PROFIT_OPT_STEP})")
+    
+    parser.add_argument("--min-hold", type=int, default=settings.MAX_HOLD_OPT_MIN, help=f"Min Max Hold Days (default {settings.MAX_HOLD_OPT_MIN})")
+    parser.add_argument("--max-hold", type=int, default=settings.MAX_HOLD_OPT_MAX, help=f"Max Max Hold Days (default {settings.MAX_HOLD_OPT_MAX})")
+    parser.add_argument("--step-hold", type=int, default=settings.MAX_HOLD_OPT_STEP, help=f"Step Max Hold Days (default {settings.MAX_HOLD_OPT_STEP})")
     
     args = parser.parse_args()
     
@@ -135,8 +205,10 @@ def main():
         run_backtest(target_code)
     elif args.mode == "bot":
         run_bot()
-    elif args.mode == "optimize":
-        run_optimization(target_code, min_rsi=args.min_rsi, max_rsi=args.max_rsi, step_rsi=args.step_rsi)
+    elif args.mode == "rsi_optimize":
+        run_rsi_optimize(target_code, args)
+    elif args.mode == "pnl_maxhold_optimize":
+        run_pnl_maxhold_optimize(target_code, args)
 
 if __name__ == "__main__":
     main()

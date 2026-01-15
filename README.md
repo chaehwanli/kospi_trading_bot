@@ -186,37 +186,66 @@ entry_time,exit_time,entry_price,exit_price,qty,pnl,pnl_pct,reason
 ```
 * **Reason**: 청산 사유 (`Take Profit`, `Stop Loss`, `Max Hold Reached (PROFIT/LOSS)`)
 
-### 4. Run Optimization (RSI)
-RSI 과매도 기준값(`RSI_OVERSOLD`)을 30~70 사이(설정 가능)로 변경해가며 백테스트를 반복 수행하여, 가장 높은 수익률을 기록하는 최적의 RSI 값을 찾습니다.
+### 4. Run Optimization
+전략의 수익률을 극대화하기 위해 두 가지 최적화 명령을 제공합니다.
+
+#### 1) RSI Optimization (`rsi_optimize`)
+`RSI` 과매도 기준값만을 변경하며 최적의 값을 찾습니다. 가장 빠르고 직관적입니다.
 
 **명령어**:
 ```bash
-# 기본 설정(settings.py)으로 최적화 실행
-python main.py optimize --code "사조씨푸드"
+# 기본 설정(settings.py)으로 실행
+python main.py rsi_optimize --code "사조씨푸드"
 
 # 범위 직접 지정 (예: 60~70, 2단위)
-python main.py optimize --code "사조씨푸드" --min-rsi 60 --max-rsi 70 --step-rsi 2
+python main.py rsi_optimize --code "사조씨푸드" --min-rsi 60 --max-rsi 70 --step-rsi 2
 ```
 
-**설정**:
-기본 탐색 범위는 `config/settings.py`에서 변경할 수 있습니다.
+#### 2) PnL & MaxHold Optimization (`pnl_maxhold_optimize`)
+`Stop Loss`, `Take Profit`, `Max Hold Days` 3가지 변수를 조합하여 최적의 파라미터 셋을 찾습니다.
+*   **변수**: Stop Loss (손절가), Take Profit (익절가), Max Hold Days (최대 보유일)
+*   3가지 변수의 모든 조합을 테스트하므로 시간이 더 소요될 수 있습니다.
+
+**명령어**:
+```bash
+# 기본 설정(settings.py)으로 실행
+python main.py pnl_maxhold_optimize --code "사조씨푸드"
+
+# 범위 직접 지정
+python main.py pnl_maxhold_optimize --code "사조씨푸드" --min-sl -3.0 --max-sl -2.0 --step-sl 0.5 --min-tp 30 --max-tp 40 --step-tp 5
+```
+
+**설정 (config/settings.py)**:
+각 최적화 모드의 기본 탐색 범위를 설정할 수 있습니다.
 ```python
+# RSI Defaults
 RSI_OPTIMIZE_MIN = 30
 RSI_OPTIMIZE_MAX = 70
-RSI_OPTIMIZE_STEP = 1
+RSI_OPTIMIZE_STEP = 2
+
+# PnL & MaxHold Defaults
+STOP_LOSS_OPT_MIN = -5.0
+STOP_LOSS_OPT_MAX = -1.0
+STOP_LOSS_OPT_STEP = 0.5
+
+TAKE_PROFIT_OPT_MIN = 10.0
+TAKE_PROFIT_OPT_MAX = 50.0
+TAKE_PROFIT_OPT_STEP = 5.0
+
+MAX_HOLD_OPT_MIN = 1
+MAX_HOLD_OPT_MAX = 10
+MAX_HOLD_OPT_STEP = 1
 ```
 
-**실행 결과**:
-수익률 상위 10개의 RSI 설정값과 결과를 출력합니다.
+**실행 결과 예시 (PnL & MaxHold)**:
 ```
-Optimization Results for 014710 (Top 10):
-RSI   | Return     | Trades   | Win  
-----------------------------------------
-66    |  146.26%   | 56       | 30   
-68    |  124.75%   | 57       | 29   
-65    |  126.32%   | 55       | 28   
+Optimization Results for 014710 - PnL & MaxHold (Top 10):
+SL     | TP     | Hold | Return    | Trades | Win 
+------------------------------------------------------------
+-2.5   | 30.0   | 5    |  107.55%  | 38     | 17  
+-2.5   | 40.0   | 5    |   90.85%  | 38     | 17  
 ...
-Best RSI: 66 (Return: 146.26%)
+Best: SL=-2.5, TP=30.0, Hold=5 (Return: 107.55%)
 ```
 
 ### 5. Run Bot

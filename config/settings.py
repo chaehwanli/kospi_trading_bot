@@ -34,6 +34,21 @@ RSI_OPTIMIZE_MIN = 30
 RSI_OPTIMIZE_MAX = 70
 RSI_OPTIMIZE_STEP = 2
 
+# Stop Loss Optimization Defaults
+STOP_LOSS_OPT_MIN = -5.0
+STOP_LOSS_OPT_MAX = -1.0
+STOP_LOSS_OPT_STEP = 0.5
+
+# Take Profit Optimization Defaults
+TAKE_PROFIT_OPT_MIN = 10.0
+TAKE_PROFIT_OPT_MAX = 50.0
+TAKE_PROFIT_OPT_STEP = 5.0
+
+# Max Hold Days Optimization Defaults
+MAX_HOLD_OPT_MIN = 1
+MAX_HOLD_OPT_MAX = 10
+MAX_HOLD_OPT_STEP = 1
+
 # Target Stocks
 # Sajo Seafood, Eugene Tech, Eugene Robot
 TARGET_STOCKS = [

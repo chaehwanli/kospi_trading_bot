@@ -8,7 +8,7 @@ from utils.logger import setup_logger
 logger = setup_logger("Backtester")
 
 class BacktestEngine:
-    def __init__(self, strategy, rsi_oversold=None):
+    def __init__(self, strategy, rsi_oversold=None, stop_loss_pct=None, take_profit_pct=None, max_hold_days=None):
         self.strategy = strategy
         self.initial_capital = settings.INITIAL_CAPITAL
         self.balance = self.initial_capital
@@ -16,6 +16,9 @@ class BacktestEngine:
         self.trades = []
         
         self.rsi_oversold = rsi_oversold if rsi_oversold is not None else settings.RSI_OVERSOLD
+        self.stop_loss_pct = stop_loss_pct if stop_loss_pct is not None else settings.STOP_LOSS_PCT
+        self.take_profit_pct = take_profit_pct if take_profit_pct is not None else settings.TAKE_PROFIT_PCT
+        self.max_hold_days = max_hold_days if max_hold_days is not None else settings.MAX_HOLD_DAYS
         
         # Fees
         self.fee_buy = 0.00015 # 0.015%
@@ -84,12 +87,12 @@ class BacktestEngine:
         pnl_pct = (current_price - entry_price) / entry_price * 100
         
         # 1. Stop Loss
-        if pnl_pct <= settings.STOP_LOSS_PCT: # -3.0
+        if pnl_pct <= self.stop_loss_pct: # -3.0
             self._sell(row, "Stop Loss", current_time)
             return
 
         # 2. Take Profit
-        if pnl_pct >= settings.TAKE_PROFIT_PCT: # 35.0
+        if pnl_pct >= self.take_profit_pct: # 35.0
             self._sell(row, "Take Profit", current_time)
             return
             
@@ -99,7 +102,7 @@ class BacktestEngine:
         if isinstance(entry_time, str):
             entry_time = pd.to_datetime(entry_time) # robust check
             
-        if (current_time - entry_time).days >= settings.MAX_HOLD_DAYS:
+        if (current_time - entry_time).days >= self.max_hold_days:
             status = "PROFIT" if pnl_pct >= 0 else "LOSS"
             self._sell(row, f"Max Hold Reached ({status})", current_time)
             return
