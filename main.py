@@ -74,22 +74,52 @@ def run_rsi_optimize(code, args):
         strategy = RsiMacdStrategy()
         engine = BacktestEngine(strategy, rsi_oversold=val)
         res = engine.run(df, code=code, save_results=False)
-        results.append({'param': val, 'return': res['return'], 'trades': res['total_trades'], 'win': res['win_trades']})
+        results.append({
+            'param': val, 
+            'return': res['return'], 
+            'trades': res['total_trades'], 
+            'win': res['win_trades'],
+            'sl': res['count_sl'],
+            'tp': res['count_tp'],
+            'mh_win': res['count_mh_win'],
+            'mh_loss': res['count_mh_loss']
+        })
 
     # Sort by success (Return)
     results.sort(key=lambda x: x['return'], reverse=True)
     
     logger.info(f"\nOptimization Results for {code} - Target: RSI (Top 10):")
-    logger.info(f"{'Param':<8} | {'Return':<10} | {'Trades':<8} | {'Win':<5}")
-    logger.info("-" * 45)
+    logger.info(f"{'Param':<8} | {'Return':<10} | {'Trades':<8} | {'Win':<5} | {'SL':<4} | {'TP':<4} | {'MH(W)':<5} | {'MH(L)':<5}")
+    logger.info("-" * 80)
     
     for r in results[:10]:
-         logger.info(f"{r['param']:<8} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5}")
+         logger.info(f"{r['param']:<8} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5} | {r['sl']:<4} | {r['tp']:<4} | {r['mh_win']:<5} | {r['mh_loss']:<5}")
          
     if results:
         best = results[0]
-        logger.info("-" * 45)
+        logger.info("-" * 80)
         logger.info(f"Best RSI: {best['param']} (Return: {best['return']:.2f}%)")
+        
+        # Save to file
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        result_path = f"backtest_results/optimization_rsi_{code}_{timestamp}.txt"
+        os.makedirs("backtest_results", exist_ok=True)
+        
+        with open(result_path, "w", encoding="utf-8") as f:
+            f.write(f"Optimization Results for {code} - RSI\n")
+            f.write(f"Date: {timestamp}\n")
+            f.write(f"Range: {min_val} ~ {max_val} (Step {step_val})\n")
+            f.write("-" * 85 + "\n")
+            f.write(f"{'RSI':<8} | {'Return':<10} | {'Trades':<8} | {'Win':<5} | {'SL':<4} | {'TP':<4} | {'MH(W)':<5} | {'MH(L)':<5}\n")
+            f.write("-" * 85 + "\n")
+            
+            for r in results:
+                f.write(f"{r['param']:<8} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5} | {r['sl']:<4} | {r['tp']:<4} | {r['mh_win']:<5} | {r['mh_loss']:<5}\n")
+            
+            f.write("-" * 85 + "\n")
+            f.write(f"Best RSI: {best['param']} (Return: {best['return']:.2f}%)\n")
+            
+        logger.info(f"Full RSI optimization results saved to {result_path}")
 
 def run_pnl_maxhold_optimize(code, args):
     if not code:
@@ -135,7 +165,11 @@ def run_pnl_maxhold_optimize(code, args):
                     'sl': sl, 'tp': tp, 'hold': hold,
                     'return': res['return'],
                     'trades': res['total_trades'],
-                    'win': res['win_trades']
+                    'win': res['win_trades'],
+                    'count_sl': res['count_sl'],
+                    'count_tp': res['count_tp'],
+                    'mh_win': res['count_mh_win'],
+                    'mh_loss': res['count_mh_loss']
                 })
                 count += 1
                 if count % 100 == 0:
@@ -145,34 +179,34 @@ def run_pnl_maxhold_optimize(code, args):
     results.sort(key=lambda x: x['return'], reverse=True)
     
     logger.info(f"\nOptimization Results for {code} - PnL & MaxHold (Top 50):")
-    logger.info(f"{'SL':<6} | {'TP':<6} | {'Hold':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4}")
-    logger.info("-" * 60)
+    logger.info(f"{'SL':<6} | {'TP':<6} | {'Hold':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4} | {'SL':<4} | {'TP':<4} | {'MH(W)':<5} | {'MH(L)':<5}")
+    logger.info("-" * 100)
     
     for r in results[:50]:
-         logger.info(f"{r['sl']:<6} | {r['tp']:<6} | {r['hold']:<4} | {r['return']:>7.2f}%  | {r['trades']:<6} | {r['win']:<4}")
+         logger.info(f"{r['sl']:<6} | {r['tp']:<6} | {r['hold']:<4} | {r['return']:>7.2f}%  | {r['trades']:<6} | {r['win']:<4} | {r['count_sl']:<4} | {r['count_tp']:<4} | {r['mh_win']:<5} | {r['mh_loss']:<5}")
          
     if results:
         best = results[0]
-        logger.info("-" * 60 + "\n")
+        logger.info("-" * 100 + "\n")
         logger.info(f"Best: SL={best['sl']}, TP={best['tp']}, Hold={best['hold']} (Return: {best['return']:.2f}%)\n")
         
         # Save to file
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        result_path = f"backtest_results/optimization_{code}_{timestamp}.txt"
+        result_path = f"backtest_results/optimization_pnl_{code}_{timestamp}.txt"
         os.makedirs("backtest_results", exist_ok=True)
         
         with open(result_path, "w", encoding="utf-8") as f:
             f.write(f"Optimization Results for {code} - PnL & MaxHold\n")
             f.write(f"Date: {timestamp}\n")
             f.write(f"Total Combinations Tested: {total_combinations}\n")
-            f.write("-" * 65 + "\n")
-            f.write(f"{'SL':<6} | {'TP':<6} | {'Hold':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4}\n")
-            f.write("-" * 65 + "\n")
+            f.write("-" * 105 + "\n")
+            f.write(f"{'SL':<6} | {'TP':<6} | {'Hold':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4} | {'SL':<4} | {'TP':<4} | {'MH(W)':<5} | {'MH(L)':<5}\n")
+            f.write("-" * 105 + "\n")
             
             for r in results:
-                f.write(f"{r['sl']:<6} | {r['tp']:<6} | {r['hold']:<4} | {r['return']:>7.2f}%  | {r['trades']:<6} | {r['win']:<4}\n")
+                f.write(f"{r['sl']:<6} | {r['tp']:<6} | {r['hold']:<4} | {r['return']:>7.2f}%  | {r['trades']:<6} | {r['win']:<4} | {r['count_sl']:<4} | {r['count_tp']:<4} | {r['mh_win']:<5} | {r['mh_loss']:<5}\n")
             
-            f.write("-" * 65 + "\n")
+            f.write("-" * 105 + "\n")
             f.write(f"Best: SL={best['sl']}, TP={best['tp']}, Hold={best['hold']} (Return: {best['return']:.2f}%)\n")
             
         logger.info(f"Full optimization results saved to {result_path}")

@@ -247,10 +247,20 @@ class BacktestEngine:
                 trades_df.to_csv(trades_file, index=False)
                 logger.info(f"Trades saved to {trades_file}")
                 
+        # Calculate Reason Counts
+        count_sl = len([t for t in self.trades if "Stop Loss" in t['reason']])
+        count_tp = len([t for t in self.trades if "Take Profit" in t['reason']])
+        count_mh_win = len([t for t in self.trades if "Max Hold" in t['reason'] and "PROFIT" in t['reason']])
+        count_mh_loss = len([t for t in self.trades if "Max Hold" in t['reason'] and "LOSS" in t['reason']])
+        
         return {
             'final_balance': final_balance,
             'return': total_return,
             'total_trades': len(self.trades),
             'win_trades': win_count,
-            'loss_trades': loss_count
+            'loss_trades': loss_count,
+            'count_sl': count_sl,
+            'count_tp': count_tp,
+            'count_mh_win': count_mh_win,
+            'count_mh_loss': count_mh_loss
         }
