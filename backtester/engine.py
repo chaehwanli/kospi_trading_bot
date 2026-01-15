@@ -4,6 +4,7 @@ from datetime import datetime
 from datetime import timedelta
 from config import settings
 from utils.logger import setup_logger
+from utils.market_time import get_trading_days_diff
 
 logger = setup_logger("Backtester")
 
@@ -102,7 +103,7 @@ class BacktestEngine:
         if isinstance(entry_time, str):
             entry_time = pd.to_datetime(entry_time) # robust check
             
-        if (current_time - entry_time).days >= self.max_hold_days:
+        if get_trading_days_diff(entry_time, current_time) >= self.max_hold_days:
             status = "PROFIT" if pnl_pct >= 0 else "LOSS"
             self._sell(row, f"Max Hold Reached ({status})", current_time)
             return

@@ -71,10 +71,21 @@ Long Max Hold Days: 5일
 
 10. 국내 휴장일
 국내 휴장일에 대해서는 거래하지 않는다.
+토요일/일요일도 거래하지 않는다.
+MAX HOLD DAYS 계산에 휴장일은 제외한다.
 
 11. 거래 시간
 정규장 시간동안 동작한다.
 
+12. 슬리피지 고려
+매수/매도 시 슬리피지가 발생할 수 있으므로 이를 고려한다.
+국내장 거래는 10원 단위로 슬리피지를 적용한다. 매도 -10원, 매수 +10원
+Backtest 시에도 적용한다.
+
+13. 수수료 고려
+매수/매도 시 수수료가 발생할 수 있으므로 이를 고려한다.
+국내장 거래는 0.015%의 수수료를 적용한다.
+Backtest 시에도 적용한다.
 
 # KOSPI Trading Bot - Implementation Walkthrough
 
@@ -252,6 +263,39 @@ Best: SL=-2.5, TP=30.0, Hold=5 (Return: 107.55%)
 ```bash
 python main.py bot
 ```
+## Holiday & Weekend Handling
+
+I have implemented the holiday and weekend handling rules as requested.
+
+### 1. New Utility: `market_time.py`
+Created `utils/market_time.py` with `get_trading_days_diff(start_date, end_date)`.
+- Calculates the number of **trading days** between two dates.
+- Excludes Weekends (Sat, Sun).
+- Excludes Holidays defined in `config.holidays.MARKET_HOLIDAYS`.
+
+### 2. Trader Update
+Modified `bot/trader.py` to use `get_trading_days_diff` for checking `MAX_HOLD_DAYS`.
+```diff
+-        elif (current_time - entry_time).days >= settings.MAX_HOLD_DAYS:
++        elif get_trading_days_diff(entry_time, current_time) >= settings.MAX_HOLD_DAYS:
+```
+
+### 3. Backtester Update
+Modified `backtester/engine.py` to use the same utility, ensuring backtest results align with live trading logic.
+
+### 4. Verification
+Created `tests/test_market_time.py` and verified the logic with:
+- Normal trading days (Mon -> Tue = 1 day)
+- Weekends (Fri -> Mon = 1 day)
+- Holidays (Lunar New Year 2025: Fri -> Thu = 1 day, excluding Sat/Sun/Mon/Tue/Wed)
+
+**Test Output:**
+```
+Ran 3 tests in 0.001s
+
+OK
+```
+
 ##
 I have found some relevant GitHub repositories and Python packages for Kiwoom REST API usage:
 

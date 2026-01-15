@@ -9,6 +9,7 @@ from config import settings
 from utils.logger import setup_logger
 from utils.telegram_bot import TelegramBot
 from config.holidays import MARKET_HOLIDAYS
+from utils.market_time import get_trading_days_diff
 
 logger = setup_logger("TradingBot")
 
@@ -128,7 +129,7 @@ class TradingBot:
             reason = "Stop Loss"
         elif pnl_pct >= settings.TAKE_PROFIT_PCT:
             reason = "Take Profit"
-        elif (current_time - entry_time).days >= settings.MAX_HOLD_DAYS:
+        elif get_trading_days_diff(entry_time, current_time) >= settings.MAX_HOLD_DAYS:
             reason = "Max Hold Reached"
             
         if reason:
