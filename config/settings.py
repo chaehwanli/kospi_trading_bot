@@ -28,6 +28,11 @@ STOP_LOSS_PCT = -3.0  # -3.0%
 TAKE_PROFIT_PCT = 35.0  # 35.0%
 MAX_HOLD_DAYS = 5
 INITIAL_CAPITAL = 1000000  # 1 Million KRW
+ 
+# RSI Optimization Defaults
+RSI_OPTIMIZE_MIN = 30
+RSI_OPTIMIZE_MAX = 70
+RSI_OPTIMIZE_STEP = 1
 
 # Target Stocks
 # Sajo Seafood, Eugene Tech, Eugene Robot

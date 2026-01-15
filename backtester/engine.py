@@ -8,22 +8,25 @@ from utils.logger import setup_logger
 logger = setup_logger("Backtester")
 
 class BacktestEngine:
-    def __init__(self, strategy):
+    def __init__(self, strategy, rsi_oversold=None):
         self.strategy = strategy
         self.initial_capital = settings.INITIAL_CAPITAL
         self.balance = self.initial_capital
         self.position = None # { 'price': float, 'qty': int, 'time': datetime, 'cost': float }
         self.trades = []
         
+        self.rsi_oversold = rsi_oversold if rsi_oversold is not None else settings.RSI_OVERSOLD
+        
         # Fees
         self.fee_buy = 0.00015 # 0.015%
         self.fee_sell = 0.00015 + 0.0018 # 0.015% + 0.18% Tax
         
-    def run(self, df, code="UNKNOWN"):
+    def run(self, df, code="UNKNOWN", save_results=True):
         """
         Run backtest on the provided DataFrame.
         """
         self.balance = self.initial_capital
+        self.save_results = save_results
         self.position = None
         self.trades = []
         self.start_date = None
@@ -71,7 +74,7 @@ class BacktestEngine:
         if self.position and last_row is not None:
             self._sell(last_row, "Backtest End", last_time)
             
-        self._calculate_performance()
+        return self._calculate_performance()
         
     def _check_exit_conditions(self, row, current_time):
         current_price = row['close']
@@ -114,7 +117,7 @@ class BacktestEngine:
         
         # Check condition
         macd_bullish = (macd > signal) and (hist > 0)
-        rsi_oversold = rsi < settings.RSI_OVERSOLD
+        rsi_oversold = rsi < self.rsi_oversold
         
         if macd_bullish and rsi_oversold:
             self._buy(row, "Strategy Signal", current_time)
@@ -204,23 +207,35 @@ class BacktestEngine:
         avg_profit = sum(t['pnl'] for t in win_trades) / win_count if win_count > 0 else 0
         avg_loss = sum(t['pnl'] for t in loss_trades) / loss_count if loss_count > 0 else 0
         
-        with open(summary_file, 'w') as f:
-            f.write(f"Backtest Result for {display_name}\n")
-            f.write(f"Period: {self.start_date} ~ {self.end_date}\n")
-            f.write(f"Date: {timestamp}\n")
-            f.write(f"Initial Capital: {self.initial_capital}\n")
-            f.write(f"Final Balance: {final_balance:.0f}\n")
-            f.write(f"Return: {total_return:.2f}%\n")
-            f.write(f"Total Trades: {len(self.trades)}\n")
-            f.write(f"Win Trades: {win_count}\n")
-            f.write(f"Loss Trades: {loss_count}\n")
-            f.write(f"Avg Profit: {int(avg_profit)}\n")
-            f.write(f"Avg Loss: {int(avg_loss)}\n")
-        logger.info(f"Summary saved to {summary_file}")
+        avg_profit = sum(t['pnl'] for t in win_trades) / win_count if win_count > 0 else 0
+        avg_loss = sum(t['pnl'] for t in loss_trades) / loss_count if loss_count > 0 else 0
         
-        # 2. Trades File
-        if self.trades:
-            trades_df = pd.DataFrame(self.trades)
-            trades_file = os.path.join(self.result_dir, f"trades_{self.code}_{timestamp}.csv")
-            trades_df.to_csv(trades_file, index=False)
-            logger.info(f"Trades saved to {trades_file}")
+        if self.save_results:
+            with open(summary_file, 'w') as f:
+                f.write(f"Backtest Result for {display_name}\n")
+                f.write(f"Period: {self.start_date} ~ {self.end_date}\n")
+                f.write(f"Date: {timestamp}\n")
+                f.write(f"Initial Capital: {self.initial_capital}\n")
+                f.write(f"Final Balance: {final_balance:.0f}\n")
+                f.write(f"Return: {total_return:.2f}%\n")
+                f.write(f"Total Trades: {len(self.trades)}\n")
+                f.write(f"Win Trades: {win_count}\n")
+                f.write(f"Loss Trades: {loss_count}\n")
+                f.write(f"Avg Profit: {int(avg_profit)}\n")
+                f.write(f"Avg Loss: {int(avg_loss)}\n")
+            logger.info(f"Summary saved to {summary_file}")
+            
+            # 2. Trades File
+            if self.trades:
+                trades_df = pd.DataFrame(self.trades)
+                trades_file = os.path.join(self.result_dir, f"trades_{self.code}_{timestamp}.csv")
+                trades_df.to_csv(trades_file, index=False)
+                logger.info(f"Trades saved to {trades_file}")
+                
+        return {
+            'final_balance': final_balance,
+            'return': total_return,
+            'total_trades': len(self.trades),
+            'win_trades': win_count,
+            'loss_trades': loss_count
+        }

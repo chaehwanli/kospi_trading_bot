@@ -177,7 +177,40 @@ entry_time,exit_time,entry_price,exit_price,qty,pnl,pnl_pct,reason
 ```
 * **Reason**: 청산 사유 (`Take Profit`, `Stop Loss`, `Max Hold Reached (PROFIT/LOSS)`)
 
-### 4. Run Bot
+### 4. Run Optimization (RSI)
+RSI 과매도 기준값(`RSI_OVERSOLD`)을 30~70 사이(설정 가능)로 변경해가며 백테스트를 반복 수행하여, 가장 높은 수익률을 기록하는 최적의 RSI 값을 찾습니다.
+
+**명령어**:
+```bash
+# 기본 설정(settings.py)으로 최적화 실행
+python main.py optimize --code "사조씨푸드"
+
+# 범위 직접 지정 (예: 60~70, 2단위)
+python main.py optimize --code "사조씨푸드" --min-rsi 60 --max-rsi 70 --step-rsi 2
+```
+
+**설정**:
+기본 탐색 범위는 `config/settings.py`에서 변경할 수 있습니다.
+```python
+RSI_OPTIMIZE_MIN = 30
+RSI_OPTIMIZE_MAX = 70
+RSI_OPTIMIZE_STEP = 1
+```
+
+**실행 결과**:
+수익률 상위 10개의 RSI 설정값과 결과를 출력합니다.
+```
+Optimization Results for 014710 (Top 10):
+RSI   | Return     | Trades   | Win  
+----------------------------------------
+66    |  146.26%   | 56       | 30   
+68    |  124.75%   | 57       | 29   
+65    |  126.32%   | 55       | 28   
+...
+Best RSI: 66 (Return: 146.26%)
+```
+
+### 5. Run Bot
 ```bash
 python main.py bot
 ```
