@@ -10,6 +10,7 @@ from utils.logger import setup_logger
 from utils.telegram_bot import TelegramBot
 from config.holidays import MARKET_HOLIDAYS
 from utils.market_time import get_trading_days_diff
+from utils.price_utils import get_tick_size
 
 logger = setup_logger("TradingBot")
 
@@ -122,7 +123,10 @@ class TradingBot:
             # Simpler: just calculate days diff if we can parse.
             entry_time = datetime.now() # Fallback if parsing fails to avoid crash
         
-        pnl_pct = (current_price - entry_price) / entry_price * 100
+        # Slippage: Sell at -Tick Size
+        tick = get_tick_size(current_price)
+        sell_price = current_price - tick
+        pnl_pct = (sell_price - entry_price) / entry_price * 100
         
         reason = None
         if pnl_pct <= settings.STOP_LOSS_PCT:
@@ -160,13 +164,16 @@ class TradingBot:
             return
             
         fee_rate = 0.00015
-        qty = int(invest_amount / (price * (1 + fee_rate)))
+        # Slippage: Buy at +Tick Size
+        tick = get_tick_size(price)
+        buy_price = price + tick
+        qty = int(invest_amount / (buy_price * (1 + fee_rate)))
         
         if qty > 0:
             res = self.api.place_order(code, qty, "BUY", 0) # Market Order
             if res:
                 self.positions[code] = {
-                    'price': price,
+                    'price': buy_price,
                     'qty': qty,
                     'time': datetime.now().isoformat()
                 }
@@ -180,7 +187,9 @@ class TradingBot:
     def execute_sell(self, code, qty, price, reason):
         res = self.api.place_order(code, qty, "SELL", 0) # Market Order
         if res:
-            pnl_pct = (price - self.positions[code]['price']) / self.positions[code]['price'] * 100
+            tick = get_tick_size(price)
+            sell_price = price - tick
+            pnl_pct = (sell_price - self.positions[code]['price']) / self.positions[code]['price'] * 100
             prefix = self._get_msg_prefix(code)
             msg = f"{prefix} SELL: {qty}주 @ {price} ({reason}) PnL: {pnl_pct:.2f}%"
             logger.info(msg)

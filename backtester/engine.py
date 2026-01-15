@@ -5,6 +5,7 @@ from datetime import timedelta
 from config import settings
 from utils.logger import setup_logger
 from utils.market_time import get_trading_days_diff
+from utils.price_utils import get_tick_size
 
 logger = setup_logger("Backtester")
 
@@ -85,7 +86,10 @@ class BacktestEngine:
         entry_price = self.position['price']
         
         # PnL %
-        pnl_pct = (current_price - entry_price) / entry_price * 100
+        # Slippage: Sell at -Tick Size
+        tick = get_tick_size(current_price)
+        current_sell_price = current_price - tick
+        pnl_pct = (current_sell_price - entry_price) / entry_price * 100
         
         # 1. Stop Loss
         if pnl_pct <= self.stop_loss_pct: # -3.0
@@ -133,16 +137,20 @@ class BacktestEngine:
         # Calculate Qty
         # Cost = Qty * Price * (1 + fee)
         # Qty = Balance / (Price * (1 + fee))
-        qty = int(max_buy_amt / (price * (1 + self.fee_buy)))
+        
+        # Slippage: Buy at +Tick Size
+        tick = get_tick_size(price)
+        buy_price = price + tick
+        qty = int(max_buy_amt / (buy_price * (1 + self.fee_buy)))
         
         if qty > 0:
-            cost = qty * price
+            cost = qty * buy_price
             fee = cost * self.fee_buy
             self.balance -= (cost + fee)
             logger.debug(f"Balance Update (BUY): {self.balance + (cost+fee)} -> {self.balance} (Cost: {cost}, Fee: {fee})")
             
             self.position = {
-                'price': price,
+                'price': buy_price,
                 'qty': qty,
                 'time': current_time, 
                 'cost': cost,
@@ -152,9 +160,12 @@ class BacktestEngine:
             
     def _sell(self, row, reason, current_time):
         price = row['close']
+        # Slippage: Sell at -Tick Size
+        tick = get_tick_size(price)
+        sell_price = price - tick
         qty = self.position['qty']
         
-        revenue = qty * price
+        revenue = qty * sell_price
         fee = revenue * self.fee_sell
         
         net_revenue = revenue - fee
@@ -168,7 +179,7 @@ class BacktestEngine:
             'entry_time': self.position['time'],
             'exit_time': current_time,
             'entry_price': self.position['price'],
-            'exit_price': price,
+            'exit_price': sell_price,
             'qty': qty,
             'pnl': int(pnl),
             'pnl_pct': round(pnl_pct, 2),

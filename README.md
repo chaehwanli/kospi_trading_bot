@@ -81,6 +81,23 @@ MAX HOLD DAYS 계산에 휴장일은 제외한다.
 매수/매도 시 슬리피지가 발생할 수 있으므로 이를 고려한다.
 국내장 거래는 10원 단위로 슬리피지를 적용한다. 매도 -10원, 매수 +10원
 Backtest 시에도 적용한다.
+```
+국내 주식(KOSPI) 거래 단위(호가 단위)는 주가에 따라 다릅니다.
+
+현재 한국거래소(KRX)의 호가 가격 단위는 다음과 같습니다:
+
+1,000원 미만: 1원
+1,000원 ~ 5,000원 미만: 5원
+5,000원 ~ 10,000원 미만: 10원
+10,000원 ~ 50,000원 미만: 50원
+50,000원 ~ 100,000원 미만: 100원
+100,000원 ~ 500,000원 미만: 500원
+500,000원 이상: 1,000원
+즉, 종목의 현재 가격에 따라 5원일 수도, 10원일 수도, 혹은 그 이상일 수도 있습니다.
+
+저희 타겟 종목들의 대략적인 가격대(예: 유진로봇 5,000~10,000원 대)라면 10원이 맞을 수 있으나, 사조씨푸드(4,000원 대)의 경우 5원 단위입니다. 유진테크(30,000원 이상)는 50원 단위입니다.
+```
+가격대별 동적 호가 단위(Tick Size)를 적용한다.
 
 13. 수수료 고려
 매수/매도 시 수수료가 발생할 수 있으므로 이를 고려한다.
@@ -263,36 +280,45 @@ Best: SL=-2.5, TP=30.0, Hold=5 (Return: 107.55%)
 ```bash
 python main.py bot
 ```
-## Holiday & Weekend Handling
+## Holiday & Slippage Rules
 
-I have implemented the holiday and weekend handling rules as requested.
+I have implemented the holiday/weekend handling rules and the dynamic KOSPI tick size slippage.
 
-### 1. New Utility: `market_time.py`
+### Holiday & Weekend Handling
+
+#### 1. New Utility: `market_time.py`
 Created `utils/market_time.py` with `get_trading_days_diff(start_date, end_date)`.
 - Calculates the number of **trading days** between two dates.
 - Excludes Weekends (Sat, Sun).
 - Excludes Holidays defined in `config.holidays.MARKET_HOLIDAYS`.
 
-### 2. Trader Update
-Modified `bot/trader.py` to use `get_trading_days_diff` for checking `MAX_HOLD_DAYS`.
-```diff
--        elif (current_time - entry_time).days >= settings.MAX_HOLD_DAYS:
-+        elif get_trading_days_diff(entry_time, current_time) >= settings.MAX_HOLD_DAYS:
-```
+#### 2. Trader & Backtester Update
+Modified `bot/trader.py` and `backtester/engine.py` to use `get_trading_days_diff` for `MAX_HOLD_DAYS` checks.
 
-### 3. Backtester Update
-Modified `backtester/engine.py` to use the same utility, ensuring backtest results align with live trading logic.
+### Slippage & Fee
 
-### 4. Verification
-Created `tests/test_market_time.py` and verified the logic with:
-- Normal trading days (Mon -> Tue = 1 day)
-- Weekends (Fri -> Mon = 1 day)
-- Holidays (Lunar New Year 2025: Fri -> Thu = 1 day, excluding Sat/Sun/Mon/Tue/Wed)
+#### 1. Fee (0.015%)
+Verified that the 0.015% fee was already implemented in both the bot and backtester.
+
+#### 2. Dynamic Tick Size (Slippage)
+Implemented dynamic slippage based on KOSPI price ranges (e.g., 5 KRW, 10 KRW, 50 KRW depending on price).
+
+- **New Utility**: `utils/price_utils.py` implemented `get_tick_size(price)`.
+- **Trader (`bot/trader.py`)**:
+  - `BUY`: Entry Price = Market Price + `get_tick_size(price)`
+  - `SELL` / Exit Logic: Sell Price = Market Price - `get_tick_size(price)`
+- **Backtester (`backtester/engine.py`)**:
+  - Updated Buy/Sell logic to match the Trader's dynamic slippage.
+
+### Verification
+
+#### Unit Tests
+- `tests/test_market_time.py`: Verified holiday/weekend exclusion logic.
+- `tests/test_price_utils.py`: Verified tick size calculation for various price ranges (<1k, 1k-5k, 5k-10k, etc.).
 
 **Test Output:**
 ```
-Ran 3 tests in 0.001s
-
+Ran 1 test in 0.000s
 OK
 ```
 
