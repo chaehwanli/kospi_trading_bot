@@ -136,9 +136,46 @@ python main.py data --code "사조씨푸드" --years 2
 ```
 
 ### 3. Run Backtest
+백테스트를 실행하여 전략의 수익성을 검증할 수 있습니다.
+* 주의: 백테스트 실행 시에는 API 연결을 하지 않고 로컬 데이터(`data_storage/`)만을 사용하므로, 먼저 `data` 모드를 통해 데이터를 수집해야 합니다.
+
+**명령어**:
 ```bash
+# 특정 종목(이름 또는 코드)에 대해 백테스트 실행
+python main.py backtest --code "사조씨푸드"
+
+# 전체 타켓 종목에 대해 실행
 python main.py backtest
 ```
+
+**실행 결과**:
+백테스트 결과는 `backtest_results/` 디렉토리에 저장되며 두 가지 파일이 생성됩니다.
+
+1. **요약 파일 (`summary_종목코드_시간.txt`)**:
+전체 수익률 및 승률 정보를 포함합니다.
+```
+Backtest Result for 사조씨푸드(014710)
+Date: 20260115_213213
+Initial Capital: 1000000       # 초기 자본금 (원)
+Final Balance: 1603513         # 최종 평가액 (보유 주식 포함)
+Return: 60.35%                 # 총 수익률
+Total Trades: 35               # 총 거래 횟수
+Win Trades: 16                 # 수익 거래 횟수
+Loss Trades: 19                # 손실 거래 횟수
+Avg Profit: 90807              # 평균 수익금 (원)
+Avg Loss: -44705               # 평균 손실금 (원)
+```
+
+2. **상세 거래 내역 (`trades_종목코드_시간.csv`)**:
+각 거래별 진입/청산 시점과 수익/손실 내역을 기록합니다.
+```csv
+entry_time,exit_time,entry_price,exit_price,qty,pnl,pnl_pct,reason
+2025-01-14 14:00:00,2025-01-20 09:00:00,4545.0,4445.0,219,-23947,-2.41,Max Hold Reached (LOSS)
+2025-01-21 14:00:00,2025-01-24 09:00:00,4445.0,6100.0,219,359693,36.94,Take Profit
+2025-01-31 15:00:00,2025-02-03 09:00:00,5680.0,5180.0,235,-120073,-8.99,Stop Loss
+...
+```
+* **Reason**: 청산 사유 (`Take Profit`, `Stop Loss`, `Max Hold Reached (PROFIT/LOSS)`)
 
 ### 4. Run Bot
 ```bash

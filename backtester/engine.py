@@ -1,4 +1,6 @@
 import pandas as pd
+import os
+from datetime import datetime
 from datetime import timedelta
 from config import settings
 from utils.logger import setup_logger
@@ -17,56 +19,53 @@ class BacktestEngine:
         self.fee_buy = 0.00015 # 0.015%
         self.fee_sell = 0.00015 + 0.0018 # 0.015% + 0.18% Tax
         
-    def run(self, df):
+    def run(self, df, code="UNKNOWN"):
         """
         Run backtest on the provided DataFrame.
         """
         self.balance = self.initial_capital
         self.position = None
         self.trades = []
+        self.code = code
+        self.result_dir = "backtest_results"
+        if not os.path.exists(self.result_dir):
+            os.makedirs(self.result_dir)
         
         logger.info(f"Starting Backtest. Initial Capital: {self.balance}")
         
-        # We need to iterate row by row to simulate real-time
-        # Use simple iteration for now
-        
-        # Pre-calculate indicators to speed up? 
-        # Strategy calculates on the fly usually, but for backtest we can pass the whole DF if the strategy supports it.
-        # But our strategy expects data up to point T.
-        # RsiMacdStrategy.generate_signal computes on the whole df passed to it.
-        # Passing growing window is slow.
-        # Optimization: Calculate indicators once for the whole DF, then iterate.
-        # I'll update Strategy to allow `precompute`? Or just trust pandas is fast enough for 1 year (1500 rows).
-        # 1500 rows is tiny. Growing window is fine.
-        
-        # However, to be correct, indicators at time T should not know T+1.
-        # `calculate_indicators` using `rolling` and `ewm` on the whole DF is correct 
-        # because row T only depends on T-n..T.
-        
-        # So I will calculate indicators on the FULL DF once, then iterate.
-        # I need to expose `calculate_indicators` in strategy or just use it.
-        # Modifying strategy to return DataFrame with indicators.
-        
+        # Pre-calculate indicators
         df_with_indicators = self.strategy.calculate_indicators(df.copy())
         
+        last_row = None
+        last_time = None
+        
         for index, row in df_with_indicators.iterrows():
+            last_row = row
             current_time = row['time'] # assume string or datetime
-            # Convert to datetime if str
-            if isinstance(current_time, str):
-                current_time = pd.to_datetime(current_time, format="%Y%m%d%H%M%S") # Format depends on API
-                # API format: stck_bsop_date + stck_cntg_hour usually YYYYMMDDHHMMSS or similar
-                # data_manager saves it as fetched.
+            
+            # Ensure proper datetime conversion
+            if not isinstance(current_time, pd.Timestamp):
+                try:
+                    str_time = str(int(float(current_time))) if not isinstance(current_time, str) else current_time
+                    current_time = pd.to_datetime(str_time, format="%Y%m%d%H%M%S")
+                except Exception as e:
+                    logger.error(f"Failed to parse time {current_time}: {e}")
+                    continue
+            
+            last_time = current_time
             
             # 1. Manage Position
             if self.position:
                 self._check_exit_conditions(row, current_time)
             
             # 2. Check Entry (if no position)
-            # Re-check position because we might have just sold
             if not self.position:
-                self._check_entry_conditions(row, index, df_with_indicators)
+                self._check_entry_conditions(row, index, df_with_indicators, current_time)
                 
-        # Finalize
+        # Finalize - Force Close
+        if self.position and last_row is not None:
+            self._sell(last_row, "Backtest End", last_time)
+            
         self._calculate_performance()
         
     def _check_exit_conditions(self, row, current_time):
@@ -78,12 +77,12 @@ class BacktestEngine:
         
         # 1. Stop Loss
         if pnl_pct <= settings.STOP_LOSS_PCT: # -3.0
-            self._sell(row, "Stop Loss")
+            self._sell(row, "Stop Loss", current_time)
             return
 
         # 2. Take Profit
         if pnl_pct >= settings.TAKE_PROFIT_PCT: # 35.0
-            self._sell(row, "Take Profit")
+            self._sell(row, "Take Profit", current_time)
             return
             
         # 3. Max Hold Days
@@ -93,10 +92,11 @@ class BacktestEngine:
             entry_time = pd.to_datetime(entry_time) # robust check
             
         if (current_time - entry_time).days >= settings.MAX_HOLD_DAYS:
-            self._sell(row, "Max Hold Reached")
+            status = "PROFIT" if pnl_pct >= 0 else "LOSS"
+            self._sell(row, f"Max Hold Reached ({status})", current_time)
             return
             
-    def _check_entry_conditions(self, row, index, df):
+    def _check_entry_conditions(self, row, index, df, current_time):
         # We need to check if the Strategy signal fired.
         # Strategy `generate_signal` logic:
         # macd_bullish = (macd > signal) and (hist > 0)
@@ -112,9 +112,9 @@ class BacktestEngine:
         rsi_oversold = rsi < settings.RSI_OVERSOLD
         
         if macd_bullish and rsi_oversold:
-            self._buy(row, "Strategy Signal")
+            self._buy(row, "Strategy Signal", current_time)
 
-    def _buy(self, row, reason):
+    def _buy(self, row, reason, current_time):
         price = row['close']
         max_buy_amt = self.balance
         
@@ -127,17 +127,18 @@ class BacktestEngine:
             cost = qty * price
             fee = cost * self.fee_buy
             self.balance -= (cost + fee)
+            logger.debug(f"Balance Update (BUY): {self.balance + (cost+fee)} -> {self.balance} (Cost: {cost}, Fee: {fee})")
             
             self.position = {
                 'price': price,
                 'qty': qty,
-                'time': row['time'], # Keep original format or object
+                'time': current_time, 
                 'cost': cost,
                 'fee_entry': fee
             }
-            logger.info(f"BUY at {price} ({reason}) time={row['time']}")
+            logger.info(f"BUY at {price} ({reason}) time={current_time}")
             
-    def _sell(self, row, reason):
+    def _sell(self, row, reason, current_time):
         price = row['close']
         qty = self.position['qty']
         
@@ -146,18 +147,19 @@ class BacktestEngine:
         
         net_revenue = revenue - fee
         self.balance += net_revenue
+        logger.debug(f"Balance Update (SELL): {self.balance - net_revenue} -> {self.balance} (Rev: {revenue}, Fee: {fee})")
         
         pnl = net_revenue - (self.position['cost'] + self.position['fee_entry'])
         pnl_pct = (pnl / (self.position['cost'] + self.position['fee_entry'])) * 100
         
         self.trades.append({
             'entry_time': self.position['time'],
-            'exit_time': row['time'],
+            'exit_time': current_time,
             'entry_price': self.position['price'],
             'exit_price': price,
             'qty': qty,
-            'pnl': pnl,
-            'pnl_pct': pnl_pct,
+            'pnl': int(pnl),
+            'pnl_pct': round(pnl_pct, 2),
             'reason': reason
         })
         
@@ -166,15 +168,53 @@ class BacktestEngine:
 
     def _calculate_performance(self):
         final_balance = self.balance
-        if self.position:
-            # Mark to market current position
-            # Simply ignore or cash out at last price?
-            # Usually cash out for total equity calc.
-            pass
+        # Position is guaranteed to be closed by run() logic
             
         total_return = (final_balance - self.initial_capital) / self.initial_capital * 100
+        
+        # Log to Console
         logger.info(f"Backtest Finished.")
         logger.info(f"Initial: {self.initial_capital}")
         logger.info(f"Final: {final_balance:.0f}")
         logger.info(f"Return: {total_return:.2f}%")
         logger.info(f"Total Trades: {len(self.trades)}")
+        
+        # Save Results
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        # 1. Summary File
+        summary_file = os.path.join(self.result_dir, f"summary_{self.code}_{timestamp}.txt")
+        
+        # Get Stock Name
+        stock_name = settings.STOCK_NAMES.get(self.code, "Unknown")
+        display_name = f"{stock_name}({self.code})"
+        
+        # Calculate Statistics
+        win_trades = [t for t in self.trades if t['pnl'] > 0]
+        loss_trades = [t for t in self.trades if t['pnl'] <= 0]
+        
+        win_count = len(win_trades)
+        loss_count = len(loss_trades)
+        
+        avg_profit = sum(t['pnl'] for t in win_trades) / win_count if win_count > 0 else 0
+        avg_loss = sum(t['pnl'] for t in loss_trades) / loss_count if loss_count > 0 else 0
+        
+        with open(summary_file, 'w') as f:
+            f.write(f"Backtest Result for {display_name}\n")
+            f.write(f"Date: {timestamp}\n")
+            f.write(f"Initial Capital: {self.initial_capital}\n")
+            f.write(f"Final Balance: {final_balance:.0f}\n")
+            f.write(f"Return: {total_return:.2f}%\n")
+            f.write(f"Total Trades: {len(self.trades)}\n")
+            f.write(f"Win Trades: {win_count}\n")
+            f.write(f"Loss Trades: {loss_count}\n")
+            f.write(f"Avg Profit: {int(avg_profit)}\n")
+            f.write(f"Avg Loss: {int(avg_loss)}\n")
+        logger.info(f"Summary saved to {summary_file}")
+        
+        # 2. Trades File
+        if self.trades:
+            trades_df = pd.DataFrame(self.trades)
+            trades_file = os.path.join(self.result_dir, f"trades_{self.code}_{timestamp}.csv")
+            trades_df.to_csv(trades_file, index=False)
+            logger.info(f"Trades saved to {trades_file}")

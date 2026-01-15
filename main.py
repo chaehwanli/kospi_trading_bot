@@ -43,7 +43,7 @@ def run_backtest(code):
             logger.error(f"No data found for {c}. Run 'data' mode first.")
             continue
             
-        engine.run(df)
+        engine.run(df, code=c)
 
 def run_bot():
     from bot.trader import TradingBot
