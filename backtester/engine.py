@@ -38,6 +38,9 @@ class BacktestEngine:
         self.end_date = None
         self.code = code
         self.result_dir = "backtest_results"
+        self.last_exit = None # { 'time': datetime, 'reason': str }
+        self.cooldown_days = settings.STOP_LOSS_COOLDOWN_DAYS
+        
         if not os.path.exists(self.result_dir):
             os.makedirs(self.result_dir)
         
@@ -128,6 +131,13 @@ class BacktestEngine:
         rsi_oversold = rsi < self.rsi_oversold
         
         if macd_bullish and rsi_oversold:
+            # Check Cooldown
+            if self.last_exit and "Stop Loss" in self.last_exit['reason']:
+                days_diff = get_trading_days_diff(self.last_exit['time'], current_time)
+                if days_diff < self.cooldown_days:
+                    logger.debug(f"Skipping Entry (Cooldown: {days_diff}/{self.cooldown_days} days)")
+                    return
+
             self._buy(row, "Strategy Signal", current_time)
 
     def _buy(self, row, reason, current_time):
@@ -187,6 +197,11 @@ class BacktestEngine:
         })
         
         logger.info(f"SELL at {price} ({reason}) PnL: {pnl:.0f} ({pnl_pct:.2f}%)")
+        
+        self.last_exit = {
+            'time': current_time,
+            'reason': reason
+        }
         self.position = None
 
     def _calculate_performance(self):

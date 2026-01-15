@@ -38,14 +38,27 @@ class TradingBot:
         if os.path.exists(self.state_file):
             try:
                 with open(self.state_file, 'r') as f:
-                    return json.load(f)
+                    data = json.load(f)
+                    # Check if new format
+                    if 'positions' in data:
+                        self.last_exits = data.get('last_exits', {})
+                        return data.get('positions', {})
+                    else:
+                        # Legacy format: data is positions
+                        self.last_exits = {}
+                        return data
             except Exception as e:
                 logger.error(f"Failed to load state: {e}")
+        self.last_exits = {}
         return {}
 
     def _save_state(self):
+        state = {
+            'positions': self.positions,
+            'last_exits': self.last_exits
+        }
         with open(self.state_file, 'w') as f:
-            json.dump(self.positions, f, indent=4)
+            json.dump(state, f, indent=4)
 
     def is_market_open(self):
         now = datetime.now()
@@ -103,7 +116,20 @@ class TradingBot:
             self.check_exit(code, current_price, current_time)
         else:
             if signal_result['action'] == 'BUY':
-                self.execute_buy(code, current_price, balance, signal_result['reason'])
+                # Check Cooldown
+                skipped = False
+                if code in self.last_exits:
+                    last_exit = self.last_exits[code]
+                    if "Stop Loss" in last_exit['reason']:
+                        last_exit_time = datetime.fromisoformat(last_exit['time'])
+                        current_time_dt = datetime.now() # Use current time for check
+                        days_diff = get_trading_days_diff(last_exit_time, current_time_dt)
+                        if days_diff < settings.STOP_LOSS_COOLDOWN_DAYS:
+                            logger.info(f"Skipping Entry for {code} (Cooldown: {days_diff}/{settings.STOP_LOSS_COOLDOWN_DAYS} days)")
+                            skipped = True
+                
+                if not skipped:
+                    self.execute_buy(code, current_price, balance, signal_result['reason'])
             else:
                 logger.info(f"{code}: No Signal ({signal_result['reason']})")
 
@@ -195,6 +221,12 @@ class TradingBot:
             logger.info(msg)
             self.telegram.send_message(msg)
             
+            # Record Exit for Cooldown
+            self.last_exits[code] = {
+                'time': datetime.now().isoformat(),
+                'reason': reason
+            }
+            
             del self.positions[code]
             self._save_state()
 
@@ -202,19 +234,34 @@ class TradingBot:
         logger.info("Bot Started.")
         self.telegram.send_message("KOSPI Trading Bot Started.")
         
+        last_run_hour = -1
+        
         while True:
             try:
-                if self.is_market_open():
-                    self.run_cycle()
-                else:
-                    logger.info("Market Closed. Sleeping...")
+                now = datetime.now()
                 
-                # Sleep for 1 hour? Or check every minute?
-                # "1시간 분봉을 확인한다."
-                # We should run once per hour.
-                # Align to top of hour?
-                # Sleep 60s
-                time.sleep(60) 
+                # Check Market Open (Day/Time)
+                if self.is_market_open():
+                    # Run logic at Minute 01
+                    if now.minute == 1:
+                        if now.hour != last_run_hour:
+                            logger.info(f"Scheduled Run at {now.strftime('%H:%M')}")
+                            self.run_cycle()
+                            last_run_hour = now.hour
+                            # Sleep to avoid double run within the same minute? 
+                            # No, next loop iteration minute might still be 1 if run_cycle was fast.
+                            # But last_run_hour check prevents it.
+                    else:
+                        # Reset last_run_hour if minute is NOT 1 (optional, but good for safety if restarted)
+                        # Actually strict `!= last_run_hour` is enough. 
+                        # But what if we restart at 09:01? last_run_hour=-1 -> Runs immediately. Correct.
+                        pass
+                else:
+                    if now.minute == 0: # Log once an hour when closed
+                        logger.info("Market Closed. Waiting...")
+                
+                # Sleep 10 seconds to ensure we catch the minute 01
+                time.sleep(10)
                 
             except KeyboardInterrupt:
                 break
