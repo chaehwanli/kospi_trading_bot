@@ -1,5 +1,7 @@
 import argparse
 import sys
+import os
+from datetime import datetime
 from config import settings
 from utils.logger import setup_logger
 
@@ -151,8 +153,29 @@ def run_pnl_maxhold_optimize(code, args):
          
     if results:
         best = results[0]
-        logger.info("-" * 60)
-        logger.info(f"Best: SL={best['sl']}, TP={best['tp']}, Hold={best['hold']} (Return: {best['return']:.2f}%)")
+        logger.info("-" * 60 + "\n")
+        logger.info(f"Best: SL={best['sl']}, TP={best['tp']}, Hold={best['hold']} (Return: {best['return']:.2f}%)\n")
+        
+        # Save to file
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        result_path = f"backtest_results/optimization_{code}_{timestamp}.txt"
+        os.makedirs("backtest_results", exist_ok=True)
+        
+        with open(result_path, "w", encoding="utf-8") as f:
+            f.write(f"Optimization Results for {code} - PnL & MaxHold\n")
+            f.write(f"Date: {timestamp}\n")
+            f.write(f"Total Combinations Tested: {total_combinations}\n")
+            f.write("-" * 65 + "\n")
+            f.write(f"{'SL':<6} | {'TP':<6} | {'Hold':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4}\n")
+            f.write("-" * 65 + "\n")
+            
+            for r in results:
+                f.write(f"{r['sl']:<6} | {r['tp']:<6} | {r['hold']:<4} | {r['return']:>7.2f}%  | {r['trades']:<6} | {r['win']:<4}\n")
+            
+            f.write("-" * 65 + "\n")
+            f.write(f"Best: SL={best['sl']}, TP={best['tp']}, Hold={best['hold']} (Return: {best['return']:.2f}%)\n")
+            
+        logger.info(f"Full optimization results saved to {result_path}")
 
 def run_bot():
     from bot.trader import TradingBot
