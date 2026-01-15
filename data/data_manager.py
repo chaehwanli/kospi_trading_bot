@@ -4,12 +4,14 @@ import os
 from api.kiwoom import KiwoomAPI
 from config import settings
 from utils.logger import setup_logger
+from strategy.rsi_macd import RsiMacdStrategy
 
 logger = setup_logger("DataManager")
 
 class DataManager:
     def __init__(self):
         self.api = KiwoomAPI()
+        self.strategy = RsiMacdStrategy()
         self.data_dir = "data_storage"
         if not os.path.exists(self.data_dir):
             os.makedirs(self.data_dir)
@@ -31,7 +33,7 @@ class DataManager:
         # TODO: Enhance api/kiwoom.py for pagination to get full 1 year.
         # For now, fetching what is available.
         
-        data = self.api.get_ohlcv(code, time_unit="60") # 60 might mean 60 minute
+        data = self.api.get_ohlcv(code, time_unit="60", days=period_days) # 60 might mean 60 minute
         
         if not data:
             logger.error("No data fetched.")
@@ -40,6 +42,10 @@ class DataManager:
         df = pd.DataFrame(data)
         # Sort by time
         df = df.sort_values('time')
+        
+        # Calculate Indicators
+        logger.info("Calculating Indicators (RSI, MACD)...")
+        df = self.strategy.calculate_indicators(df)
         
         start_date = df['time'].iloc[0]
         end_date = df['time'].iloc[-1]

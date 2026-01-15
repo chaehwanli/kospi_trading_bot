@@ -5,14 +5,14 @@ from utils.logger import setup_logger
 
 logger = setup_logger("Main")
 
-def run_data(code):
+def run_data(code, days):
     from data.data_manager import DataManager
     dm = DataManager()
     if code:
-        dm.fetch_and_save_data(code)
+        dm.fetch_and_save_data(code, period_days=days)
     else:
         for c in settings.TARGET_STOCKS:
-            dm.fetch_and_save_data(c)
+            dm.fetch_and_save_data(c, period_days=days)
 
 def run_backtest(code):
     from backtester.engine import BacktestEngine
@@ -42,14 +42,29 @@ def run_bot():
 def main():
     parser = argparse.ArgumentParser(description="KOSPI Trading Bot")
     parser.add_argument("mode", choices=["bot", "backtest", "data"], help="Operation mode")
-    parser.add_argument("--code", help="Stock code (optional for data/backtest)")
+    parser.add_argument("--code", help="Stock code or Name (optional for data/backtest)")
+    parser.add_argument("--name", help="Stock Code or Name (Available for backward compatibility)", dest="code_arg")
+    parser.add_argument("--years", type=int, default=1, help="Number of years to fetch data for (default 1)")
     
     args = parser.parse_args()
     
+    # Handle --code or the new argument logic. 
+    # User might pass name in --code argument too.
+    # Let's unify.
+    
+    target_code = args.code or args.code_arg
+    
+    if target_code:
+        # Check if it's a name
+        if target_code in settings.NAME_TO_CODE:
+            target_code = settings.NAME_TO_CODE[target_code]
+            logger.info(f"Resolved Name '{args.code or args.code_arg}' to Code '{target_code}'")
+            
     if args.mode == "data":
-        run_data(args.code)
+        days = args.years * 365
+        run_data(target_code, days)
     elif args.mode == "backtest":
-        run_backtest(args.code)
+        run_backtest(target_code)
     elif args.mode == "bot":
         run_bot()
 

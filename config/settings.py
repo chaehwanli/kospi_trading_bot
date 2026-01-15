@@ -4,10 +4,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Account Settings
-APP_KEY = os.getenv("APP_KEY", "")
-APP_SECRET = os.getenv("APP_SECRET", "")
-ACCOUNT_NO = os.getenv("ACCOUNT_NO", "") # Without hyphen usually, or as API expects
 MODE = os.getenv("MODE", "PAPER") # PROD or PAPER
+
+# Account Settings
+if MODE == "PAPER":
+    APP_KEY = os.getenv("APP_KEY_PAPER", "")
+    APP_SECRET = os.getenv("APP_SECRET_PAPER", "")
+    ACCOUNT_NO = os.getenv("ACCOUNT_NO_PAPER", "")
+else:
+    APP_KEY = os.getenv("APP_KEY_REAL", "")
+    APP_SECRET = os.getenv("APP_SECRET_REAL", "")
+    ACCOUNT_NO = os.getenv("ACCOUNT_NO_REAL", "")
 
 # Kiwoom REST API URLs
 URL_REAL = "https://api.kiwoom.com"
@@ -35,6 +42,9 @@ STOCK_NAMES = {
     "084370": "유진테크",
     "056080": "유진로봇"
 }
+
+# Reverse mapping for CLI
+NAME_TO_CODE = {v: k for k, v in STOCK_NAMES.items()}
 
 # Timeframes
 TIMEFRAME = "1H" # 1 Hour

@@ -123,8 +123,16 @@ pip install -r requirements.txt
 ```
 
 ### 2. Fetch Data
+You can fetch historical data for analysis or backtesting.
+- The bot automatically calculates **RSI** and **MACD** indicators and saves them to the CSV.
+- **Options**:
+  - `--code`: Stock Node or Name (e.g. "014710", "사조씨푸드"). If omitted, fetches for all targets in settings.
+  - `--years`: Data range in years (Default: **1**).
+
+**Example**:
 ```bash
-python main.py data
+# Fetch 2 years of data for Sajo Seafood
+python main.py data --code "사조씨푸드" --years 2
 ```
 
 ### 3. Run Backtest

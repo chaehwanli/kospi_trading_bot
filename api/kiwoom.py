@@ -5,16 +5,26 @@ import pandas as pd
 import datetime
 
 # Configure Environment Variables for Library
-# The library reads these on import or when config functions are called.
-os.environ["KIWOOM_API_KEY"] = settings.APP_KEY
-os.environ["KIWOOM_API_SECRET"] = settings.APP_SECRET
-os.environ["KIWOOM_USE_SANDBOX"] = "true" if settings.MODE == "PAPER" else "false"
+# We also inject directly into the config module to be safe against import order.
+import kiwoom_rest_api.config
+
+# Inject settings
+kiwoom_rest_api.config.API_KEY = settings.APP_KEY
+kiwoom_rest_api.config.API_SECRET = settings.APP_SECRET
+kiwoom_rest_api.config.USE_SANDBOX = True if settings.MODE == "PAPER" else False
+# Force base URL update
+if kiwoom_rest_api.config.USE_SANDBOX:
+    kiwoom_rest_api.config.DEFAULT_BASE_URL = kiwoom_rest_api.config.SANDBOX_BASE_URL # Just to be sure the getter uses it
+else:
+    # If library uses DEFAULT_BASE_URL as fallback
+    pass 
 
 # Import Library Components
 from kiwoom_rest_api.auth.token import TokenManager
 from kiwoom_rest_api.koreanstock.chart import Chart
 from kiwoom_rest_api.koreanstock.order import Order
 from kiwoom_rest_api.koreanstock.account import Account
+from kiwoom_rest_api.config import get_base_url # Import getter
 
 logger = setup_logger("KiwoomAPI")
 
@@ -23,46 +33,113 @@ class KiwoomAPI:
         # Initialize Library Components
         try:
             self.token_manager = TokenManager()
-            self.chart = Chart(token_manager=self.token_manager)
-            self.order = Order(token_manager=self.token_manager)
-            self.account = Account(token_manager=self.token_manager)
+            
+            # Explicitly get base_url to prevent double-slash issue in library
+            # When base_url is None, KiwoomBaseAPI defaults to relative path which causes //api/...
+            base_url = get_base_url()
+            
+            self.chart = Chart(token_manager=self.token_manager, base_url=base_url)
+            self.order = Order(token_manager=self.token_manager, base_url=base_url)
+            self.account = Account(token_manager=self.token_manager, base_url=base_url)
             logger.info("Kiwoom API initialized with kiwoom-rest-api library.")
         except Exception as e:
             logger.error(f"Failed to initialize Kiwoom API components: {e}")
             raise
 
-    def get_ohlcv(self, code, time_unit="60"):
+    def get_ohlcv(self, code, time_unit="60", days=1095):
         """
-        Get OHLCV using stock_minute_chart_request_ka10080
+        Get OHLCV using stock_minute_chart_request_ka10080 with pagination.
+        days: Number of days to fetch (default ~3 years = 1095)
         """
+        import time
         try:
-            # ka10080 params: stk_cd, tic_scope, upd_stkpc_tp, cont_yn, next_key
-            # tic_scope: "60" for 60 minutes
-            res = self.chart.stock_minute_chart_request_ka10080(
-                stk_cd=code,
-                tic_scope=str(time_unit),
-                upd_stkpc_tp="1" # Adjusted price
-            )
+            target_date = (datetime.datetime.now() - datetime.timedelta(days=days)).strftime("%Y%m%d")
+            all_ohlcv = []
+            next_key = None
             
-            if not res or res.get('rt_cd') != '0':
-                logger.error(f"OHLCV Error: {res}")
-                return None
+            while True:
+                # ka10080 params: stk_cd, tic_scope, upd_stkpc_tp, cont_yn, next_key
+                # tic_scope: "60" for 60 minutes
                 
-            # output2 has list.
-            items = res.get('output2', [])
-            ohlcv = []
-            for item in items:
-                # Format: stck_bsop_date(YYYYMMDD) + stck_cntg_hour(HHMMSS)
-                dt_str = item['stck_bsop_date'] + item['stck_cntg_hour']
-                ohlcv.append({
-                    'time': dt_str,
-                    'open': int(item['stck_oprc']),
-                    'high': int(item['stck_hgpr']),
-                    'low': int(item['stck_lwpr']),
-                    'close': int(item['stck_prpr']),
-                    'volume': int(item['cntg_vol'])
-                })
-            return ohlcv[::-1] # Convert to Ascending Time
+                kwargs = {
+                    "stk_cd": code,
+                    "tic_scope": str(time_unit),
+                    "upd_stkpc_tp": "1", # Adjusted price
+                    "cont_yn": "Y" if next_key else "N"
+                }
+                if next_key:
+                    kwargs["next_key"] = next_key
+                
+                res = self.chart.stock_minute_chart_request_ka10080(**kwargs)
+                
+                # Check success (supports 'rt_cd' or 'return_code')
+                is_success = False
+                if str(res.get('rt_cd', '')) == '0':
+                    is_success = True
+                elif str(res.get('return_code', '')) == '0':
+                    is_success = True
+                    
+                if not is_success:
+                    logger.error(f"OHLCV Error: {res}")
+                    break
+                    
+                # output2 has list. Sometimes key is 'stk_min_pole_chart_qry'
+                items = res.get('output2') or res.get('stk_min_pole_chart_qry') or []
+                
+                if not isinstance(items, list):
+                    items = []
+
+                # Debug: Log item count
+                logger.info(f"Loop {len(all_ohlcv)//900 + 1}: Received {len(items)} items. Parsing...")
+                
+                batch_ohlcv = []
+                parse_errors = 0
+                
+                for item in items:
+                    # Format: cntr_tm(YYYYMMDDHHMMSS)
+                    dt_str = item.get('cntr_tm', '')
+                    # Fallback
+                    if not dt_str:
+                         dt_str = item.get('stck_bsop_date', '') + item.get('stck_cntg_hour', '')
+                    
+                    try:
+                        batch_ohlcv.append({
+                            'time': dt_str,
+                            'open': abs(int(item.get('open_pric') or item.get('stck_oprc') or 0)),
+                            'high': abs(int(item.get('high_pric') or item.get('stck_hgpr') or 0)),
+                            'low': abs(int(item.get('low_pric') or item.get('stck_lwpr') or 0)),
+                            'close': abs(int(item.get('cur_prc') or item.get('stck_prpr') or 0)),
+                            'volume': abs(int(item.get('trde_qty') or item.get('cntg_vol') or 0)) 
+                        })
+                    except ValueError:
+                        parse_errors += 1
+                        continue 
+                
+                logger.info(f"Loop parsed {len(batch_ohlcv)} valid rows. Errors: {parse_errors}")
+                
+                if not batch_ohlcv:
+                    break
+                    
+                all_ohlcv.extend(batch_ohlcv)
+                
+                # Check date condition (last item is oldest in this batch typically?)
+                # Kiwoom returns latest first. So last item is oldest.
+                last_time = batch_ohlcv[-1]['time'][:8] # YYYYMMDD
+                if last_time < target_date:
+                    logger.info(f"Reached target date {target_date} (Current: {last_time}). Stopping.")
+                    break
+                
+                # Check continuation
+                cont_yn = res.get('cont-yn', 'N') # Note: response key might be 'cont-yn' or 'next-key' existence
+                next_key = res.get('next-key', '')
+                
+                if cont_yn != 'Y' or not next_key:
+                    break
+                    
+                logger.info(f"Fetching continuation... (oldest: {last_time})")
+                time.sleep(0.2) # Rate limit safety
+                
+            return all_ohlcv[::-1] # Convert to Ascending Time
             
         except Exception as e:
             logger.error(f"Error fetching OHLCV: {e}")
