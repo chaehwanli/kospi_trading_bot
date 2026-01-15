@@ -8,6 +8,7 @@ from strategy.rsi_macd import RsiMacdStrategy
 from config import settings
 from utils.logger import setup_logger
 from utils.telegram_bot import TelegramBot
+from config.holidays import MARKET_HOLIDAYS
 
 logger = setup_logger("TradingBot")
 
@@ -22,6 +23,14 @@ class TradingBot:
         
         # Load state: { code: { 'qty': int, 'price': float, 'time': str } }
         self.positions = self._load_state()
+
+    def _get_msg_prefix(self, code):
+        mode_str = "모의거래" if settings.MODE == "PAPER" else "실거래"
+        broker = "키움증권"
+        # Get Stock Name
+        stock_name = settings.STOCK_NAMES.get(code, code)
+        stock_display = f"{stock_name}({code})"
+        return f"[{mode_str}/{broker}/{stock_display}]"
 
     def _load_state(self):
         if os.path.exists(self.state_file):
@@ -40,6 +49,11 @@ class TradingBot:
         now = datetime.now()
         # Weekends
         if now.weekday() >= 5:
+            return False
+            
+        # Holidays
+        today_str = now.strftime("%Y-%m-%d")
+        if today_str in MARKET_HOLIDAYS:
             return False
             
         # Time 09:00 ~ 15:30
@@ -156,7 +170,9 @@ class TradingBot:
                     'time': datetime.now().isoformat()
                 }
                 self._save_state()
-                msg = f"BUY {code}: {qty} @ {price} ({reason})"
+                import locale
+                prefix = self._get_msg_prefix(code)
+                msg = f"{prefix} BUY: {qty}주 @ {price} ({reason})"
                 logger.info(msg)
                 self.telegram.send_message(msg)
 
@@ -164,7 +180,8 @@ class TradingBot:
         res = self.api.place_order(code, qty, "SELL", 0) # Market Order
         if res:
             pnl_pct = (price - self.positions[code]['price']) / self.positions[code]['price'] * 100
-            msg = f"SELL {code}: {qty} @ {price} ({reason}) PnL: {pnl_pct:.2f}%"
+            prefix = self._get_msg_prefix(code)
+            msg = f"{prefix} SELL: {qty}주 @ {price} ({reason}) PnL: {pnl_pct:.2f}%"
             logger.info(msg)
             self.telegram.send_message(msg)
             

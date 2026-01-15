@@ -69,7 +69,7 @@ Long Max Hold Days: 5일
 
 # KOSPI Trading Bot - Implementation Walkthrough
 
-I have implemented the KOSPI trading bot as requested. The bot supports Backtesting and Real-time Trading using the Kiwoom (KIS) REST API.
+I have implemented the KOSPI trading bot as requested. The bot supports Backtesting and Real-time Trading using the Kiwoom REST API.
 
 ## Features Implemented
 - **Strategy**: RSI (<50) + MACD (Golden Cross, Hist > 0) on 1-hour timeframe.

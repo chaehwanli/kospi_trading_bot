@@ -30,6 +30,12 @@ TARGET_STOCKS = [
     "056080"  # Eugene Robot
 ]
 
+STOCK_NAMES = {
+    "014710": "사조씨푸드",
+    "084370": "유진테크",
+    "056080": "유진로봇"
+}
+
 # Timeframes
 TIMEFRAME = "1H" # 1 Hour
 

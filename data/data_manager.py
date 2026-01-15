@@ -17,7 +17,7 @@ class DataManager:
     def fetch_and_save_data(self, code, period_days=365):
         """
         Fetch data for 'period_days' and save to CSV.
-        Since KIS API limit for intraday might be short, we'll try to fetch as much as possible.
+        Since the API limit for intraday might be short, we'll try to fetch as much as possible.
         """
         logger.info(f"Fetching data for {code}...")
         
