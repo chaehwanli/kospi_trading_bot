@@ -26,6 +26,8 @@ class BacktestEngine:
         self.balance = self.initial_capital
         self.position = None
         self.trades = []
+        self.start_date = None
+        self.end_date = None
         self.code = code
         self.result_dir = "backtest_results"
         if not os.path.exists(self.result_dir):
@@ -53,6 +55,9 @@ class BacktestEngine:
                     continue
             
             last_time = current_time
+            if self.start_date is None:
+                self.start_date = current_time
+            self.end_date = current_time
             
             # 1. Manage Position
             if self.position:
@@ -201,6 +206,7 @@ class BacktestEngine:
         
         with open(summary_file, 'w') as f:
             f.write(f"Backtest Result for {display_name}\n")
+            f.write(f"Period: {self.start_date} ~ {self.end_date}\n")
             f.write(f"Date: {timestamp}\n")
             f.write(f"Initial Capital: {self.initial_capital}\n")
             f.write(f"Final Balance: {final_balance:.0f}\n")
