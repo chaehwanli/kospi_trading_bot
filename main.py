@@ -6,8 +6,18 @@ from utils.logger import setup_logger
 logger = setup_logger("Main")
 
 def run_data(code, days):
+    # Force REAL Mode for Data Download
+    import os
+    settings.MODE = "REAL"
+    settings.APP_KEY = os.getenv("APP_KEY_REAL", "")
+    settings.APP_SECRET = os.getenv("APP_SECRET_REAL", "")
+    # settings.ACCOUNT_NO might not be strictly needed for chart data but good practice
+    settings.ACCOUNT_NO = os.getenv("ACCOUNT_NO_REAL", "")
+    
+    logger.info(f"Forced Real Mode for Data Download. MODE={settings.MODE}")
+
     from data.data_manager import DataManager
-    dm = DataManager()
+    dm = DataManager(use_api=True)
     if code:
         dm.fetch_and_save_data(code, period_days=days)
     else:
@@ -19,7 +29,8 @@ def run_backtest(code):
     from strategy.rsi_macd import RsiMacdStrategy
     from data.data_manager import DataManager
     
-    dm = DataManager()
+    # Backtest does not need API
+    dm = DataManager(use_api=False)
     strategy = RsiMacdStrategy()
     engine = BacktestEngine(strategy)
     

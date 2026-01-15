@@ -9,8 +9,8 @@ from strategy.rsi_macd import RsiMacdStrategy
 logger = setup_logger("DataManager")
 
 class DataManager:
-    def __init__(self):
-        self.api = KiwoomAPI()
+    def __init__(self, use_api=True):
+        self.api = KiwoomAPI() if use_api else None
         self.strategy = RsiMacdStrategy()
         self.data_dir = "data_storage"
         if not os.path.exists(self.data_dir):
@@ -33,6 +33,10 @@ class DataManager:
         # TODO: Enhance api/kiwoom.py for pagination to get full 1 year.
         # For now, fetching what is available.
         
+        if not self.api:
+            logger.error("API not initialized. Cannot fetch data.")
+            return
+
         data = self.api.get_ohlcv(code, time_unit="60", days=period_days) # 60 might mean 60 minute
         
         if not data:
