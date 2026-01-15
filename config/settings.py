@@ -32,7 +32,7 @@ INITIAL_CAPITAL = 1000000  # 1 Million KRW
 # RSI Optimization Defaults
 RSI_OPTIMIZE_MIN = 30
 RSI_OPTIMIZE_MAX = 70
-RSI_OPTIMIZE_STEP = 1
+RSI_OPTIMIZE_STEP = 2
 
 # Target Stocks
 # Sajo Seafood, Eugene Tech, Eugene Robot
