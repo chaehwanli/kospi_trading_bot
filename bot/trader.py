@@ -105,8 +105,11 @@ class TradingBot:
             
         df = pd.DataFrame(data)
         df = df.sort_values('time')
+        # Get specific RSI for this stock
+        rsi_oversold = settings.RSI_OVERSOLD_MAP.get(code, settings.RSI_OVERSOLD)
         
-        signal_result = self.strategy.generate_signal(df)
+        # Check Strategy Signal
+        signal_result = self.strategy.generate_signal(df, rsi_oversold=rsi_oversold)
         last_row = df.iloc[-1]
         current_price = last_row['close']
         current_time = datetime.now() # OR use API time

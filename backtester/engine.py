@@ -17,6 +17,7 @@ class BacktestEngine:
         self.position = None # { 'price': float, 'qty': int, 'time': datetime, 'cost': float }
         self.trades = []
         
+        self.fixed_rsi = rsi_oversold
         self.rsi_oversold = rsi_oversold if rsi_oversold is not None else settings.RSI_OVERSOLD
         self.stop_loss_pct = stop_loss_pct if stop_loss_pct is not None else settings.STOP_LOSS_PCT
         self.take_profit_pct = take_profit_pct if take_profit_pct is not None else settings.TAKE_PROFIT_PCT
@@ -128,7 +129,17 @@ class BacktestEngine:
         
         # Check condition
         macd_bullish = (macd > signal) and (hist > 0)
-        rsi_oversold = rsi < self.rsi_oversold
+        
+        # Determine RSI Threshold
+        # Priority: 1. Fixed value passed to __init__ (Optimization)
+        #           2. Stock-specific setting in Map
+        #           3. Global Default
+        if self.fixed_rsi is not None:
+            threshold = self.fixed_rsi
+        else:
+            threshold = settings.RSI_OVERSOLD_MAP.get(self.code, settings.RSI_OVERSOLD)
+            
+        rsi_oversold = rsi < threshold
         
         if macd_bullish and rsi_oversold:
             # Check Cooldown

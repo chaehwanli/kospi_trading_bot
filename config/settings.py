@@ -24,9 +24,24 @@ BASE_URL = URL_PAPER if MODE == "PAPER" else URL_REAL
 
 # Trading Strategy Parameters
 RSI_OVERSOLD = 50
-STOP_LOSS_PCT = -3.0  # -3.0%
-TAKE_PROFIT_PCT = 30.0  # 35.0%
-MAX_HOLD_DAYS = 4
+
+# Stock-Specific RSI Settings (Based on Optimization)
+RSI_OVERSOLD_MAP = {
+    "298380": 68, # ABL Bio (+180% at RSI 68)
+    "084370": 60, # Eugene Tech (+137% at RSI 60)
+    "007660": 58, # Isu Petasys (+80% at RSI 58)
+    "056080": 60, # Eugene Robot (+78% at RSI 60)
+    "014710": 48, # Sajo Seafood (+87% at RSI 48)
+    "117730": 50, # T-Robotics (+77% at RSI 50)
+    "336370": 50, # Solus (+64% at RSI 50)
+    "358570": 42, # GI Innovation (+66% at RSI 42)
+    "432720": 46  # Qualitas (+53% at RSI 46)
+    # Others will fallback to RSI_OVERSOLD (50)
+}
+
+STOP_LOSS_PCT = -5.0  # -3.0%
+TAKE_PROFIT_PCT = 12.0  # 35.0%
+MAX_HOLD_DAYS = 5
 STOP_LOSS_COOLDOWN_DAYS = 3
 INITIAL_CAPITAL = 1000000  # 1 Million KRW
  
@@ -36,14 +51,14 @@ RSI_OPTIMIZE_MAX = 70
 RSI_OPTIMIZE_STEP = 2
 
 # Stop Loss Optimization Defaults
-STOP_LOSS_OPT_MIN = -3.0
+STOP_LOSS_OPT_MIN = -5.0
 STOP_LOSS_OPT_MAX = -1.0
 STOP_LOSS_OPT_STEP = 0.5
 
 # Take Profit Optimization Defaults
-TAKE_PROFIT_OPT_MIN = 10.0
-TAKE_PROFIT_OPT_MAX = 35.0
-TAKE_PROFIT_OPT_STEP = 5.0
+TAKE_PROFIT_OPT_MIN = 4.0
+TAKE_PROFIT_OPT_MAX = 15.0
+TAKE_PROFIT_OPT_STEP = 2.0
 
 # Max Hold Days Optimization Defaults
 MAX_HOLD_OPT_MIN = 1

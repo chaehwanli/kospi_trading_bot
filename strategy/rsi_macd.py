@@ -31,7 +31,7 @@ class RsiMacdStrategy(BaseStrategy):
         
         return df
 
-    def generate_signal(self, df):
+    def generate_signal(self, df, rsi_oversold=None):
         if len(df) < self.macd_slow + self.macd_signal:
             return {'action': 'HOLD', 'reason': 'Not enough data'}
             
@@ -45,17 +45,16 @@ class RsiMacdStrategy(BaseStrategy):
         signal_line = latest['signal']
         histogram = latest['histogram']
         
-        # Check condition as per prompt
-        # macd_bullish = macd_line > signal_line and histogram > 0
-        # rsi_oversold = rsi < self.rsi_oversold
+        # Use provided RSI threshold or default
+        threshold = rsi_oversold if rsi_oversold is not None else self.rsi_oversold_threshold
         
         macd_bullish = (macd_line > signal_line) and (histogram > 0)
-        rsi_oversold = rsi < self.rsi_oversold_threshold
+        rsi_oversold_cond = rsi < threshold
         
-        if macd_bullish and rsi_oversold:
+        if macd_bullish and rsi_oversold_cond:
             return {
                 'action': 'BUY',
-                'reason': f"MACD Bullish (H:{histogram:.2f}) & RSI Oversold ({rsi:.2f} < {self.rsi_oversold_threshold})",
+                'reason': f"MACD Bullish (H:{histogram:.2f}) & RSI Oversold ({rsi:.2f} < {threshold})",
                 'price': latest['close'],
                 'time': latest['time']
             }
