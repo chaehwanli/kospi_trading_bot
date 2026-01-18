@@ -35,7 +35,8 @@ RSI_OVERSOLD_MAP = {
     "117730": 50, # T-Robotics (+77% at RSI 50)
     "336370": 50, # Solus (+64% at RSI 50)
     "358570": 42, # GI Innovation (+66% at RSI 42)
-    "432720": 46  # Qualitas (+53% at RSI 46)
+    "432720": 46,  # Qualitas (+53% at RSI 46)
+    "005930": 70 # Samsung (+21% at RSI 50)
     # Others will fallback to RSI_OVERSOLD (50)
 }
 
@@ -95,7 +96,8 @@ TARGET_STOCKS = [
     #"440110", # 파두
     "336370", # 솔루스첨단소재
     #"196170", # 알테오젠
-    #"263050"  # 유틸렉스
+    #"263050", # 유틸렉스
+    "005930"  # 삼성전자
 ]
 
 STOCK_NAMES = {
@@ -122,6 +124,7 @@ STOCK_NAMES = {
     "336370": "솔루스첨단소재",
     #"196170": "알테오젠",
     #"263050": "유틸렉스"
+    "005930": "삼성전자"
 }
 
 # Reverse mapping for CLI
