@@ -172,6 +172,9 @@ You can fetch historical data for analysis or backtesting.
 ```bash
 # Fetch 2 years of data for Sajo Seafood
 python main.py data --code "사조씨푸드" --years 2
+
+# [Batch] 실전/백테스트용 전체 종목 일괄 다운로드 (1년치)
+python download_backtest_data.py
 ```
 
 ### 3. Run Backtest
@@ -183,8 +186,8 @@ python main.py data --code "사조씨푸드" --years 2
 # 특정 종목(이름 또는 코드)에 대해 백테스트 실행
 python main.py backtest --code "사조씨푸드"
 
-# 전체 타켓 종목에 대해 실행
-python main.py backtest
+# [Batch] 전체 타겟 종목 일괄 백테스트 및 수익률 정렬 출력
+python batch_backtest.py
 ```
 
 **실행 결과**:
@@ -243,6 +246,18 @@ python main.py pnl_maxhold_optimize --code "사조씨푸드"
 
 # 범위 직접 지정
 python main.py pnl_maxhold_optimize --code "사조씨푸드" --min-sl -3.0 --max-sl -2.0 --step-sl 0.5 --min-tp 30 --max-tp 40 --step-tp 5
+
+#### 3) RSI Period Optimization (`optimize_rsi_period.py`)
+RSI 지표의 계산 기간(Period, 기본 14일)을 최적화합니다.
+
+**명령어**:
+```bash
+# 기본 설정(settings.py의 RSI_PERIOD_OPT_*)으로 실행
+python optimize_rsi_period.py --code "에이비엘바이오"
+
+# 범위 직접 지정 (4~14, 2단위)
+python optimize_rsi_period.py --code "014710" --min 4 --max 14 --step 2
+```
 ```
 
 **설정 (config/settings.py)**:

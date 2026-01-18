@@ -41,6 +41,7 @@ class BacktestEngine:
         self.result_dir = "backtest_results"
         self.last_exit = None # { 'time': datetime, 'reason': str }
         self.cooldown_days = settings.STOP_LOSS_COOLDOWN_DAYS
+        self.total_fees = 0.0
         
         if not os.path.exists(self.result_dir):
             os.makedirs(self.result_dir)
@@ -168,6 +169,7 @@ class BacktestEngine:
             cost = qty * buy_price
             fee = cost * self.fee_buy
             self.balance -= (cost + fee)
+            self.total_fees += fee
             logger.debug(f"Balance Update (BUY): {self.balance + (cost+fee)} -> {self.balance} (Cost: {cost}, Fee: {fee})")
             
             self.position = {
@@ -191,6 +193,7 @@ class BacktestEngine:
         
         net_revenue = revenue - fee
         self.balance += net_revenue
+        self.total_fees += fee
         logger.debug(f"Balance Update (SELL): {self.balance - net_revenue} -> {self.balance} (Rev: {revenue}, Fee: {fee})")
         
         pnl = net_revenue - (self.position['cost'] + self.position['fee_entry'])
@@ -264,6 +267,7 @@ class BacktestEngine:
                 f.write(f"Loss Trades: {loss_count}\n")
                 f.write(f"Avg Profit: {int(avg_profit)}\n")
                 f.write(f"Avg Loss: {int(avg_loss)}\n")
+                f.write(f"Total Fees: {int(self.total_fees)}\n")
             logger.info(f"Summary saved to {summary_file}")
             
             # 2. Trades File
@@ -288,5 +292,6 @@ class BacktestEngine:
             'count_sl': count_sl,
             'count_tp': count_tp,
             'count_mh_win': count_mh_win,
-            'count_mh_loss': count_mh_loss
+            'count_mh_loss': count_mh_loss,
+            'total_fees': int(self.total_fees)
         }
