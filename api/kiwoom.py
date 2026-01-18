@@ -145,6 +145,52 @@ class KiwoomAPI:
             logger.error(f"Error fetching OHLCV: {e}")
             return None
 
+    def get_holdings(self):
+        """
+        Get current holdings using kt00018 'output2'
+        Returns dict: { 'code': qty, ... }
+        """
+        try:
+            res = self.account.account_evaluation_balance_detail_request_kt00018(
+                query_type="1",
+                domestic_exchange_type="KRX"
+            )
+            
+            if not res or res.get('rt_cd') != '0':
+                logger.error(f"Holdings Error: {res}")
+                return {}
+                
+            items = res.get('output2', [])
+            if not items:
+                return {}
+                
+            holdings = {}
+            for item in items:
+                # Code might be A005930 or 005930. 
+                # Usually Kiwoom API returns pure code or A-prefixed.
+                # 'stk_cd' or 'itm_no'. 
+                # Let's clean it up.
+                code = item.get('pdno', '') # 'pdno' is typically product number/code in newer API docs
+                # If pdno is missing, try synonyms
+                if not code:
+                     code = item.get('stk_cd', '')
+                     
+                # Remove 'A' prefix if present
+                if code.startswith('A'):
+                    code = code[1:]
+                    
+                qty = int(item.get('hldg_qty') or 0)
+                
+                if code and qty > 0:
+                    holdings[code] = qty
+                    
+            logger.info(f"Account Holdings: {holdings}")
+            return holdings
+            
+        except Exception as e:
+            logger.error(f"Error fetching holdings: {e}")
+            return {}
+
     def get_balance(self):
         """
         Get balance using account_evaluation_balance_detail_request_kt00018

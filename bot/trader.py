@@ -60,6 +60,43 @@ class TradingBot:
         with open(self.state_file, 'w') as f:
             json.dump(state, f, indent=4)
 
+    def sync_state_with_account(self):
+        """
+        Synchronize local bot state with actual account holdings.
+        Removes positions from local state if they don't exist in the account (Sold externally).
+        """
+        logger.info("Synchronizing Bot State with Real Account...")
+        
+        real_holdings = self.api.get_holdings()
+        
+        # Check for locally tracked positions that are no longer in account
+        to_remove = []
+        for code, pos in self.positions.items():
+            if code not in real_holdings:
+                logger.warning(f"Position {code} found in Bot State but NOT in Account. Assuming SOLD manually.")
+                to_remove.append(code)
+            else:
+                # Update Qty if mismatch?
+                # real_qty = real_holdings[code]
+                # if real_qty != pos['qty']:
+                #     logger.warning(f"Qty Mismatch for {code}: Bot={pos['qty']}, Real={real_qty}. Updating to Real.")
+                #     self.positions[code]['qty'] = real_qty
+                pass
+                
+        # Remove partial sells or fully closed
+        for code in to_remove:
+            del self.positions[code]
+            
+            # Should we add to last_exits?
+            # We don't know the Reason or Price.
+            # Just remove to prevent errors.
+            
+        if to_remove:
+            self._save_state()
+            logger.info(f"Removed {len(to_remove)} positions from local state.")
+            
+        logger.info("State Synchronization Complete.")
+
     def is_market_open(self):
         now = datetime.now()
         # Weekends
@@ -236,6 +273,13 @@ class TradingBot:
     def start(self):
         logger.info("Bot Started.")
         self.telegram.send_message("KOSPI Trading Bot Started.")
+        
+        # Synchronize State
+        try:
+            self.sync_state_with_account()
+        except Exception as e:
+            logger.error(f"State Sync Failed: {e}")
+            self.telegram.send_message(f"⚠️ State Sync Failed: {e}")
         
         last_run_hour = -1
         

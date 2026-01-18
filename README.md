@@ -107,6 +107,9 @@ Backtest 시에도 적용한다.
 국내장 거래는 0.015%의 수수료를 적용한다.
 Backtest 시에도 적용한다.
 
+14. 봇 재시작시 상태 유지
+봇을 재시작했을때, 이전 거래 상태를 유지한다.
+
 # KOSPI Trading Bot - Implementation Walkthrough
 
 I have implemented the KOSPI trading bot as requested. The bot supports Backtesting and Real-time Trading using the Kiwoom REST API.
