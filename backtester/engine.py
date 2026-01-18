@@ -154,7 +154,7 @@ class BacktestEngine:
 
     def _buy(self, row, reason, current_time):
         price = row['close']
-        max_buy_amt = self.balance
+        max_buy_amt = self.balance * 0.95
         
         # Calculate Qty
         # Cost = Qty * Price * (1 + fee)

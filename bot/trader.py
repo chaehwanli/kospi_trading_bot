@@ -185,7 +185,7 @@ class TradingBot:
             logger.error("Balance unknown, cannot buy.")
             return
 
-        invest_amount = balance # Use full available
+        invest_amount = balance * 0.95 # Use 95% of available (Buffer for slippage/fees)
         # Or maybe limit to 1/len(target_stocks)?
         # Let's use full for simplicity as per "100만원... 누적" which implies single pot.
         
