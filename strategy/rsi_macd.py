@@ -4,9 +4,9 @@ from strategy.base import BaseStrategy
 from config import settings
 
 class RsiMacdStrategy(BaseStrategy):
-    def __init__(self):
+    def __init__(self, rsi_period=14):
         super().__init__()
-        self.rsi_period = 14
+        self.rsi_period = rsi_period
         self.macd_fast = 12
         self.macd_slow = 26
         self.macd_signal = 9
