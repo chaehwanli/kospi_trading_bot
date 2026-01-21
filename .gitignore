@@ -6,3 +6,4 @@ bot_state.json
 logs/
 data_storage/
 token.json
+backtest_results/

@@ -1,0 +1,1510 @@
+2026-01-15 22:33:59,481 - Main - INFO - Resolved Name '사조씨푸드' to Code '014710'
+2026-01-15 22:34:00,292 - Main - INFO - Starting RSI Optimization for 014710 (Range: 30-70, Step: 2)
+2026-01-15 22:34:00,292 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:00,701 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:00,710 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -33382 (-3.35%)
+2026-01-15 22:34:00,720 - Backtester - INFO - BUY at 5810.0 (Strategy Signal) time=2025-04-25 14:00:00
+2026-01-15 22:34:00,722 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -38474 (-3.99%)
+2026-01-15 22:34:00,761 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:00,772 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 35823 (3.87%)
+2026-01-15 22:34:00,856 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:00,861 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -31711 (-3.30%)
+2026-01-15 22:34:01,097 - Backtester - INFO - BUY at 7720.0 (Strategy Signal) time=2025-11-27 09:00:00
+2026-01-15 22:34:01,108 - Backtester - INFO - SELL at 8320.0 (Max Hold Reached (PROFIT)) PnL: 69914 (7.55%)
+2026-01-15 22:34:01,195 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:01,195 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:01,195 - Backtester - INFO - Final: 1002170
+2026-01-15 22:34:01,195 - Backtester - INFO - Return: 0.22%
+2026-01-15 22:34:01,196 - Backtester - INFO - Total Trades: 5
+2026-01-15 22:34:01,196 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:01,242 - Backtester - INFO - BUY at 4415.0 (Strategy Signal) time=2025-01-22 15:00:00
+2026-01-15 22:34:01,245 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 377972 (37.88%)
+2026-01-15 22:34:01,399 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:01,403 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46127 (-3.35%)
+2026-01-15 22:34:01,408 - Backtester - INFO - BUY at 5810.0 (Strategy Signal) time=2025-04-25 14:00:00
+2026-01-15 22:34:01,409 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -53076 (-3.99%)
+2026-01-15 22:34:01,431 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:01,436 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 49361 (3.87%)
+2026-01-15 22:34:01,508 - Backtester - INFO - BUY at 8380.0 (Strategy Signal) time=2025-07-14 14:00:00
+2026-01-15 22:34:01,515 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -50088 (-3.78%)
+2026-01-15 22:34:01,516 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:01,523 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -42104 (-3.30%)
+2026-01-15 22:34:01,616 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:01,621 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -40575 (-3.30%)
+2026-01-15 22:34:01,733 - Backtester - INFO - BUY at 7720.0 (Strategy Signal) time=2025-11-27 09:00:00
+2026-01-15 22:34:01,744 - Backtester - INFO - SELL at 8320.0 (Max Hold Reached (PROFIT)) PnL: 89723 (7.55%)
+2026-01-15 22:34:01,848 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:01,848 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:01,848 - Backtester - INFO - Final: 1285086
+2026-01-15 22:34:01,848 - Backtester - INFO - Return: 28.51%
+2026-01-15 22:34:01,849 - Backtester - INFO - Total Trades: 8
+2026-01-15 22:34:01,849 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:01,917 - Backtester - INFO - BUY at 4415.0 (Strategy Signal) time=2025-01-22 15:00:00
+2026-01-15 22:34:01,922 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 377972 (37.88%)
+2026-01-15 22:34:02,079 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:02,086 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46127 (-3.35%)
+2026-01-15 22:34:02,092 - Backtester - INFO - BUY at 5800.0 (Strategy Signal) time=2025-04-25 13:00:00
+2026-01-15 22:34:02,094 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -50785 (-3.82%)
+2026-01-15 22:34:02,118 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:02,125 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 49569 (3.87%)
+2026-01-15 22:34:02,204 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:02,212 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -57622 (-4.35%)
+2026-01-15 22:34:02,212 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:02,220 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -41837 (-3.30%)
+2026-01-15 22:34:02,312 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:02,320 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -40575 (-3.30%)
+2026-01-15 22:34:02,407 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:02,413 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 94341 (7.95%)
+2026-01-15 22:34:02,483 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:02,483 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:02,483 - Backtester - INFO - Final: 1284934
+2026-01-15 22:34:02,483 - Backtester - INFO - Return: 28.49%
+2026-01-15 22:34:02,483 - Backtester - INFO - Total Trades: 8
+2026-01-15 22:34:02,484 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:02,525 - Backtester - INFO - BUY at 4415.0 (Strategy Signal) time=2025-01-22 15:00:00
+2026-01-15 22:34:02,528 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 377972 (37.88%)
+2026-01-15 22:34:02,640 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:02,646 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46127 (-3.35%)
+2026-01-15 22:34:02,648 - Backtester - INFO - BUY at 5910.0 (Strategy Signal) time=2025-04-23 15:00:00
+2026-01-15 22:34:02,652 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -74652 (-5.61%)
+2026-01-15 22:34:02,656 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:02,660 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -42339 (-3.37%)
+2026-01-15 22:34:02,677 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:02,684 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 46861 (3.87%)
+2026-01-15 22:34:02,768 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:02,775 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -54686 (-4.35%)
+2026-01-15 22:34:02,776 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:02,782 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -39706 (-3.30%)
+2026-01-15 22:34:02,860 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:02,865 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -38560 (-3.30%)
+2026-01-15 22:34:02,951 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:02,959 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 89440 (7.95%)
+2026-01-15 22:34:03,028 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:03,028 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:03,028 - Backtester - INFO - Final: 1218203
+2026-01-15 22:34:03,028 - Backtester - INFO - Return: 21.82%
+2026-01-15 22:34:03,028 - Backtester - INFO - Total Trades: 9
+2026-01-15 22:34:03,028 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:03,062 - Backtester - INFO - BUY at 4415.0 (Strategy Signal) time=2025-01-22 15:00:00
+2026-01-15 22:34:03,065 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 377972 (37.88%)
+2026-01-15 22:34:03,183 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:03,190 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46127 (-3.35%)
+2026-01-15 22:34:03,192 - Backtester - INFO - BUY at 5910.0 (Strategy Signal) time=2025-04-23 15:00:00
+2026-01-15 22:34:03,199 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -74652 (-5.61%)
+2026-01-15 22:34:03,203 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:03,207 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -42339 (-3.37%)
+2026-01-15 22:34:03,226 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:03,234 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 46861 (3.87%)
+2026-01-15 22:34:03,312 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:03,320 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -54686 (-4.35%)
+2026-01-15 22:34:03,321 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:03,327 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -39706 (-3.30%)
+2026-01-15 22:34:03,416 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:03,423 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -38560 (-3.30%)
+2026-01-15 22:34:03,521 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:03,528 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 89440 (7.95%)
+2026-01-15 22:34:03,598 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:03,598 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:03,598 - Backtester - INFO - Final: 1218203
+2026-01-15 22:34:03,598 - Backtester - INFO - Return: 21.82%
+2026-01-15 22:34:03,598 - Backtester - INFO - Total Trades: 9
+2026-01-15 22:34:03,599 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:03,621 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:03,629 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:03,636 - Backtester - INFO - BUY at 4415.0 (Strategy Signal) time=2025-01-22 15:00:00
+2026-01-15 22:34:03,639 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 369610 (37.88%)
+2026-01-15 22:34:03,666 - Backtester - INFO - BUY at 5310.0 (Strategy Signal) time=2025-02-14 13:00:00
+2026-01-15 22:34:03,673 - Backtester - INFO - SELL at 5430.0 (Max Hold Reached (PROFIT)) PnL: 27480 (2.05%)
+2026-01-15 22:34:03,710 - Backtester - INFO - BUY at 5120.0 (Strategy Signal) time=2025-03-12 15:00:00
+2026-01-15 22:34:03,718 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (PROFIT)) PnL: 13167 (0.96%)
+2026-01-15 22:34:03,783 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:03,791 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46330 (-3.35%)
+2026-01-15 22:34:03,792 - Backtester - INFO - BUY at 5910.0 (Strategy Signal) time=2025-04-23 15:00:00
+2026-01-15 22:34:03,798 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -74984 (-5.61%)
+2026-01-15 22:34:03,802 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:03,809 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -42530 (-3.37%)
+2026-01-15 22:34:03,835 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:03,842 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 47278 (3.87%)
+2026-01-15 22:34:03,938 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:03,947 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -55053 (-4.35%)
+2026-01-15 22:34:03,948 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:03,956 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -39972 (-3.30%)
+2026-01-15 22:34:04,034 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:04,039 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -38560 (-3.30%)
+2026-01-15 22:34:04,044 - Backtester - INFO - BUY at 8510.0 (Strategy Signal) time=2025-09-29 11:00:00
+2026-01-15 22:34:04,051 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 73285 (6.47%)
+2026-01-15 22:34:04,116 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:04,122 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 96178 (7.95%)
+2026-01-15 22:34:04,182 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:04,182 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:04,182 - Backtester - INFO - Final: 1305621
+2026-01-15 22:34:04,182 - Backtester - INFO - Return: 30.56%
+2026-01-15 22:34:04,182 - Backtester - INFO - Total Trades: 13
+2026-01-15 22:34:04,182 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:04,206 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:04,216 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:04,219 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:04,225 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:04,255 - Backtester - INFO - BUY at 5310.0 (Strategy Signal) time=2025-02-14 13:00:00
+2026-01-15 22:34:04,265 - Backtester - INFO - SELL at 5430.0 (Max Hold Reached (PROFIT)) PnL: 27262 (2.05%)
+2026-01-15 22:34:04,294 - Backtester - INFO - BUY at 5120.0 (Strategy Signal) time=2025-03-12 15:00:00
+2026-01-15 22:34:04,301 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (PROFIT)) PnL: 13069 (0.96%)
+2026-01-15 22:34:04,321 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:04,330 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 132586 (9.67%)
+2026-01-15 22:34:04,351 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:04,356 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -50376 (-3.35%)
+2026-01-15 22:34:04,357 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:04,364 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -79481 (-5.45%)
+2026-01-15 22:34:04,368 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:04,372 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -46362 (-3.37%)
+2026-01-15 22:34:04,379 - Backtester - INFO - BUY at 5370.0 (Strategy Signal) time=2025-05-09 11:00:00
+2026-01-15 22:34:04,386 - Backtester - INFO - SELL at 5500.0 (Max Hold Reached (PROFIT)) PnL: 29380 (2.21%)
+2026-01-15 22:34:04,392 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:04,399 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 52693 (3.87%)
+2026-01-15 22:34:04,474 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:04,481 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -61292 (-4.35%)
+2026-01-15 22:34:04,481 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:04,487 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -44502 (-3.30%)
+2026-01-15 22:34:04,568 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:04,572 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -43165 (-3.30%)
+2026-01-15 22:34:04,574 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-09-25 15:00:00
+2026-01-15 22:34:04,580 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (LOSS)) PnL: -17320 (-1.37%)
+2026-01-15 22:34:04,581 - Backtester - INFO - BUY at 8450.0 (Strategy Signal) time=2025-10-01 10:00:00
+2026-01-15 22:34:04,585 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 89821 (7.23%)
+2026-01-15 22:34:04,646 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:04,653 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 105980 (7.95%)
+2026-01-15 22:34:04,712 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:04,712 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:04,713 - Backtester - INFO - Final: 1444040
+2026-01-15 22:34:04,713 - Backtester - INFO - Return: 44.40%
+2026-01-15 22:34:04,713 - Backtester - INFO - Total Trades: 16
+2026-01-15 22:34:04,713 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:04,736 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:04,742 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:04,747 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:04,752 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:04,773 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:04,778 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -59034 (-4.44%)
+2026-01-15 22:34:04,782 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:04,788 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4452 (0.35%)
+2026-01-15 22:34:04,809 - Backtester - INFO - BUY at 5160.0 (Strategy Signal) time=2025-03-07 14:00:00
+2026-01-15 22:34:04,815 - Backtester - INFO - SELL at 5120.0 (Max Hold Reached (LOSS)) PnL: -12588 (-0.98%)
+2026-01-15 22:34:04,815 - Backtester - INFO - BUY at 5120.0 (Strategy Signal) time=2025-03-12 15:00:00
+2026-01-15 22:34:04,822 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (PROFIT)) PnL: 12135 (0.96%)
+2026-01-15 22:34:04,841 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:04,848 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 123492 (9.67%)
+2026-01-15 22:34:04,866 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:04,871 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46937 (-3.35%)
+2026-01-15 22:34:04,871 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:04,877 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -74011 (-5.45%)
+2026-01-15 22:34:04,879 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:04,883 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -43105 (-3.37%)
+2026-01-15 22:34:04,889 - Backtester - INFO - BUY at 5370.0 (Strategy Signal) time=2025-05-09 11:00:00
+2026-01-15 22:34:04,895 - Backtester - INFO - SELL at 5500.0 (Max Hold Reached (PROFIT)) PnL: 27248 (2.21%)
+2026-01-15 22:34:04,900 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:04,906 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 48944 (3.87%)
+2026-01-15 22:34:04,953 - Backtester - INFO - BUY at 7870.0 (Strategy Signal) time=2025-06-27 15:00:00
+2026-01-15 22:34:04,959 - Backtester - INFO - SELL at 9470.0 (Max Hold Reached (PROFIT)) PnL: 263919 (20.08%)
+2026-01-15 22:34:04,978 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:04,985 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -68633 (-4.35%)
+2026-01-15 22:34:04,986 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:04,991 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -49832 (-3.30%)
+2026-01-15 22:34:05,075 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:05,082 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -48057 (-3.30%)
+2026-01-15 22:34:05,086 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-09-25 15:00:00
+2026-01-15 22:34:05,096 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (LOSS)) PnL: -19323 (-1.37%)
+2026-01-15 22:34:05,098 - Backtester - INFO - BUY at 8450.0 (Strategy Signal) time=2025-10-01 10:00:00
+2026-01-15 22:34:05,106 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 100208 (7.23%)
+2026-01-15 22:34:05,170 - Backtester - INFO - BUY at 8540.0 (Strategy Signal) time=2025-11-10 12:00:00
+2026-01-15 22:34:05,189 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -6594 (-0.44%)
+2026-01-15 22:34:05,215 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:05,222 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 118232 (7.95%)
+2026-01-15 22:34:05,284 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:05,285 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:05,285 - Backtester - INFO - Final: 1606265
+2026-01-15 22:34:05,285 - Backtester - INFO - Return: 60.63%
+2026-01-15 22:34:05,285 - Backtester - INFO - Total Trades: 20
+2026-01-15 22:34:05,285 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:05,306 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:05,313 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:05,317 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:05,323 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:05,340 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:05,345 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -59034 (-4.44%)
+2026-01-15 22:34:05,348 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:05,356 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4452 (0.35%)
+2026-01-15 22:34:05,374 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:05,382 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -22086 (-1.73%)
+2026-01-15 22:34:05,390 - Backtester - INFO - BUY at 5120.0 (Strategy Signal) time=2025-03-12 14:00:00
+2026-01-15 22:34:05,403 - Backtester - INFO - SELL at 5150.0 (Max Hold Reached (PROFIT)) PnL: 4701 (0.37%)
+2026-01-15 22:34:05,439 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:05,451 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 122056 (9.67%)
+2026-01-15 22:34:05,475 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:05,484 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46330 (-3.35%)
+2026-01-15 22:34:05,485 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:05,493 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -73045 (-5.45%)
+2026-01-15 22:34:05,498 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:05,508 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -42530 (-3.37%)
+2026-01-15 22:34:05,519 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:05,529 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 121490 (9.94%)
+2026-01-15 22:34:05,541 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:05,551 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 52068 (3.87%)
+2026-01-15 22:34:05,606 - Backtester - INFO - BUY at 7870.0 (Strategy Signal) time=2025-06-27 15:00:00
+2026-01-15 22:34:05,612 - Backtester - INFO - SELL at 9470.0 (Max Hold Reached (PROFIT)) PnL: 279722 (20.08%)
+2026-01-15 22:34:05,621 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:05,627 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -64824 (-3.88%)
+2026-01-15 22:34:05,634 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:05,641 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -70101 (-4.35%)
+2026-01-15 22:34:05,641 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:05,651 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -50631 (-3.30%)
+2026-01-15 22:34:05,690 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-08-14 09:00:00
+2026-01-15 22:34:05,695 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (PROFIT)) PnL: 40001 (2.70%)
+2026-01-15 22:34:05,741 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:05,745 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -55496 (-3.63%)
+2026-01-15 22:34:05,753 - Backtester - INFO - BUY at 8970.0 (Strategy Signal) time=2025-09-11 15:00:00
+2026-01-15 22:34:05,760 - Backtester - INFO - SELL at 9350.0 (Max Hold Reached (PROFIT)) PnL: 59109 (4.02%)
+2026-01-15 22:34:05,771 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:05,776 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -50647 (-3.30%)
+2026-01-15 22:34:05,779 - Backtester - INFO - BUY at 8550.0 (Strategy Signal) time=2025-09-25 13:00:00
+2026-01-15 22:34:05,788 - Backtester - INFO - SELL at 8500.0 (Max Hold Reached (LOSS)) PnL: -11739 (-0.79%)
+2026-01-15 22:34:05,790 - Backtester - INFO - BUY at 8450.0 (Strategy Signal) time=2025-10-01 10:00:00
+2026-01-15 22:34:05,794 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 106319 (7.23%)
+2026-01-15 22:34:05,815 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:05,822 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 23640 (1.50%)
+2026-01-15 22:34:05,844 - Backtester - INFO - BUY at 8540.0 (Strategy Signal) time=2025-11-10 12:00:00
+2026-01-15 22:34:05,856 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -7086 (-0.44%)
+2026-01-15 22:34:05,874 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:05,883 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 126809 (7.95%)
+2026-01-15 22:34:05,951 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:05,951 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:05,951 - Backtester - INFO - Final: 1722564
+2026-01-15 22:34:05,951 - Backtester - INFO - Return: 72.26%
+2026-01-15 22:34:05,951 - Backtester - INFO - Total Trades: 25
+2026-01-15 22:34:05,952 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:05,982 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:05,991 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:05,999 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:06,004 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:06,022 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:06,027 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -59034 (-4.44%)
+2026-01-15 22:34:06,033 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:06,039 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4452 (0.35%)
+2026-01-15 22:34:06,065 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:06,076 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -22086 (-1.73%)
+2026-01-15 22:34:06,089 - Backtester - INFO - BUY at 5120.0 (Strategy Signal) time=2025-03-12 14:00:00
+2026-01-15 22:34:06,100 - Backtester - INFO - SELL at 5150.0 (Max Hold Reached (PROFIT)) PnL: 4701 (0.37%)
+2026-01-15 22:34:06,137 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:06,150 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 122056 (9.67%)
+2026-01-15 22:34:06,174 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:06,180 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -46330 (-3.35%)
+2026-01-15 22:34:06,180 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:06,188 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -73045 (-5.45%)
+2026-01-15 22:34:06,190 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:06,196 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -42530 (-3.37%)
+2026-01-15 22:34:06,201 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:06,211 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 121490 (9.94%)
+2026-01-15 22:34:06,221 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:06,230 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 52068 (3.87%)
+2026-01-15 22:34:06,291 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:06,298 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 304450 (21.82%)
+2026-01-15 22:34:06,307 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:06,314 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -65837 (-3.88%)
+2026-01-15 22:34:06,317 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:06,325 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -71202 (-4.35%)
+2026-01-15 22:34:06,325 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:06,332 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -51431 (-3.30%)
+2026-01-15 22:34:06,346 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-07-30 14:00:00
+2026-01-15 22:34:06,349 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -51169 (-3.40%)
+2026-01-15 22:34:06,355 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-08-04 13:00:00
+2026-01-15 22:34:06,367 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 25678 (1.76%)
+2026-01-15 22:34:06,376 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-08-14 09:00:00
+2026-01-15 22:34:06,382 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (PROFIT)) PnL: 40001 (2.70%)
+2026-01-15 22:34:06,417 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:06,422 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -55168 (-3.63%)
+2026-01-15 22:34:06,424 - Backtester - INFO - BUY at 8920.0 (Strategy Signal) time=2025-09-11 09:00:00
+2026-01-15 22:34:06,433 - Backtester - INFO - SELL at 9390.0 (Max Hold Reached (PROFIT)) PnL: 74308 (5.05%)
+2026-01-15 22:34:06,434 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:06,441 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -64160 (-4.17%)
+2026-01-15 22:34:06,447 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:06,455 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -48920 (-3.30%)
+2026-01-15 22:34:06,457 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 11:00:00
+2026-01-15 22:34:06,467 - Backtester - INFO - SELL at 8570.0 (Max Hold Reached (LOSS)) PnL: -11289 (-0.79%)
+2026-01-15 22:34:06,469 - Backtester - INFO - BUY at 8490.0 (Strategy Signal) time=2025-10-01 09:00:00
+2026-01-15 22:34:06,475 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 95360 (6.72%)
+2026-01-15 22:34:06,499 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:06,508 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 22721 (1.50%)
+2026-01-15 22:34:06,530 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:06,539 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 79767 (5.18%)
+2026-01-15 22:34:06,577 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:06,588 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 128646 (7.95%)
+2026-01-15 22:34:06,675 - Backtester - INFO - BUY at 9030.0 (Strategy Signal) time=2026-01-15 12:00:00
+2026-01-15 22:34:06,680 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 15603 (0.90%)
+2026-01-15 22:34:06,680 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:06,681 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:06,681 - Backtester - INFO - Final: 1764848
+2026-01-15 22:34:06,681 - Backtester - INFO - Return: 76.48%
+2026-01-15 22:34:06,681 - Backtester - INFO - Total Trades: 29
+2026-01-15 22:34:06,681 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:06,719 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:06,728 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:06,733 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:06,740 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:06,745 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-01-31 15:00:00
+2026-01-15 22:34:06,746 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -120074 (-8.99%)
+2026-01-15 22:34:06,764 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:06,773 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -53733 (-4.44%)
+2026-01-15 22:34:06,778 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:06,787 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4059 (0.35%)
+2026-01-15 22:34:06,807 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:06,815 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -20087 (-1.73%)
+2026-01-15 22:34:06,822 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:06,831 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -11222 (-0.98%)
+2026-01-15 22:34:06,855 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-26 12:00:00
+2026-01-15 22:34:06,861 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -49809 (-4.39%)
+2026-01-15 22:34:06,868 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:06,880 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 104824 (9.67%)
+2026-01-15 22:34:06,908 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:06,916 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -39653 (-3.35%)
+2026-01-15 22:34:06,917 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:06,926 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -62426 (-5.45%)
+2026-01-15 22:34:06,931 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:06,937 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -36591 (-3.37%)
+2026-01-15 22:34:06,943 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:06,953 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 104288 (9.94%)
+2026-01-15 22:34:06,965 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:06,974 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 44570 (3.87%)
+2026-01-15 22:34:06,985 - Backtester - INFO - BUY at 5670.0 (Strategy Signal) time=2025-05-27 11:00:00
+2026-01-15 22:34:06,994 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 31182 (2.61%)
+2026-01-15 22:34:07,037 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:07,044 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 268329 (21.82%)
+2026-01-15 22:34:07,053 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:07,064 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -58072 (-3.88%)
+2026-01-15 22:34:07,068 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:07,081 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -62393 (-4.35%)
+2026-01-15 22:34:07,082 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:07,089 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -45302 (-3.30%)
+2026-01-15 22:34:07,106 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-07-30 14:00:00
+2026-01-15 22:34:07,110 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -45084 (-3.40%)
+2026-01-15 22:34:07,118 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-08-04 13:00:00
+2026-01-15 22:34:07,132 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 22540 (1.76%)
+2026-01-15 22:34:07,141 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-08-14 09:00:00
+2026-01-15 22:34:07,149 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (PROFIT)) PnL: 35334 (2.70%)
+2026-01-15 22:34:07,187 - Backtester - INFO - BUY at 8960.0 (Strategy Signal) time=2025-09-08 14:00:00
+2026-01-15 22:34:07,192 - Backtester - INFO - SELL at 8680.0 (Stop Loss) PnL: -44740 (-3.33%)
+2026-01-15 22:34:07,196 - Backtester - INFO - BUY at 8920.0 (Strategy Signal) time=2025-09-11 09:00:00
+2026-01-15 22:34:07,203 - Backtester - INFO - SELL at 9390.0 (Max Hold Reached (PROFIT)) PnL: 65301 (5.05%)
+2026-01-15 22:34:07,204 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:07,209 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -56772 (-4.17%)
+2026-01-15 22:34:07,217 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:07,226 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -43165 (-3.30%)
+2026-01-15 22:34:07,227 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:07,235 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -17214 (-1.37%)
+2026-01-15 22:34:07,238 - Backtester - INFO - BUY at 8490.0 (Strategy Signal) time=2025-10-01 09:00:00
+2026-01-15 22:34:07,243 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 83940 (6.72%)
+2026-01-15 22:34:07,245 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-10-10 13:00:00
+2026-01-15 22:34:07,252 - Backtester - INFO - SELL at 9170.0 (Max Hold Reached (PROFIT)) PnL: -2792 (-0.21%)
+2026-01-15 22:34:07,266 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:07,274 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 19963 (1.50%)
+2026-01-15 22:34:07,291 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:07,300 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 69638 (5.18%)
+2026-01-15 22:34:07,319 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-11-21 13:00:00
+2026-01-15 22:34:07,320 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -56333 (-3.97%)
+2026-01-15 22:34:07,328 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:07,337 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 108430 (7.95%)
+2026-01-15 22:34:07,358 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:07,368 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 120183 (8.18%)
+2026-01-15 22:34:07,421 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:07,422 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 10647 (0.67%)
+2026-01-15 22:34:07,422 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:07,422 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:07,422 - Backtester - INFO - Final: 1603513
+2026-01-15 22:34:07,422 - Backtester - INFO - Return: 60.35%
+2026-01-15 22:34:07,422 - Backtester - INFO - Total Trades: 35
+2026-01-15 22:34:07,423 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:07,448 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:07,455 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:07,458 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:07,466 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:07,469 - Backtester - INFO - BUY at 5650.0 (Strategy Signal) time=2025-01-31 14:00:00
+2026-01-15 22:34:07,470 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -113504 (-8.51%)
+2026-01-15 22:34:07,483 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:07,490 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -54215 (-4.44%)
+2026-01-15 22:34:07,495 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:07,502 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4078 (0.35%)
+2026-01-15 22:34:07,518 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:07,521 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -69203 (-5.92%)
+2026-01-15 22:34:07,528 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:07,535 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -18996 (-1.73%)
+2026-01-15 22:34:07,541 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:07,550 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -10613 (-0.98%)
+2026-01-15 22:34:07,563 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:07,573 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -47042 (-4.39%)
+2026-01-15 22:34:07,582 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:07,589 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 99080 (9.67%)
+2026-01-15 22:34:07,612 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:07,618 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -37630 (-3.35%)
+2026-01-15 22:34:07,619 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:07,624 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -59209 (-5.45%)
+2026-01-15 22:34:07,629 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:07,634 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -34675 (-3.37%)
+2026-01-15 22:34:07,639 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:07,649 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 98375 (9.94%)
+2026-01-15 22:34:07,656 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:07,666 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 42071 (3.87%)
+2026-01-15 22:34:07,673 - Backtester - INFO - BUY at 5670.0 (Strategy Signal) time=2025-05-27 11:00:00
+2026-01-15 22:34:07,684 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 29556 (2.61%)
+2026-01-15 22:34:07,726 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:07,736 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 252849 (21.82%)
+2026-01-15 22:34:07,745 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:07,754 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -54695 (-3.88%)
+2026-01-15 22:34:07,759 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:07,770 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -59090 (-4.35%)
+2026-01-15 22:34:07,770 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:07,776 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -42903 (-3.30%)
+2026-01-15 22:34:07,791 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:07,797 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -57244 (-4.57%)
+2026-01-15 22:34:07,801 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-08-04 13:00:00
+2026-01-15 22:34:07,812 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 21113 (1.76%)
+2026-01-15 22:34:07,818 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-08-14 09:00:00
+2026-01-15 22:34:07,822 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (PROFIT)) PnL: 32890 (2.70%)
+2026-01-15 22:34:07,833 - Backtester - INFO - BUY at 8490.0 (Strategy Signal) time=2025-08-22 13:00:00
+2026-01-15 22:34:07,839 - Backtester - INFO - SELL at 8720.0 (Max Hold Reached (PROFIT)) PnL: 31335 (2.49%)
+2026-01-15 22:34:07,853 - Backtester - INFO - BUY at 8990.0 (Strategy Signal) time=2025-09-04 10:00:00
+2026-01-15 22:34:07,859 - Backtester - INFO - SELL at 8990.0 (Max Hold Reached (PROFIT)) PnL: -2700 (-0.21%)
+2026-01-15 22:34:07,863 - Backtester - INFO - BUY at 9060.0 (Strategy Signal) time=2025-09-09 15:00:00
+2026-01-15 22:34:07,864 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -49122 (-3.84%)
+2026-01-15 22:34:07,866 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:07,872 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 44922 (3.65%)
+2026-01-15 22:34:07,873 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:07,879 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -53273 (-4.17%)
+2026-01-15 22:34:07,884 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:07,889 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -40287 (-3.30%)
+2026-01-15 22:34:07,890 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:07,899 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -16153 (-1.37%)
+2026-01-15 22:34:07,901 - Backtester - INFO - BUY at 8480.0 (Strategy Signal) time=2025-09-30 15:00:00
+2026-01-15 22:34:07,905 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 80181 (6.85%)
+2026-01-15 22:34:07,907 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-10-10 13:00:00
+2026-01-15 22:34:07,916 - Backtester - INFO - SELL at 9170.0 (Max Hold Reached (PROFIT)) PnL: -2619 (-0.21%)
+2026-01-15 22:34:07,928 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:07,934 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 18649 (1.50%)
+2026-01-15 22:34:07,951 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:07,960 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 65417 (5.18%)
+2026-01-15 22:34:07,960 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:07,971 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -12075 (-0.91%)
+2026-01-15 22:34:07,982 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-11-21 13:00:00
+2026-01-15 22:34:07,983 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -52160 (-3.97%)
+2026-01-15 22:34:07,990 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:07,999 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 100467 (7.95%)
+2026-01-15 22:34:08,016 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:08,022 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 111455 (8.18%)
+2026-01-15 22:34:08,028 - Backtester - INFO - BUY at 9120.0 (Strategy Signal) time=2025-12-17 11:00:00
+2026-01-15 22:34:08,035 - Backtester - INFO - SELL at 9210.0 (Max Hold Reached (PROFIT)) PnL: 11449 (0.77%)
+2026-01-15 22:34:08,049 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:08,052 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -49716 (-3.35%)
+2026-01-15 22:34:08,069 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:08,072 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 9673 (0.67%)
+2026-01-15 22:34:08,072 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:08,072 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:08,072 - Backtester - INFO - Final: 1452185
+2026-01-15 22:34:08,072 - Backtester - INFO - Return: 45.22%
+2026-01-15 22:34:08,072 - Backtester - INFO - Total Trades: 41
+2026-01-15 22:34:08,072 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:08,098 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:08,105 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:08,109 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:08,116 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:08,119 - Backtester - INFO - BUY at 5650.0 (Strategy Signal) time=2025-01-31 14:00:00
+2026-01-15 22:34:08,120 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -113504 (-8.51%)
+2026-01-15 22:34:08,134 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:08,138 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -54215 (-4.44%)
+2026-01-15 22:34:08,142 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:08,151 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4078 (0.35%)
+2026-01-15 22:34:08,154 - Backtester - INFO - BUY at 5400.0 (Strategy Signal) time=2025-02-21 09:00:00
+2026-01-15 22:34:08,163 - Backtester - INFO - SELL at 5390.0 (Max Hold Reached (LOSS)) PnL: -4627 (-0.39%)
+2026-01-15 22:34:08,166 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:08,168 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -68872 (-5.92%)
+2026-01-15 22:34:08,172 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:08,181 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -18905 (-1.73%)
+2026-01-15 22:34:08,186 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:08,196 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -10562 (-0.98%)
+2026-01-15 22:34:08,212 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:08,222 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -46811 (-4.39%)
+2026-01-15 22:34:08,230 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:08,241 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 98602 (9.67%)
+2026-01-15 22:34:08,266 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:08,272 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -37428 (-3.35%)
+2026-01-15 22:34:08,272 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:08,282 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -58887 (-5.45%)
+2026-01-15 22:34:08,284 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:08,288 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -34484 (-3.37%)
+2026-01-15 22:34:08,294 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:08,301 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 97837 (9.94%)
+2026-01-15 22:34:08,309 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:08,317 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 42071 (3.87%)
+2026-01-15 22:34:08,324 - Backtester - INFO - BUY at 5670.0 (Strategy Signal) time=2025-05-27 11:00:00
+2026-01-15 22:34:08,335 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 29408 (2.61%)
+2026-01-15 22:34:08,382 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:08,392 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 252849 (21.82%)
+2026-01-15 22:34:08,401 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:08,409 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -54695 (-3.88%)
+2026-01-15 22:34:08,414 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:08,422 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -59090 (-4.35%)
+2026-01-15 22:34:08,422 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:08,431 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -42637 (-3.30%)
+2026-01-15 22:34:08,433 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:08,439 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 17358 (1.39%)
+2026-01-15 22:34:08,446 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:08,449 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -57997 (-4.57%)
+2026-01-15 22:34:08,452 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:08,465 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 9271 (0.76%)
+2026-01-15 22:34:08,471 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-08-14 09:00:00
+2026-01-15 22:34:08,476 - Backtester - INFO - SELL at 8480.0 (Max Hold Reached (PROFIT)) PnL: 32890 (2.70%)
+2026-01-15 22:34:08,484 - Backtester - INFO - BUY at 8490.0 (Strategy Signal) time=2025-08-22 13:00:00
+2026-01-15 22:34:08,494 - Backtester - INFO - SELL at 8720.0 (Max Hold Reached (PROFIT)) PnL: 31335 (2.49%)
+2026-01-15 22:34:08,510 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:08,519 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -19460 (-1.52%)
+2026-01-15 22:34:08,519 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:08,523 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -45973 (-3.63%)
+2026-01-15 22:34:08,527 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:08,533 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 44592 (3.65%)
+2026-01-15 22:34:08,535 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:08,540 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -52884 (-4.17%)
+2026-01-15 22:34:08,548 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:08,553 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -39999 (-3.30%)
+2026-01-15 22:34:08,554 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:08,563 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -16035 (-1.37%)
+2026-01-15 22:34:08,565 - Backtester - INFO - BUY at 8480.0 (Strategy Signal) time=2025-09-30 15:00:00
+2026-01-15 22:34:08,569 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 79019 (6.85%)
+2026-01-15 22:34:08,570 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-10-10 13:00:00
+2026-01-15 22:34:08,580 - Backtester - INFO - SELL at 9170.0 (Max Hold Reached (PROFIT)) PnL: -2580 (-0.21%)
+2026-01-15 22:34:08,590 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:08,599 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 18518 (1.50%)
+2026-01-15 22:34:08,615 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:08,621 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 64995 (5.18%)
+2026-01-15 22:34:08,622 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:08,634 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -11919 (-0.91%)
+2026-01-15 22:34:08,646 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-11-21 13:00:00
+2026-01-15 22:34:08,648 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -51812 (-3.97%)
+2026-01-15 22:34:08,654 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:08,664 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 99241 (7.95%)
+2026-01-15 22:34:08,681 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:08,687 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 110112 (8.18%)
+2026-01-15 22:34:08,690 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-12-17 10:00:00
+2026-01-15 22:34:08,700 - Backtester - INFO - SELL at 9200.0 (Max Hold Reached (PROFIT)) PnL: 1699 (0.12%)
+2026-01-15 22:34:08,717 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:08,720 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -49099 (-3.35%)
+2026-01-15 22:34:08,728 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:08,735 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -2961 (-0.21%)
+2026-01-15 22:34:08,738 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:08,740 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 9491 (0.67%)
+2026-01-15 22:34:08,740 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:08,740 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:08,740 - Backtester - INFO - Final: 1423678
+2026-01-15 22:34:08,741 - Backtester - INFO - Return: 42.37%
+2026-01-15 22:34:08,741 - Backtester - INFO - Total Trades: 44
+2026-01-15 22:34:08,741 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:08,753 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:08,769 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:08,773 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:08,784 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:08,787 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:08,795 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:08,800 - Backtester - INFO - BUY at 5650.0 (Strategy Signal) time=2025-01-31 14:00:00
+2026-01-15 22:34:08,801 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -113504 (-8.51%)
+2026-01-15 22:34:08,814 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:08,819 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -53974 (-4.44%)
+2026-01-15 22:34:08,821 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:08,831 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4059 (0.35%)
+2026-01-15 22:34:08,834 - Backtester - INFO - BUY at 5400.0 (Strategy Signal) time=2025-02-21 09:00:00
+2026-01-15 22:34:08,840 - Backtester - INFO - SELL at 5390.0 (Max Hold Reached (LOSS)) PnL: -4605 (-0.39%)
+2026-01-15 22:34:08,845 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:08,847 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -68872 (-5.92%)
+2026-01-15 22:34:08,851 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:08,858 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -18905 (-1.73%)
+2026-01-15 22:34:08,864 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:08,870 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -10562 (-0.98%)
+2026-01-15 22:34:08,883 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:08,890 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -46811 (-4.39%)
+2026-01-15 22:34:08,898 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:08,905 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 98602 (9.67%)
+2026-01-15 22:34:08,929 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:08,935 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -37428 (-3.35%)
+2026-01-15 22:34:08,936 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:08,945 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -58887 (-5.45%)
+2026-01-15 22:34:08,947 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:08,953 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -34484 (-3.37%)
+2026-01-15 22:34:08,958 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:08,965 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 97837 (9.94%)
+2026-01-15 22:34:08,974 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:08,982 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 41863 (3.87%)
+2026-01-15 22:34:08,990 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:09,001 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 23202 (2.07%)
+2026-01-15 22:34:09,034 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:09,038 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -42364 (-3.70%)
+2026-01-15 22:34:09,043 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:09,051 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 240808 (21.82%)
+2026-01-15 22:34:09,059 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:09,067 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -52332 (-3.88%)
+2026-01-15 22:34:09,070 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:09,081 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -56154 (-4.35%)
+2026-01-15 22:34:09,081 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:09,087 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -40772 (-3.30%)
+2026-01-15 22:34:09,089 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:09,098 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 16569 (1.39%)
+2026-01-15 22:34:09,102 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:09,105 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -55360 (-4.57%)
+2026-01-15 22:34:09,110 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:09,120 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 8833 (0.76%)
+2026-01-15 22:34:09,127 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:09,132 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 20067 (1.72%)
+2026-01-15 22:34:09,141 - Backtester - INFO - BUY at 8490.0 (Strategy Signal) time=2025-08-22 13:00:00
+2026-01-15 22:34:09,150 - Backtester - INFO - SELL at 8720.0 (Max Hold Reached (PROFIT)) PnL: 29641 (2.49%)
+2026-01-15 22:34:09,162 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:09,169 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -18487 (-1.52%)
+2026-01-15 22:34:09,169 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:09,172 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -43346 (-3.63%)
+2026-01-15 22:34:09,175 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:09,182 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 41950 (3.65%)
+2026-01-15 22:34:09,183 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:09,189 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -49773 (-4.17%)
+2026-01-15 22:34:09,195 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:09,201 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -37985 (-3.30%)
+2026-01-15 22:34:09,202 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:09,210 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -15210 (-1.37%)
+2026-01-15 22:34:09,212 - Backtester - INFO - BUY at 8500.0 (Strategy Signal) time=2025-09-30 13:00:00
+2026-01-15 22:34:09,218 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 72371 (6.60%)
+2026-01-15 22:34:09,220 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-10-10 13:00:00
+2026-01-15 22:34:09,228 - Backtester - INFO - SELL at 9170.0 (Max Hold Reached (PROFIT)) PnL: -2446 (-0.21%)
+2026-01-15 22:34:09,240 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:09,248 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 17467 (1.50%)
+2026-01-15 22:34:09,267 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:09,274 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 61197 (5.18%)
+2026-01-15 22:34:09,274 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:09,285 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -11296 (-0.91%)
+2026-01-15 22:34:09,293 - Backtester - INFO - BUY at 8770.0 (Strategy Signal) time=2025-11-20 09:00:00
+2026-01-15 22:34:09,298 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -51483 (-4.19%)
+2026-01-15 22:34:09,304 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:09,313 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 93728 (7.95%)
+2026-01-15 22:34:09,329 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:09,335 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 104069 (8.18%)
+2026-01-15 22:34:09,338 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-12-17 10:00:00
+2026-01-15 22:34:09,346 - Backtester - INFO - SELL at 9200.0 (Max Hold Reached (PROFIT)) PnL: 1603 (0.12%)
+2026-01-15 22:34:09,362 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:09,365 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -46011 (-3.35%)
+2026-01-15 22:34:09,373 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:09,381 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -2791 (-0.21%)
+2026-01-15 22:34:09,385 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:09,388 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 8943 (0.67%)
+2026-01-15 22:34:09,388 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:09,388 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:09,388 - Backtester - INFO - Final: 1342616
+2026-01-15 22:34:09,388 - Backtester - INFO - Return: 34.26%
+2026-01-15 22:34:09,388 - Backtester - INFO - Total Trades: 46
+2026-01-15 22:34:09,388 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:09,398 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:09,413 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:09,416 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:09,424 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:09,430 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:09,435 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:09,438 - Backtester - INFO - BUY at 5650.0 (Strategy Signal) time=2025-01-31 14:00:00
+2026-01-15 22:34:09,439 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -113504 (-8.51%)
+2026-01-15 22:34:09,452 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-10 13:00:00
+2026-01-15 22:34:09,459 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -53974 (-4.44%)
+2026-01-15 22:34:09,464 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:09,469 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4059 (0.35%)
+2026-01-15 22:34:09,473 - Backtester - INFO - BUY at 5400.0 (Strategy Signal) time=2025-02-21 09:00:00
+2026-01-15 22:34:09,481 - Backtester - INFO - SELL at 5390.0 (Max Hold Reached (LOSS)) PnL: -4605 (-0.39%)
+2026-01-15 22:34:09,485 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:09,487 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -68872 (-5.92%)
+2026-01-15 22:34:09,494 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:09,501 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -18905 (-1.73%)
+2026-01-15 22:34:09,506 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:09,514 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -10562 (-0.98%)
+2026-01-15 22:34:09,528 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:09,535 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -46811 (-4.39%)
+2026-01-15 22:34:09,542 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:09,554 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 98602 (9.67%)
+2026-01-15 22:34:09,579 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:09,584 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -37428 (-3.35%)
+2026-01-15 22:34:09,584 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:09,591 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -58887 (-5.45%)
+2026-01-15 22:34:09,596 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:09,600 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -34484 (-3.37%)
+2026-01-15 22:34:09,603 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:09,612 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 97837 (9.94%)
+2026-01-15 22:34:09,620 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:09,629 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 41863 (3.87%)
+2026-01-15 22:34:09,629 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:09,637 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 5661 (0.50%)
+2026-01-15 22:34:09,638 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:09,651 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 23320 (2.07%)
+2026-01-15 22:34:09,684 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:09,688 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -42661 (-3.70%)
+2026-01-15 22:34:09,692 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:09,701 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 242528 (21.82%)
+2026-01-15 22:34:09,712 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:09,718 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -52670 (-3.88%)
+2026-01-15 22:34:09,721 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:09,732 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -56521 (-4.35%)
+2026-01-15 22:34:09,732 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:09,738 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -41038 (-3.30%)
+2026-01-15 22:34:09,741 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:09,750 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 16682 (1.39%)
+2026-01-15 22:34:09,754 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:09,761 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -55737 (-4.57%)
+2026-01-15 22:34:09,765 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:09,777 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 8896 (0.76%)
+2026-01-15 22:34:09,784 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:09,788 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 20210 (1.72%)
+2026-01-15 22:34:09,791 - Backtester - INFO - BUY at 8500.0 (Strategy Signal) time=2025-08-19 15:00:00
+2026-01-15 22:34:09,800 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 10076 (0.85%)
+2026-01-15 22:34:09,800 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:09,813 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 86900 (7.22%)
+2026-01-15 22:34:09,818 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:09,827 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -19599 (-1.52%)
+2026-01-15 22:34:09,827 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:09,830 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -45973 (-3.63%)
+2026-01-15 22:34:09,832 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:09,839 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 44592 (3.65%)
+2026-01-15 22:34:09,840 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:09,847 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -52884 (-4.17%)
+2026-01-15 22:34:09,852 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:09,857 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -40287 (-3.30%)
+2026-01-15 22:34:09,858 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:09,866 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -16035 (-1.37%)
+2026-01-15 22:34:09,866 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:09,872 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 73578 (6.35%)
+2026-01-15 22:34:09,875 - Backtester - INFO - BUY at 9170.0 (Strategy Signal) time=2025-10-10 13:00:00
+2026-01-15 22:34:09,883 - Backtester - INFO - SELL at 9170.0 (Max Hold Reached (PROFIT)) PnL: -2580 (-0.21%)
+2026-01-15 22:34:09,895 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:09,901 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 18518 (1.50%)
+2026-01-15 22:34:09,917 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:09,925 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 64573 (5.18%)
+2026-01-15 22:34:09,925 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:09,937 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -11919 (-0.91%)
+2026-01-15 22:34:09,946 - Backtester - INFO - BUY at 8770.0 (Strategy Signal) time=2025-11-20 09:00:00
+2026-01-15 22:34:09,950 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -54425 (-4.19%)
+2026-01-15 22:34:09,960 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:09,968 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 99241 (7.95%)
+2026-01-15 22:34:09,987 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:09,996 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 110112 (8.18%)
+2026-01-15 22:34:09,997 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-16 09:00:00
+2026-01-15 22:34:10,005 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 67317 (4.61%)
+2026-01-15 22:34:10,020 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:10,025 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -50951 (-3.35%)
+2026-01-15 22:34:10,032 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:10,039 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -3093 (-0.21%)
+2026-01-15 22:34:10,045 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:10,047 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 9856 (0.67%)
+2026-01-15 22:34:10,047 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:10,047 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:10,047 - Backtester - INFO - Final: 1483664
+2026-01-15 22:34:10,047 - Backtester - INFO - Return: 48.37%
+2026-01-15 22:34:10,047 - Backtester - INFO - Total Trades: 48
+2026-01-15 22:34:10,047 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:10,055 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:10,067 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:10,073 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:10,082 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:10,086 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:10,092 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:10,097 - Backtester - INFO - BUY at 5520.0 (Strategy Signal) time=2025-01-31 13:00:00
+2026-01-15 22:34:10,098 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -84574 (-6.36%)
+2026-01-15 22:34:10,108 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-02-07 11:00:00
+2026-01-15 22:34:10,116 - Backtester - INFO - SELL at 5430.0 (Max Hold Reached (PROFIT)) PnL: 23076 (1.85%)
+2026-01-15 22:34:10,116 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-12 11:00:00
+2026-01-15 22:34:10,118 - Backtester - INFO - SELL at 5200.0 (Stop Loss) PnL: -56383 (-4.44%)
+2026-01-15 22:34:10,121 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:10,130 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4246 (0.35%)
+2026-01-15 22:34:10,131 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-02-19 12:00:00
+2026-01-15 22:34:10,137 - Backtester - INFO - SELL at 5420.0 (Max Hold Reached (PROFIT)) PnL: 6469 (0.53%)
+2026-01-15 22:34:10,144 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:10,146 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -72514 (-5.92%)
+2026-01-15 22:34:10,151 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:10,163 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -19905 (-1.73%)
+2026-01-15 22:34:10,170 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:10,182 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -11121 (-0.98%)
+2026-01-15 22:34:10,202 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:10,214 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -49117 (-4.39%)
+2026-01-15 22:34:10,222 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:10,236 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 103388 (9.67%)
+2026-01-15 22:34:10,268 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:10,280 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -39249 (-3.35%)
+2026-01-15 22:34:10,282 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:10,291 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -61783 (-5.45%)
+2026-01-15 22:34:10,297 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:10,301 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -36208 (-3.37%)
+2026-01-15 22:34:10,306 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:10,316 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 103213 (9.94%)
+2026-01-15 22:34:10,330 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:10,342 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 44154 (3.87%)
+2026-01-15 22:34:10,343 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:10,355 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 5942 (0.50%)
+2026-01-15 22:34:10,356 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:10,375 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 24615 (2.07%)
+2026-01-15 22:34:10,450 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:10,455 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -45031 (-3.70%)
+2026-01-15 22:34:10,459 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:10,466 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 254569 (21.82%)
+2026-01-15 22:34:10,474 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:10,482 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -55370 (-3.88%)
+2026-01-15 22:34:10,485 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:10,498 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -59457 (-4.35%)
+2026-01-15 22:34:10,498 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:10,505 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -43170 (-3.30%)
+2026-01-15 22:34:10,508 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:10,515 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 17584 (1.39%)
+2026-01-15 22:34:10,522 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:10,527 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -58750 (-4.57%)
+2026-01-15 22:34:10,532 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:10,546 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 9334 (0.76%)
+2026-01-15 22:34:10,555 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:10,561 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 21206 (1.72%)
+2026-01-15 22:34:10,565 - Backtester - INFO - BUY at 8500.0 (Strategy Signal) time=2025-08-19 15:00:00
+2026-01-15 22:34:10,574 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 10652 (0.85%)
+2026-01-15 22:34:10,575 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:10,590 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 91245 (7.22%)
+2026-01-15 22:34:10,598 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:10,607 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -20572 (-1.52%)
+2026-01-15 22:34:10,607 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:10,611 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -48600 (-3.63%)
+2026-01-15 22:34:10,614 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:10,625 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 46904 (3.65%)
+2026-01-15 22:34:10,627 - Backtester - INFO - BUY at 9320.0 (Strategy Signal) time=2025-09-16 10:00:00
+2026-01-15 22:34:10,634 - Backtester - INFO - SELL at 8950.0 (Stop Loss) PnL: -55606 (-4.17%)
+2026-01-15 22:34:10,641 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:10,649 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -42301 (-3.30%)
+2026-01-15 22:34:10,650 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:10,661 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -16861 (-1.37%)
+2026-01-15 22:34:10,661 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:10,671 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 77365 (6.35%)
+2026-01-15 22:34:10,673 - Backtester - INFO - BUY at 9110.0 (Strategy Signal) time=2025-10-10 11:00:00
+2026-01-15 22:34:10,696 - Backtester - INFO - SELL at 9020.0 (Max Hold Reached (LOSS)) PnL: -15472 (-1.20%)
+2026-01-15 22:34:10,729 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:10,739 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 19175 (1.50%)
+2026-01-15 22:34:10,762 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:10,772 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 67528 (5.18%)
+2026-01-15 22:34:10,773 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:10,801 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -12386 (-0.91%)
+2026-01-15 22:34:10,823 - Backtester - INFO - BUY at 8770.0 (Strategy Signal) time=2025-11-20 09:00:00
+2026-01-15 22:34:10,831 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -56999 (-4.19%)
+2026-01-15 22:34:10,845 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:10,855 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 103530 (7.95%)
+2026-01-15 22:34:10,878 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:10,889 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 114812 (8.18%)
+2026-01-15 22:34:10,891 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-16 09:00:00
+2026-01-15 22:34:10,904 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 69780 (4.61%)
+2026-01-15 22:34:10,925 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:10,931 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -53113 (-3.35%)
+2026-01-15 22:34:10,941 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:10,951 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -3225 (-0.21%)
+2026-01-15 22:34:10,955 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:10,958 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 10282 (0.67%)
+2026-01-15 22:34:10,958 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:10,958 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:10,958 - Backtester - INFO - Final: 1544948
+2026-01-15 22:34:10,958 - Backtester - INFO - Return: 54.49%
+2026-01-15 22:34:10,958 - Backtester - INFO - Total Trades: 49
+2026-01-15 22:34:10,959 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:10,969 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:10,983 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:10,989 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:10,999 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:11,005 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:11,013 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:11,019 - Backtester - INFO - BUY at 5520.0 (Strategy Signal) time=2025-01-31 13:00:00
+2026-01-15 22:34:11,021 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -84574 (-6.36%)
+2026-01-15 22:34:11,033 - Backtester - INFO - BUY at 5290.0 (Strategy Signal) time=2025-02-07 10:00:00
+2026-01-15 22:34:11,042 - Backtester - INFO - SELL at 5470.0 (Max Hold Reached (PROFIT)) PnL: 39775 (3.19%)
+2026-01-15 22:34:11,043 - Backtester - INFO - BUY at 5470.0 (Strategy Signal) time=2025-02-12 10:00:00
+2026-01-15 22:34:11,045 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -49608 (-3.86%)
+2026-01-15 22:34:11,048 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:11,055 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4321 (0.35%)
+2026-01-15 22:34:11,055 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-02-19 12:00:00
+2026-01-15 22:34:11,061 - Backtester - INFO - SELL at 5420.0 (Max Hold Reached (PROFIT)) PnL: 6612 (0.53%)
+2026-01-15 22:34:11,067 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:11,069 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -73839 (-5.92%)
+2026-01-15 22:34:11,075 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:11,081 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -20268 (-1.73%)
+2026-01-15 22:34:11,085 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:11,091 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -11324 (-0.98%)
+2026-01-15 22:34:11,091 - Backtester - INFO - BUY at 5130.0 (Strategy Signal) time=2025-03-17 10:00:00
+2026-01-15 22:34:11,101 - Backtester - INFO - SELL at 5260.0 (Max Hold Reached (PROFIT)) PnL: 26531 (2.32%)
+2026-01-15 22:34:11,102 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:11,109 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -51423 (-4.39%)
+2026-01-15 22:34:11,113 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:11,120 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 108175 (9.67%)
+2026-01-15 22:34:11,122 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-04-07 12:00:00
+2026-01-15 22:34:11,131 - Backtester - INFO - SELL at 6250.0 (Max Hold Reached (PROFIT)) PnL: 210913 (17.23%)
+2026-01-15 22:34:11,140 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:11,145 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -48151 (-3.35%)
+2026-01-15 22:34:11,145 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:11,151 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -75620 (-5.45%)
+2026-01-15 22:34:11,153 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:11,157 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -44254 (-3.37%)
+2026-01-15 22:34:11,160 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:11,166 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 125791 (9.94%)
+2026-01-15 22:34:11,173 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:11,179 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 53943 (3.87%)
+2026-01-15 22:34:11,179 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:11,186 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 7294 (0.50%)
+2026-01-15 22:34:11,187 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:11,196 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 30033 (2.07%)
+2026-01-15 22:34:11,199 - Backtester - INFO - BUY at 5980.0 (Strategy Signal) time=2025-06-04 10:00:00
+2026-01-15 22:34:11,203 - Backtester - INFO - SELL at 6550.0 (Max Hold Reached (PROFIT)) PnL: 137970 (9.30%)
+2026-01-15 22:34:11,229 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:11,233 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -60140 (-3.70%)
+2026-01-15 22:34:11,236 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:11,243 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 340572 (21.82%)
+2026-01-15 22:34:11,250 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:11,259 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -73940 (-3.88%)
+2026-01-15 22:34:11,262 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:11,269 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -79643 (-4.35%)
+2026-01-15 22:34:11,269 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:11,275 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -57560 (-3.30%)
+2026-01-15 22:34:11,278 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:11,284 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 23445 (1.39%)
+2026-01-15 22:34:11,288 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:11,291 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -78333 (-4.57%)
+2026-01-15 22:34:11,294 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:11,303 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 12529 (0.76%)
+2026-01-15 22:34:11,308 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:11,312 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 28322 (1.72%)
+2026-01-15 22:34:11,314 - Backtester - INFO - BUY at 8440.0 (Strategy Signal) time=2025-08-19 12:00:00
+2026-01-15 22:34:11,321 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 26265 (1.56%)
+2026-01-15 22:34:11,322 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:11,337 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 122901 (7.22%)
+2026-01-15 22:34:11,342 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:11,349 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -27661 (-1.52%)
+2026-01-15 22:34:11,349 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:11,353 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -65348 (-3.63%)
+2026-01-15 22:34:11,355 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:11,363 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 63090 (3.65%)
+2026-01-15 22:34:11,364 - Backtester - INFO - BUY at 9390.0 (Strategy Signal) time=2025-09-16 09:00:00
+2026-01-15 22:34:11,366 - Backtester - INFO - SELL at 9100.0 (Stop Loss) PnL: -59048 (-3.29%)
+2026-01-15 22:34:11,373 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:11,379 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -57265 (-3.30%)
+2026-01-15 22:34:11,379 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:11,386 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -22992 (-1.37%)
+2026-01-15 22:34:11,387 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:11,393 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 104957 (6.35%)
+2026-01-15 22:34:11,394 - Backtester - INFO - BUY at 9110.0 (Strategy Signal) time=2025-10-10 11:00:00
+2026-01-15 22:34:11,400 - Backtester - INFO - SELL at 9020.0 (Max Hold Reached (LOSS)) PnL: -21028 (-1.20%)
+2026-01-15 22:34:11,410 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:11,416 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 26135 (1.50%)
+2026-01-15 22:34:11,429 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:11,435 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 91584 (5.18%)
+2026-01-15 22:34:11,435 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:11,443 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -16905 (-0.91%)
+2026-01-15 22:34:11,449 - Backtester - INFO - BUY at 8770.0 (Strategy Signal) time=2025-11-20 09:00:00
+2026-01-15 22:34:11,453 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -77224 (-4.19%)
+2026-01-15 22:34:11,458 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:11,465 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 140286 (7.95%)
+2026-01-15 22:34:11,468 - Backtester - INFO - BUY at 8550.0 (Strategy Signal) time=2025-12-03 09:00:00
+2026-01-15 22:34:11,474 - Backtester - INFO - SELL at 8460.0 (Max Hold Reached (LOSS)) PnL: -24035 (-1.26%)
+2026-01-15 22:34:11,480 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:11,487 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 153754 (8.18%)
+2026-01-15 22:34:11,488 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-16 09:00:00
+2026-01-15 22:34:11,497 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 93998 (4.61%)
+2026-01-15 22:34:11,499 - Backtester - INFO - BUY at 9310.0 (Strategy Signal) time=2025-12-23 09:00:00
+2026-01-15 22:34:11,506 - Backtester - INFO - SELL at 9300.0 (Max Hold Reached (LOSS)) PnL: -6763 (-0.32%)
+2026-01-15 22:34:11,511 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:11,515 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -71023 (-3.35%)
+2026-01-15 22:34:11,520 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:11,528 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -4300 (-0.21%)
+2026-01-15 22:34:11,531 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:11,533 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 13750 (0.67%)
+2026-01-15 22:34:11,533 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:11,533 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:11,534 - Backtester - INFO - Final: 2064324
+2026-01-15 22:34:11,534 - Backtester - INFO - Return: 106.43%
+2026-01-15 22:34:11,534 - Backtester - INFO - Total Trades: 54
+2026-01-15 22:34:11,534 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:11,541 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:11,552 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:11,555 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:11,561 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:11,565 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:11,569 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:11,572 - Backtester - INFO - BUY at 5520.0 (Strategy Signal) time=2025-01-31 13:00:00
+2026-01-15 22:34:11,574 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -84574 (-6.36%)
+2026-01-15 22:34:11,581 - Backtester - INFO - BUY at 5290.0 (Strategy Signal) time=2025-02-07 10:00:00
+2026-01-15 22:34:11,587 - Backtester - INFO - SELL at 5470.0 (Max Hold Reached (PROFIT)) PnL: 39775 (3.19%)
+2026-01-15 22:34:11,588 - Backtester - INFO - BUY at 5470.0 (Strategy Signal) time=2025-02-12 10:00:00
+2026-01-15 22:34:11,589 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -49608 (-3.86%)
+2026-01-15 22:34:11,593 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:11,599 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4321 (0.35%)
+2026-01-15 22:34:11,599 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-02-19 12:00:00
+2026-01-15 22:34:11,605 - Backtester - INFO - SELL at 5420.0 (Max Hold Reached (PROFIT)) PnL: 6612 (0.53%)
+2026-01-15 22:34:11,610 - Backtester - INFO - BUY at 5590.0 (Strategy Signal) time=2025-02-27 11:00:00
+2026-01-15 22:34:11,612 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -73839 (-5.92%)
+2026-01-15 22:34:11,616 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:11,622 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -20268 (-1.73%)
+2026-01-15 22:34:11,626 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:11,633 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -11324 (-0.98%)
+2026-01-15 22:34:11,633 - Backtester - INFO - BUY at 5130.0 (Strategy Signal) time=2025-03-17 10:00:00
+2026-01-15 22:34:11,644 - Backtester - INFO - SELL at 5260.0 (Max Hold Reached (PROFIT)) PnL: 26531 (2.32%)
+2026-01-15 22:34:11,646 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:11,653 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -51423 (-4.39%)
+2026-01-15 22:34:11,657 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:11,666 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 108175 (9.67%)
+2026-01-15 22:34:11,667 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-04-07 12:00:00
+2026-01-15 22:34:11,676 - Backtester - INFO - SELL at 6250.0 (Max Hold Reached (PROFIT)) PnL: 210913 (17.23%)
+2026-01-15 22:34:11,688 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:11,693 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -48151 (-3.35%)
+2026-01-15 22:34:11,694 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:11,700 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -75620 (-5.45%)
+2026-01-15 22:34:11,703 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:11,707 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -44254 (-3.37%)
+2026-01-15 22:34:11,712 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:11,720 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 125791 (9.94%)
+2026-01-15 22:34:11,728 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:11,737 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 53943 (3.87%)
+2026-01-15 22:34:11,737 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:11,746 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 7294 (0.50%)
+2026-01-15 22:34:11,748 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:11,756 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 30033 (2.07%)
+2026-01-15 22:34:11,759 - Backtester - INFO - BUY at 5980.0 (Strategy Signal) time=2025-06-04 10:00:00
+2026-01-15 22:34:11,765 - Backtester - INFO - SELL at 6550.0 (Max Hold Reached (PROFIT)) PnL: 137970 (9.30%)
+2026-01-15 22:34:11,788 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:11,792 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -60140 (-3.70%)
+2026-01-15 22:34:11,796 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:11,802 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 340572 (21.82%)
+2026-01-15 22:34:11,809 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:11,814 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -73940 (-3.88%)
+2026-01-15 22:34:11,817 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:11,824 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -79643 (-4.35%)
+2026-01-15 22:34:11,824 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:11,830 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -57560 (-3.30%)
+2026-01-15 22:34:11,832 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:11,838 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 23445 (1.39%)
+2026-01-15 22:34:11,842 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:11,846 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -78333 (-4.57%)
+2026-01-15 22:34:11,848 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:11,857 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 12529 (0.76%)
+2026-01-15 22:34:11,862 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:11,867 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 28322 (1.72%)
+2026-01-15 22:34:11,868 - Backtester - INFO - BUY at 8440.0 (Strategy Signal) time=2025-08-19 12:00:00
+2026-01-15 22:34:11,875 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 26265 (1.56%)
+2026-01-15 22:34:11,875 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:11,885 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 122901 (7.22%)
+2026-01-15 22:34:11,891 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:11,896 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -27661 (-1.52%)
+2026-01-15 22:34:11,897 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:11,899 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -65348 (-3.63%)
+2026-01-15 22:34:11,901 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:11,907 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 63090 (3.65%)
+2026-01-15 22:34:11,908 - Backtester - INFO - BUY at 9390.0 (Strategy Signal) time=2025-09-16 09:00:00
+2026-01-15 22:34:11,911 - Backtester - INFO - SELL at 9100.0 (Stop Loss) PnL: -59048 (-3.29%)
+2026-01-15 22:34:11,918 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:11,923 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -57265 (-3.30%)
+2026-01-15 22:34:11,924 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:11,930 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -22992 (-1.37%)
+2026-01-15 22:34:11,930 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:11,937 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 104957 (6.35%)
+2026-01-15 22:34:11,938 - Backtester - INFO - BUY at 9110.0 (Strategy Signal) time=2025-10-10 11:00:00
+2026-01-15 22:34:11,944 - Backtester - INFO - SELL at 9020.0 (Max Hold Reached (LOSS)) PnL: -21028 (-1.20%)
+2026-01-15 22:34:11,956 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:11,966 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 26135 (1.50%)
+2026-01-15 22:34:11,983 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:11,989 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 91584 (5.18%)
+2026-01-15 22:34:11,989 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:11,998 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -16905 (-0.91%)
+2026-01-15 22:34:12,003 - Backtester - INFO - BUY at 8840.0 (Strategy Signal) time=2025-11-19 13:00:00
+2026-01-15 22:34:12,008 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -91051 (-4.95%)
+2026-01-15 22:34:12,015 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:12,021 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 139061 (7.95%)
+2026-01-15 22:34:12,023 - Backtester - INFO - BUY at 8550.0 (Strategy Signal) time=2025-12-03 09:00:00
+2026-01-15 22:34:12,029 - Backtester - INFO - SELL at 8460.0 (Max Hold Reached (LOSS)) PnL: -23819 (-1.26%)
+2026-01-15 22:34:12,034 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:12,040 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 152411 (8.18%)
+2026-01-15 22:34:12,041 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-16 09:00:00
+2026-01-15 22:34:12,049 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 93177 (4.61%)
+2026-01-15 22:34:12,051 - Backtester - INFO - BUY at 9310.0 (Strategy Signal) time=2025-12-23 09:00:00
+2026-01-15 22:34:12,057 - Backtester - INFO - SELL at 9300.0 (Max Hold Reached (LOSS)) PnL: -6704 (-0.32%)
+2026-01-15 22:34:12,062 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:12,064 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -70406 (-3.35%)
+2026-01-15 22:34:12,071 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:12,078 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -4262 (-0.21%)
+2026-01-15 22:34:12,081 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:12,083 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 13628 (0.67%)
+2026-01-15 22:34:12,083 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:12,083 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:12,083 - Backtester - INFO - Final: 2047917
+2026-01-15 22:34:12,083 - Backtester - INFO - Return: 104.79%
+2026-01-15 22:34:12,083 - Backtester - INFO - Total Trades: 54
+2026-01-15 22:34:12,084 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:12,091 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:12,101 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:12,105 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:12,111 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:12,114 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:12,119 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:12,120 - Backtester - INFO - BUY at 5230.0 (Strategy Signal) time=2025-01-24 13:00:00
+2026-01-15 22:34:12,122 - Backtester - INFO - SELL at 5610.0 (Max Hold Reached (PROFIT)) PnL: 93542 (7.04%)
+2026-01-15 22:34:12,123 - Backtester - INFO - BUY at 5550.0 (Strategy Signal) time=2025-01-31 12:00:00
+2026-01-15 22:34:12,124 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -97900 (-6.86%)
+2026-01-15 22:34:12,132 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-02-07 09:00:00
+2026-01-15 22:34:12,137 - Backtester - INFO - SELL at 5580.0 (Max Hold Reached (PROFIT)) PnL: 61832 (4.67%)
+2026-01-15 22:34:12,138 - Backtester - INFO - BUY at 5580.0 (Strategy Signal) time=2025-02-12 09:00:00
+2026-01-15 22:34:12,139 - Backtester - INFO - SELL at 5360.0 (Stop Loss) PnL: -57591 (-4.14%)
+2026-01-15 22:34:12,143 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:12,149 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4658 (0.35%)
+2026-01-15 22:34:12,149 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-02-19 12:00:00
+2026-01-15 22:34:12,155 - Backtester - INFO - SELL at 5420.0 (Max Hold Reached (PROFIT)) PnL: 7099 (0.53%)
+2026-01-15 22:34:12,158 - Backtester - INFO - BUY at 5480.0 (Strategy Signal) time=2025-02-25 15:00:00
+2026-01-15 22:34:12,162 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -54169 (-4.03%)
+2026-01-15 22:34:12,166 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:12,173 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -22268 (-1.73%)
+2026-01-15 22:34:12,177 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:12,184 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -12441 (-0.98%)
+2026-01-15 22:34:12,184 - Backtester - INFO - BUY at 5130.0 (Strategy Signal) time=2025-03-17 10:00:00
+2026-01-15 22:34:12,194 - Backtester - INFO - SELL at 5260.0 (Max Hold Reached (PROFIT)) PnL: 29030 (2.32%)
+2026-01-15 22:34:12,196 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:12,203 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -56265 (-4.39%)
+2026-01-15 22:34:12,208 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:12,216 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 118705 (9.67%)
+2026-01-15 22:34:12,218 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-04-07 12:00:00
+2026-01-15 22:34:12,228 - Backtester - INFO - SELL at 6250.0 (Max Hold Reached (PROFIT)) PnL: 232005 (17.23%)
+2026-01-15 22:34:12,238 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:12,244 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -52804 (-3.35%)
+2026-01-15 22:34:12,245 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:12,253 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -83021 (-5.45%)
+2026-01-15 22:34:12,256 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:12,261 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -48661 (-3.37%)
+2026-01-15 22:34:12,265 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:12,272 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 138155 (9.94%)
+2026-01-15 22:34:12,279 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:12,286 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 59358 (3.87%)
+2026-01-15 22:34:12,286 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:12,292 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 7998 (0.50%)
+2026-01-15 22:34:12,293 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:12,300 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 32977 (2.07%)
+2026-01-15 22:34:12,302 - Backtester - INFO - BUY at 5980.0 (Strategy Signal) time=2025-06-04 10:00:00
+2026-01-15 22:34:12,306 - Backtester - INFO - SELL at 6550.0 (Max Hold Reached (PROFIT)) PnL: 151878 (9.30%)
+2026-01-15 22:34:12,316 - Backtester - INFO - BUY at 7450.0 (Strategy Signal) time=2025-06-16 10:00:00
+2026-01-15 22:34:12,325 - Backtester - INFO - SELL at 7790.0 (Max Hold Reached (PROFIT)) PnL: 77362 (4.34%)
+2026-01-15 22:34:12,328 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:12,332 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -68731 (-3.70%)
+2026-01-15 22:34:12,336 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:12,342 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 390453 (21.82%)
+2026-01-15 22:34:12,349 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:12,355 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -84744 (-3.88%)
+2026-01-15 22:34:12,358 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:12,365 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -91388 (-4.35%)
+2026-01-15 22:34:12,365 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:12,371 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -66087 (-3.30%)
+2026-01-15 22:34:12,373 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:12,380 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 26939 (1.39%)
+2026-01-15 22:34:12,384 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:12,388 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -89631 (-4.57%)
+2026-01-15 22:34:12,391 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:12,400 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 14346 (0.76%)
+2026-01-15 22:34:12,406 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:12,410 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 32592 (1.72%)
+2026-01-15 22:34:12,411 - Backtester - INFO - BUY at 8440.0 (Strategy Signal) time=2025-08-19 12:00:00
+2026-01-15 22:34:12,419 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 30092 (1.56%)
+2026-01-15 22:34:12,419 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:12,429 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 140902 (7.22%)
+2026-01-15 22:34:12,434 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:12,441 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -31692 (-1.52%)
+2026-01-15 22:34:12,441 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:12,444 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -74871 (-3.63%)
+2026-01-15 22:34:12,446 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:12,452 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 72669 (3.65%)
+2026-01-15 22:34:12,452 - Backtester - INFO - BUY at 9390.0 (Strategy Signal) time=2025-09-16 09:00:00
+2026-01-15 22:34:12,455 - Backtester - INFO - SELL at 9100.0 (Stop Loss) PnL: -67705 (-3.29%)
+2026-01-15 22:34:12,462 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:12,467 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -65898 (-3.30%)
+2026-01-15 22:34:12,467 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:12,474 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -26293 (-1.37%)
+2026-01-15 22:34:12,474 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:12,481 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 120647 (6.35%)
+2026-01-15 22:34:12,481 - Backtester - INFO - BUY at 9080.0 (Strategy Signal) time=2025-10-10 09:00:00
+2026-01-15 22:34:12,487 - Backtester - INFO - SELL at 9190.0 (Max Hold Reached (PROFIT)) PnL: 20139 (1.00%)
+2026-01-15 22:34:12,498 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:12,504 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 30600 (1.50%)
+2026-01-15 22:34:12,519 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:12,528 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 107200 (5.18%)
+2026-01-15 22:34:12,528 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:12,537 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -19787 (-0.91%)
+2026-01-15 22:34:12,543 - Backtester - INFO - BUY at 8840.0 (Strategy Signal) time=2025-11-19 13:00:00
+2026-01-15 22:34:12,550 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -106810 (-4.95%)
+2026-01-15 22:34:12,558 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:12,564 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 162952 (7.95%)
+2026-01-15 22:34:12,564 - Backtester - INFO - BUY at 8330.0 (Strategy Signal) time=2025-12-01 15:00:00
+2026-01-15 22:34:12,573 - Backtester - INFO - SELL at 8460.0 (Max Hold Reached (PROFIT)) PnL: 29859 (1.35%)
+2026-01-15 22:34:12,578 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:12,584 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 183296 (8.18%)
+2026-01-15 22:34:12,584 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-15 14:00:00
+2026-01-15 22:34:12,593 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 112059 (4.61%)
+2026-01-15 22:34:12,595 - Backtester - INFO - BUY at 9310.0 (Strategy Signal) time=2025-12-23 09:00:00
+2026-01-15 22:34:12,601 - Backtester - INFO - SELL at 9300.0 (Max Hold Reached (LOSS)) PnL: -8062 (-0.32%)
+2026-01-15 22:34:12,605 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:12,608 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -84919 (-3.35%)
+2026-01-15 22:34:12,614 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:12,619 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -5129 (-0.21%)
+2026-01-15 22:34:12,622 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:12,624 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 16427 (0.67%)
+2026-01-15 22:34:12,624 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:12,624 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:12,624 - Backtester - INFO - Final: 2462550
+2026-01-15 22:34:12,624 - Backtester - INFO - Return: 146.26%
+2026-01-15 22:34:12,624 - Backtester - INFO - Total Trades: 56
+2026-01-15 22:34:12,625 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:12,634 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:12,644 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:12,649 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:12,655 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:12,658 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:12,665 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:12,666 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-01-24 12:00:00
+2026-01-15 22:34:12,668 - Backtester - INFO - SELL at 5610.0 (Max Hold Reached (PROFIT)) PnL: 85583 (6.43%)
+2026-01-15 22:34:12,669 - Backtester - INFO - BUY at 5550.0 (Strategy Signal) time=2025-01-31 12:00:00
+2026-01-15 22:34:12,670 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -97138 (-6.86%)
+2026-01-15 22:34:12,678 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-06 15:00:00
+2026-01-15 22:34:12,684 - Backtester - INFO - SELL at 5410.0 (Max Hold Reached (LOSS)) PnL: -7621 (-0.58%)
+2026-01-15 22:34:12,685 - Backtester - INFO - BUY at 5580.0 (Strategy Signal) time=2025-02-12 09:00:00
+2026-01-15 22:34:12,687 - Backtester - INFO - SELL at 5360.0 (Stop Loss) PnL: -54353 (-4.14%)
+2026-01-15 22:34:12,690 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:12,697 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4396 (0.35%)
+2026-01-15 22:34:12,698 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-02-19 12:00:00
+2026-01-15 22:34:12,704 - Backtester - INFO - SELL at 5420.0 (Max Hold Reached (PROFIT)) PnL: 6727 (0.53%)
+2026-01-15 22:34:12,707 - Backtester - INFO - BUY at 5480.0 (Strategy Signal) time=2025-02-25 15:00:00
+2026-01-15 22:34:12,713 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -51074 (-4.03%)
+2026-01-15 22:34:12,718 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:12,724 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -20996 (-1.73%)
+2026-01-15 22:34:12,729 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:12,738 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -11730 (-0.98%)
+2026-01-15 22:34:12,738 - Backtester - INFO - BUY at 5130.0 (Strategy Signal) time=2025-03-17 10:00:00
+2026-01-15 22:34:12,752 - Backtester - INFO - SELL at 5260.0 (Max Hold Reached (PROFIT)) PnL: 27483 (2.32%)
+2026-01-15 22:34:12,754 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:12,761 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -53268 (-4.39%)
+2026-01-15 22:34:12,767 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:12,774 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 112004 (9.67%)
+2026-01-15 22:34:12,775 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-04-07 12:00:00
+2026-01-15 22:34:12,786 - Backtester - INFO - SELL at 6250.0 (Max Hold Reached (PROFIT)) PnL: 219166 (17.23%)
+2026-01-15 22:34:12,796 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:12,801 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -49971 (-3.35%)
+2026-01-15 22:34:12,802 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:12,808 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -78516 (-5.45%)
+2026-01-15 22:34:12,810 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:12,814 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -45978 (-3.37%)
+2026-01-15 22:34:12,818 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:12,825 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 130629 (9.94%)
+2026-01-15 22:34:12,825 - Backtester - INFO - BUY at 5960.0 (Strategy Signal) time=2025-05-13 09:00:00
+2026-01-15 22:34:12,826 - Backtester - INFO - SELL at 5770.0 (Stop Loss) PnL: -49121 (-3.39%)
+2026-01-15 22:34:12,833 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:12,839 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 54151 (3.87%)
+2026-01-15 22:34:12,839 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:12,845 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 7294 (0.50%)
+2026-01-15 22:34:12,846 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:12,854 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 30151 (2.07%)
+2026-01-15 22:34:12,856 - Backtester - INFO - BUY at 5980.0 (Strategy Signal) time=2025-06-04 10:00:00
+2026-01-15 22:34:12,861 - Backtester - INFO - SELL at 6550.0 (Max Hold Reached (PROFIT)) PnL: 138526 (9.30%)
+2026-01-15 22:34:12,870 - Backtester - INFO - BUY at 7450.0 (Strategy Signal) time=2025-06-16 10:00:00
+2026-01-15 22:34:12,880 - Backtester - INFO - SELL at 7790.0 (Max Hold Reached (PROFIT)) PnL: 70565 (4.34%)
+2026-01-15 22:34:12,883 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:12,887 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -62806 (-3.70%)
+2026-01-15 22:34:12,890 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:12,895 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 356052 (21.82%)
+2026-01-15 22:34:12,902 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:12,908 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -77316 (-3.88%)
+2026-01-15 22:34:12,912 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:12,922 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -83314 (-4.35%)
+2026-01-15 22:34:12,922 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:12,930 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -60225 (-3.30%)
+2026-01-15 22:34:12,932 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:12,941 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 24572 (1.39%)
+2026-01-15 22:34:12,946 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:12,949 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -82099 (-4.57%)
+2026-01-15 22:34:12,953 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:12,964 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 13093 (0.76%)
+2026-01-15 22:34:12,972 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:12,977 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 29603 (1.72%)
+2026-01-15 22:34:12,978 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-08-18 15:00:00
+2026-01-15 22:34:12,986 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 29533 (1.68%)
+2026-01-15 22:34:12,986 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:12,997 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 129108 (7.22%)
+2026-01-15 22:34:13,004 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:13,011 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -29051 (-1.52%)
+2026-01-15 22:34:13,011 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:13,014 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -68303 (-3.63%)
+2026-01-15 22:34:13,016 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:13,024 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 66393 (3.65%)
+2026-01-15 22:34:13,025 - Backtester - INFO - BUY at 9400.0 (Strategy Signal) time=2025-09-15 15:00:00
+2026-01-15 22:34:13,028 - Backtester - INFO - SELL at 9100.0 (Stop Loss) PnL: -63831 (-3.39%)
+2026-01-15 22:34:13,034 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:13,039 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -60143 (-3.30%)
+2026-01-15 22:34:13,040 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:13,046 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -24053 (-1.37%)
+2026-01-15 22:34:13,046 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:13,052 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 109826 (6.35%)
+2026-01-15 22:34:13,052 - Backtester - INFO - BUY at 9080.0 (Strategy Signal) time=2025-10-10 09:00:00
+2026-01-15 22:34:13,058 - Backtester - INFO - SELL at 9190.0 (Max Hold Reached (PROFIT)) PnL: 18416 (1.00%)
+2026-01-15 22:34:13,069 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:13,077 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 27974 (1.50%)
+2026-01-15 22:34:13,090 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:13,096 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 97915 (5.18%)
+2026-01-15 22:34:13,097 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:13,106 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -18073 (-0.91%)
+2026-01-15 22:34:13,111 - Backtester - INFO - BUY at 8840.0 (Strategy Signal) time=2025-11-19 13:00:00
+2026-01-15 22:34:13,115 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -97617 (-4.95%)
+2026-01-15 22:34:13,121 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:13,127 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 148862 (7.95%)
+2026-01-15 22:34:13,127 - Backtester - INFO - BUY at 8330.0 (Strategy Signal) time=2025-12-01 15:00:00
+2026-01-15 22:34:13,136 - Backtester - INFO - SELL at 8460.0 (Max Hold Reached (PROFIT)) PnL: 27278 (1.35%)
+2026-01-15 22:34:13,141 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:13,148 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 167182 (8.18%)
+2026-01-15 22:34:13,148 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-15 14:00:00
+2026-01-15 22:34:13,159 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 102207 (4.61%)
+2026-01-15 22:34:13,161 - Backtester - INFO - BUY at 9310.0 (Strategy Signal) time=2025-12-23 09:00:00
+2026-01-15 22:34:13,168 - Backtester - INFO - SELL at 9300.0 (Max Hold Reached (LOSS)) PnL: -7353 (-0.32%)
+2026-01-15 22:34:13,173 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:13,176 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -77199 (-3.35%)
+2026-01-15 22:34:13,182 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:13,189 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -4696 (-0.21%)
+2026-01-15 22:34:13,194 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:13,196 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 14966 (0.67%)
+2026-01-15 22:34:13,196 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:13,196 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:13,196 - Backtester - INFO - Final: 2247456
+2026-01-15 22:34:13,196 - Backtester - INFO - Return: 124.75%
+2026-01-15 22:34:13,196 - Backtester - INFO - Total Trades: 57
+2026-01-15 22:34:13,197 - Backtester - INFO - Starting Backtest. Initial Capital: 1000000
+2026-01-15 22:34:13,205 - Backtester - INFO - BUY at 4565.0 (Strategy Signal) time=2025-01-06 09:00:00
+2026-01-15 22:34:13,219 - Backtester - INFO - SELL at 4565.0 (Max Hold Reached (PROFIT)) PnL: -2099 (-0.21%)
+2026-01-15 22:34:13,222 - Backtester - INFO - BUY at 4545.0 (Strategy Signal) time=2025-01-14 14:00:00
+2026-01-15 22:34:13,232 - Backtester - INFO - SELL at 4445.0 (Max Hold Reached (LOSS)) PnL: -23948 (-2.41%)
+2026-01-15 22:34:13,238 - Backtester - INFO - BUY at 4445.0 (Strategy Signal) time=2025-01-21 14:00:00
+2026-01-15 22:34:13,246 - Backtester - INFO - SELL at 6100.0 (Take Profit) PnL: 359694 (36.94%)
+2026-01-15 22:34:13,247 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-01-24 12:00:00
+2026-01-15 22:34:13,249 - Backtester - INFO - SELL at 5610.0 (Max Hold Reached (PROFIT)) PnL: 85583 (6.43%)
+2026-01-15 22:34:13,250 - Backtester - INFO - BUY at 5510.0 (Strategy Signal) time=2025-01-31 10:00:00
+2026-01-15 22:34:13,253 - Backtester - INFO - SELL at 5180.0 (Stop Loss) PnL: -87618 (-6.19%)
+2026-01-15 22:34:13,264 - Backtester - INFO - BUY at 5430.0 (Strategy Signal) time=2025-02-06 15:00:00
+2026-01-15 22:34:13,270 - Backtester - INFO - SELL at 5410.0 (Max Hold Reached (LOSS)) PnL: -7684 (-0.58%)
+2026-01-15 22:34:13,271 - Backtester - INFO - BUY at 5580.0 (Strategy Signal) time=2025-02-12 09:00:00
+2026-01-15 22:34:13,273 - Backtester - INFO - SELL at 5360.0 (Stop Loss) PnL: -54815 (-4.14%)
+2026-01-15 22:34:13,277 - Backtester - INFO - BUY at 5350.0 (Strategy Signal) time=2025-02-14 12:00:00
+2026-01-15 22:34:13,283 - Backtester - INFO - SELL at 5380.0 (Max Hold Reached (PROFIT)) PnL: 4433 (0.35%)
+2026-01-15 22:34:13,283 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-02-19 12:00:00
+2026-01-15 22:34:13,292 - Backtester - INFO - SELL at 5420.0 (Max Hold Reached (PROFIT)) PnL: 6755 (0.53%)
+2026-01-15 22:34:13,296 - Backtester - INFO - BUY at 5500.0 (Strategy Signal) time=2025-02-25 14:00:00
+2026-01-15 22:34:13,301 - Backtester - INFO - SELL at 5270.0 (Stop Loss) PnL: -55936 (-4.38%)
+2026-01-15 22:34:13,305 - Backtester - INFO - BUY at 5260.0 (Strategy Signal) time=2025-03-05 10:00:00
+2026-01-15 22:34:13,311 - Backtester - INFO - SELL at 5180.0 (Max Hold Reached (LOSS)) PnL: -21086 (-1.73%)
+2026-01-15 22:34:13,315 - Backtester - INFO - BUY at 5170.0 (Strategy Signal) time=2025-03-12 10:00:00
+2026-01-15 22:34:13,320 - Backtester - INFO - SELL at 5130.0 (Max Hold Reached (LOSS)) PnL: -11781 (-0.98%)
+2026-01-15 22:34:13,320 - Backtester - INFO - BUY at 5130.0 (Strategy Signal) time=2025-03-17 10:00:00
+2026-01-15 22:34:13,330 - Backtester - INFO - SELL at 5260.0 (Max Hold Reached (PROFIT)) PnL: 27602 (2.32%)
+2026-01-15 22:34:13,331 - Backtester - INFO - BUY at 5250.0 (Strategy Signal) time=2025-03-24 13:00:00
+2026-01-15 22:34:13,338 - Backtester - INFO - SELL at 5030.0 (Stop Loss) PnL: -53498 (-4.39%)
+2026-01-15 22:34:13,343 - Backtester - INFO - BUY at 4950.0 (Strategy Signal) time=2025-04-01 11:00:00
+2026-01-15 22:34:13,351 - Backtester - INFO - SELL at 5440.0 (Max Hold Reached (PROFIT)) PnL: 112483 (9.67%)
+2026-01-15 22:34:13,352 - Backtester - INFO - BUY at 5320.0 (Strategy Signal) time=2025-04-07 12:00:00
+2026-01-15 22:34:13,361 - Backtester - INFO - SELL at 6250.0 (Max Hold Reached (PROFIT)) PnL: 220083 (17.23%)
+2026-01-15 22:34:13,371 - Backtester - INFO - BUY at 6040.0 (Strategy Signal) time=2025-04-18 15:00:00
+2026-01-15 22:34:13,376 - Backtester - INFO - SELL at 5850.0 (Stop Loss) PnL: -50174 (-3.35%)
+2026-01-15 22:34:13,376 - Backtester - INFO - BUY at 5900.0 (Strategy Signal) time=2025-04-23 11:00:00
+2026-01-15 22:34:13,382 - Backtester - INFO - SELL at 5590.0 (Stop Loss) PnL: -78837 (-5.45%)
+2026-01-15 22:34:13,385 - Backtester - INFO - BUY at 5680.0 (Strategy Signal) time=2025-04-29 10:00:00
+2026-01-15 22:34:13,389 - Backtester - INFO - SELL at 5500.0 (Stop Loss) PnL: -46170 (-3.37%)
+2026-01-15 22:34:13,393 - Backtester - INFO - BUY at 5410.0 (Strategy Signal) time=2025-05-08 09:00:00
+2026-01-15 22:34:13,400 - Backtester - INFO - SELL at 5960.0 (Max Hold Reached (PROFIT)) PnL: 131166 (9.94%)
+2026-01-15 22:34:13,400 - Backtester - INFO - BUY at 5960.0 (Strategy Signal) time=2025-05-13 09:00:00
+2026-01-15 22:34:13,402 - Backtester - INFO - SELL at 5770.0 (Stop Loss) PnL: -49121 (-3.39%)
+2026-01-15 22:34:13,408 - Backtester - INFO - BUY at 5380.0 (Strategy Signal) time=2025-05-16 15:00:00
+2026-01-15 22:34:13,414 - Backtester - INFO - SELL at 5600.0 (Max Hold Reached (PROFIT)) PnL: 54359 (3.87%)
+2026-01-15 22:34:13,415 - Backtester - INFO - BUY at 5600.0 (Strategy Signal) time=2025-05-21 15:00:00
+2026-01-15 22:34:13,421 - Backtester - INFO - SELL at 5640.0 (Max Hold Reached (PROFIT)) PnL: 7322 (0.50%)
+2026-01-15 22:34:13,422 - Backtester - INFO - BUY at 5700.0 (Strategy Signal) time=2025-05-27 10:00:00
+2026-01-15 22:34:13,429 - Backtester - INFO - SELL at 5830.0 (Max Hold Reached (PROFIT)) PnL: 30269 (2.07%)
+2026-01-15 22:34:13,432 - Backtester - INFO - BUY at 5980.0 (Strategy Signal) time=2025-06-04 10:00:00
+2026-01-15 22:34:13,436 - Backtester - INFO - SELL at 6550.0 (Max Hold Reached (PROFIT)) PnL: 139083 (9.30%)
+2026-01-15 22:34:13,445 - Backtester - INFO - BUY at 7450.0 (Strategy Signal) time=2025-06-16 10:00:00
+2026-01-15 22:34:13,455 - Backtester - INFO - SELL at 7790.0 (Max Hold Reached (PROFIT)) PnL: 70889 (4.34%)
+2026-01-15 22:34:13,458 - Backtester - INFO - BUY at 8000.0 (Strategy Signal) time=2025-06-24 12:00:00
+2026-01-15 22:34:13,462 - Backtester - INFO - SELL at 7720.0 (Stop Loss) PnL: -63102 (-3.70%)
+2026-01-15 22:34:13,465 - Backtester - INFO - BUY at 7880.0 (Strategy Signal) time=2025-06-27 14:00:00
+2026-01-15 22:34:13,471 - Backtester - INFO - SELL at 9620.0 (Max Hold Reached (PROFIT)) PnL: 357772 (21.82%)
+2026-01-15 22:34:13,480 - Backtester - INFO - BUY at 8690.0 (Strategy Signal) time=2025-07-08 12:00:00
+2026-01-15 22:34:13,486 - Backtester - INFO - SELL at 8370.0 (Stop Loss) PnL: -77654 (-3.88%)
+2026-01-15 22:34:13,489 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-07-14 13:00:00
+2026-01-15 22:34:13,495 - Backtester - INFO - SELL at 8080.0 (Stop Loss) PnL: -83681 (-4.35%)
+2026-01-15 22:34:13,496 - Backtester - INFO - BUY at 8080.0 (Strategy Signal) time=2025-07-18 09:00:00
+2026-01-15 22:34:13,502 - Backtester - INFO - SELL at 7830.0 (Stop Loss) PnL: -60491 (-3.30%)
+2026-01-15 22:34:13,504 - Backtester - INFO - BUY at 8110.0 (Strategy Signal) time=2025-07-23 13:00:00
+2026-01-15 22:34:13,510 - Backtester - INFO - SELL at 8240.0 (Max Hold Reached (PROFIT)) PnL: 24685 (1.39%)
+2026-01-15 22:34:13,514 - Backtester - INFO - BUY at 8240.0 (Strategy Signal) time=2025-07-30 13:00:00
+2026-01-15 22:34:13,518 - Backtester - INFO - SELL at 7880.0 (Stop Loss) PnL: -82099 (-4.57%)
+2026-01-15 22:34:13,521 - Backtester - INFO - BUY at 8190.0 (Strategy Signal) time=2025-08-04 12:00:00
+2026-01-15 22:34:13,531 - Backtester - INFO - SELL at 8270.0 (Max Hold Reached (PROFIT)) PnL: 13155 (0.76%)
+2026-01-15 22:34:13,537 - Backtester - INFO - BUY at 8270.0 (Strategy Signal) time=2025-08-13 15:00:00
+2026-01-15 22:34:13,541 - Backtester - INFO - SELL at 8430.0 (Max Hold Reached (PROFIT)) PnL: 29745 (1.72%)
+2026-01-15 22:34:13,541 - Backtester - INFO - BUY at 8430.0 (Strategy Signal) time=2025-08-18 15:00:00
+2026-01-15 22:34:13,549 - Backtester - INFO - SELL at 8590.0 (Max Hold Reached (PROFIT)) PnL: 29675 (1.68%)
+2026-01-15 22:34:13,549 - Backtester - INFO - BUY at 8590.0 (Strategy Signal) time=2025-08-25 09:00:00
+2026-01-15 22:34:13,559 - Backtester - INFO - SELL at 9230.0 (Max Hold Reached (PROFIT)) PnL: 129108 (7.22%)
+2026-01-15 22:34:13,565 - Backtester - INFO - BUY at 9160.0 (Strategy Signal) time=2025-09-03 15:00:00
+2026-01-15 22:34:13,570 - Backtester - INFO - SELL at 9040.0 (Max Hold Reached (LOSS)) PnL: -29190 (-1.52%)
+2026-01-15 22:34:13,571 - Backtester - INFO - BUY at 9040.0 (Strategy Signal) time=2025-09-08 15:00:00
+2026-01-15 22:34:13,573 - Backtester - INFO - SELL at 8730.0 (Stop Loss) PnL: -68631 (-3.63%)
+2026-01-15 22:34:13,575 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2025-09-10 15:00:00
+2026-01-15 22:34:13,581 - Backtester - INFO - SELL at 9400.0 (Max Hold Reached (PROFIT)) PnL: 66393 (3.65%)
+2026-01-15 22:34:13,581 - Backtester - INFO - BUY at 9400.0 (Strategy Signal) time=2025-09-15 15:00:00
+2026-01-15 22:34:13,584 - Backtester - INFO - SELL at 9100.0 (Stop Loss) PnL: -64150 (-3.39%)
+2026-01-15 22:34:13,591 - Backtester - INFO - BUY at 8710.0 (Strategy Signal) time=2025-09-22 13:00:00
+2026-01-15 22:34:13,596 - Backtester - INFO - SELL at 8440.0 (Stop Loss) PnL: -60143 (-3.30%)
+2026-01-15 22:34:13,596 - Backtester - INFO - BUY at 8620.0 (Strategy Signal) time=2025-09-25 10:00:00
+2026-01-15 22:34:13,603 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -24171 (-1.37%)
+2026-01-15 22:34:13,603 - Backtester - INFO - BUY at 8520.0 (Strategy Signal) time=2025-09-30 10:00:00
+2026-01-15 22:34:13,609 - Backtester - INFO - SELL at 9080.0 (Max Hold Reached (PROFIT)) PnL: 110367 (6.35%)
+2026-01-15 22:34:13,609 - Backtester - INFO - BUY at 9080.0 (Strategy Signal) time=2025-10-10 09:00:00
+2026-01-15 22:34:13,615 - Backtester - INFO - SELL at 9190.0 (Max Hold Reached (PROFIT)) PnL: 18506 (1.00%)
+2026-01-15 22:34:13,625 - Backtester - INFO - BUY at 8750.0 (Strategy Signal) time=2025-10-22 13:00:00
+2026-01-15 22:34:13,633 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 28105 (1.50%)
+2026-01-15 22:34:13,647 - Backtester - INFO - BUY at 8140.0 (Strategy Signal) time=2025-11-05 14:00:00
+2026-01-15 22:34:13,653 - Backtester - INFO - SELL at 8580.0 (Max Hold Reached (PROFIT)) PnL: 98337 (5.18%)
+2026-01-15 22:34:13,653 - Backtester - INFO - BUY at 8580.0 (Strategy Signal) time=2025-11-10 14:00:00
+2026-01-15 22:34:13,662 - Backtester - INFO - SELL at 8520.0 (Max Hold Reached (LOSS)) PnL: -18151 (-0.91%)
+2026-01-15 22:34:13,667 - Backtester - INFO - BUY at 8840.0 (Strategy Signal) time=2025-11-19 13:00:00
+2026-01-15 22:34:13,672 - Backtester - INFO - SELL at 8420.0 (Stop Loss) PnL: -98055 (-4.95%)
+2026-01-15 22:34:13,679 - Backtester - INFO - BUY at 7700.0 (Strategy Signal) time=2025-11-26 15:00:00
+2026-01-15 22:34:13,685 - Backtester - INFO - SELL at 8330.0 (Max Hold Reached (PROFIT)) PnL: 149475 (7.95%)
+2026-01-15 22:34:13,685 - Backtester - INFO - BUY at 8330.0 (Strategy Signal) time=2025-12-01 15:00:00
+2026-01-15 22:34:13,693 - Backtester - INFO - SELL at 8460.0 (Max Hold Reached (PROFIT)) PnL: 27278 (1.35%)
+2026-01-15 22:34:13,699 - Backtester - INFO - BUY at 8210.0 (Strategy Signal) time=2025-12-10 14:00:00
+2026-01-15 22:34:13,705 - Backtester - INFO - SELL at 8900.0 (Max Hold Reached (PROFIT)) PnL: 167853 (8.18%)
+2026-01-15 22:34:13,705 - Backtester - INFO - BUY at 8900.0 (Strategy Signal) time=2025-12-15 14:00:00
+2026-01-15 22:34:13,716 - Backtester - INFO - SELL at 9330.0 (Max Hold Reached (PROFIT)) PnL: 102618 (4.61%)
+2026-01-15 22:34:13,719 - Backtester - INFO - BUY at 9310.0 (Strategy Signal) time=2025-12-23 09:00:00
+2026-01-15 22:34:13,725 - Backtester - INFO - SELL at 9300.0 (Max Hold Reached (LOSS)) PnL: -7383 (-0.32%)
+2026-01-15 22:34:13,731 - Backtester - INFO - BUY at 9220.0 (Strategy Signal) time=2026-01-02 13:00:00
+2026-01-15 22:34:13,735 - Backtester - INFO - SELL at 8930.0 (Stop Loss) PnL: -77508 (-3.35%)
+2026-01-15 22:34:13,744 - Backtester - INFO - BUY at 8980.0 (Strategy Signal) time=2026-01-08 14:00:00
+2026-01-15 22:34:13,756 - Backtester - INFO - SELL at 8980.0 (Max Hold Reached (PROFIT)) PnL: -4714 (-0.21%)
+2026-01-15 22:34:13,760 - Backtester - INFO - BUY at 9050.0 (Strategy Signal) time=2026-01-15 11:00:00
+2026-01-15 22:34:13,762 - Backtester - INFO - SELL at 9130.0 (Backtest End) PnL: 15027 (0.67%)
+2026-01-15 22:34:13,762 - Backtester - INFO - Backtest Finished.
+2026-01-15 22:34:13,762 - Backtester - INFO - Initial: 1000000
+2026-01-15 22:34:13,763 - Backtester - INFO - Final: 2255929
+2026-01-15 22:34:13,763 - Backtester - INFO - Return: 125.59%
+2026-01-15 22:34:13,763 - Backtester - INFO - Total Trades: 57
+2026-01-15 22:34:13,763 - Main - INFO - 
+Optimization Results for 014710 - Target: RSI (Top 10):
+2026-01-15 22:34:13,763 - Main - INFO - Param    | Return     | Trades   | Win  
+2026-01-15 22:34:13,763 - Main - INFO - ---------------------------------------------
+2026-01-15 22:34:13,763 - Main - INFO - 66       |  146.26%  | 56       | 30   
+2026-01-15 22:34:13,763 - Main - INFO - 70       |  125.59%  | 57       | 29   
+2026-01-15 22:34:13,763 - Main - INFO - 68       |  124.75%  | 57       | 29   
+2026-01-15 22:34:13,763 - Main - INFO - 62       |  106.43%  | 54       | 26   
+2026-01-15 22:34:13,764 - Main - INFO - 64       |  104.79%  | 54       | 26   
+2026-01-15 22:34:13,764 - Main - INFO - 48       |   76.48%  | 29       | 15   
+2026-01-15 22:34:13,764 - Main - INFO - 46       |   72.26%  | 25       | 12   
+2026-01-15 22:34:13,764 - Main - INFO - 44       |   60.63%  | 20       | 9    
+2026-01-15 22:34:13,764 - Main - INFO - 50       |   60.35%  | 35       | 16   
+2026-01-15 22:34:13,764 - Main - INFO - 60       |   54.49%  | 49       | 23   
+2026-01-15 22:34:13,764 - Main - INFO - ---------------------------------------------
+2026-01-15 22:34:13,764 - Main - INFO - Best RSI: 66 (Return: 146.26%)

@@ -195,12 +195,21 @@ class TradingBot:
         pnl_pct = (sell_price - entry_price) / entry_price * 100
         
         reason = None
+        days_held = get_trading_days_diff(entry_time, current_time)
+        
         if pnl_pct <= settings.STOP_LOSS_PCT:
             reason = "Stop Loss"
         elif pnl_pct >= settings.TAKE_PROFIT_PCT:
             reason = "Take Profit"
-        elif get_trading_days_diff(entry_time, current_time) >= settings.MAX_HOLD_DAYS:
-            reason = "Max Hold Reached"
+        elif days_held >= settings.MAX_HOLD_MAX_DAYS:
+            reason = f"Max Hold Limit Reached ({days_held} days)"
+        elif days_held >= settings.MAX_HOLD_DAYS:
+            if pnl_pct >= settings.MIN_PROFIT_YIELD:
+                reason = f"Max Hold (Profit Met {pnl_pct:.2f}%)"
+            else:
+                # Extending holding
+                logger.debug(f"{code} holding extended: {days_held} days, PnL {pnl_pct:.2f}% < {settings.MIN_PROFIT_YIELD}%")
+
             
         if reason:
             self.execute_sell(code, pos['qty'], current_price, reason)

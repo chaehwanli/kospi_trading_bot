@@ -58,6 +58,10 @@ Long Max Hold Days: 5일
 6.1 손실/수익 구간을 지킨다. (Stop Loss, Take Profit)
 6.2 최대 보유 기간을 지킨다. (Long Max Hold Days)
 6.3 Stop Loss가 발생하면 매도후 CoolDown 을 3거래일동안 유지한다.
+6.4 동적 보유 기간 (Dynamic Holding Strategy)
+수익률을 극대화하기 위해 기본 보유 기간(5일) 이후에도 수익이 충분하지 않으면(예: 1% 미만) 최대 보유 기간(10일)까지 보유를 연장한다.
+- MIN_PROFIT_YIELD: 1.0% (이 수익률 미만이면 보유 연장)
+- MAX_HOLD_MAX_DAYS: 10일 (최대 연장 기한, 이 기간 도달시 강제 매도)
 
 7. 거래 금액
 초기 거래 시작 금액은 100만원으로 한다.
@@ -119,7 +123,7 @@ I have implemented the KOSPI trading bot as requested. The bot supports Backtest
 - **Risk Management**:
   - Stop Loss: -3.0%
   - Take Profit: +35.0%
-  - Max Hold: 5 Days
+- Max Hold: 5 Days (Dynamic extension up to 10 days if profit < 1.0%)
 - **Bot Engine**:
   - Real-time market hours check (09:00 - 15:30).
   - Hourly cycle execution.
@@ -261,6 +265,18 @@ python optimize_rsi_period.py --code "에이비엘바이오"
 
 # 범위 직접 지정 (4~14, 2단위)
 python optimize_rsi_period.py --code "014710" --min 4 --max 14 --step 2
+```
+
+#### 4) Min Profit Yield Optimization (`min_profit_optimize`)
+동적 보유 기간 전략(Dynamic Holding)에서 보유 연장을 위한 최소 수익률(`MIN_PROFIT_YIELD`)을 최적화합니다.
+
+**명령어**:
+```bash
+# 기본 설정(settings.py)으로 실행
+python main.py min_profit_optimize --code "삼성전자"
+
+# 범위 직접 지정
+python main.py min_profit_optimize --code "005930" --min-profit 0.5 --max-profit 3.0 --step-profit 0.5
 ```
 ```
 

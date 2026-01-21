@@ -211,6 +211,84 @@ def run_pnl_maxhold_optimize(code, args):
             
         logger.info(f"Full optimization results saved to {result_path}")
 
+def run_min_profit_optimize(code, args):
+    if not code:
+        logger.error("Min Profit Optimization requires a specific --code argument.")
+        return
+
+    from backtester.engine import BacktestEngine
+    from strategy.rsi_macd import RsiMacdStrategy
+    from data.data_manager import DataManager
+    import numpy as np
+
+    dm = DataManager(use_api=False)
+    df = dm.load_data(code)
+    
+    if df is None:
+        logger.error(f"No data found for {code}. Run 'data' mode first.")
+        return
+        
+    logger.info(f"Starting Min Profit Optimization for {code}")
+    
+    # Range
+    # Use numpy for float range
+    profit_vals = np.arange(args.min_profit, args.max_profit + (args.step_profit/1000), args.step_profit)
+    
+    results = []
+    
+    for val in profit_vals:
+        val = round(val, 2)
+        strategy = RsiMacdStrategy()
+        # Use default max_hold_days (5) and max_hold_max_days (10) for this optimization, or should we expose them?
+        # Let's keep others default to isolate Min Profit impact.
+        engine = BacktestEngine(strategy, min_profit_yield=val)
+        res = engine.run(df, code=code, save_results=False)
+        
+        results.append({
+            'min_profit': val,
+            'return': res['return'],
+            'trades': res['total_trades'],
+            'win': res['win_trades'],
+            'loss': res['loss_trades'],
+            'mh_win': res['count_mh_win'],
+            'mh_loss': res['count_mh_loss']
+        })
+        
+    # Sort by success (Return)
+    results.sort(key=lambda x: x['return'], reverse=True)
+    
+    logger.info(f"\nOptimization Results for {code} - Min Profit Yield:")
+    logger.info(f"{'MinProfit':<10} | {'Return':<10} | {'Trades':<8} | {'Win':<5} | {'Loss':<5} | {'MH(W)':<5} | {'MH(L)':<5}")
+    logger.info("-" * 80)
+    
+    for r in results:
+         logger.info(f"{r['min_profit']:<10} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5} | {r['loss']:<5} | {r['mh_win']:<5} | {r['mh_loss']:<5}")
+         
+    if results:
+        best = results[0]
+        logger.info("-" * 80)
+        logger.info(f"Best: MinProfit={best['min_profit']} (Return: {best['return']:.2f}%)")
+        
+        # Save to file
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        result_path = f"backtest_results/optimization_minprofit_{code}_{timestamp}.txt"
+        os.makedirs("backtest_results", exist_ok=True)
+        
+        with open(result_path, "w", encoding="utf-8") as f:
+            f.write(f"Optimization Results for {code} - Min Profit Yield\n")
+            f.write(f"Date: {timestamp}\n")
+            f.write("-" * 85 + "\n")
+            f.write(f"{'MinProfit':<10} | {'Return':<10} | {'Trades':<8} | {'Win':<5} | {'Loss':<5} | {'MH(W)':<5} | {'MH(L)':<5}\n")
+            f.write("-" * 85 + "\n")
+            
+            for r in results:
+                f.write(f"{r['min_profit']:<10} | {r['return']:>7.2f}%  | {r['trades']:<8} | {r['win']:<5} | {r['loss']:<5} | {r['mh_win']:<5} | {r['mh_loss']:<5}\n")
+            
+            f.write("-" * 85 + "\n")
+            f.write(f"Best: MinProfit={best['min_profit']} (Return: {best['return']:.2f}%)\n")
+            
+        logger.info(f"Results saved to {result_path}")
+
 def run_bot():
     from bot.trader import TradingBot
     bot = TradingBot()
@@ -218,7 +296,7 @@ def run_bot():
 
 def main():
     parser = argparse.ArgumentParser(description="KOSPI Trading Bot")
-    parser.add_argument("mode", choices=["bot", "backtest", "data", "rsi_optimize", "pnl_maxhold_optimize"], help="Operation mode")
+    parser.add_argument("mode", choices=["bot", "backtest", "data", "rsi_optimize", "pnl_maxhold_optimize", "min_profit_optimize"], help="Operation mode")
     parser.add_argument("--code", help="Stock code or Name (optional for data/backtest)")
     parser.add_argument("--name", help="Stock Code or Name (Available for backward compatibility)", dest="code_arg")
     parser.add_argument("--years", type=int, default=1, help="Number of years to fetch data for (default 1)")
@@ -240,6 +318,11 @@ def main():
     parser.add_argument("--min-hold", type=int, default=settings.MAX_HOLD_OPT_MIN, help=f"Min Max Hold Days (default {settings.MAX_HOLD_OPT_MIN})")
     parser.add_argument("--max-hold", type=int, default=settings.MAX_HOLD_OPT_MAX, help=f"Max Max Hold Days (default {settings.MAX_HOLD_OPT_MAX})")
     parser.add_argument("--step-hold", type=int, default=settings.MAX_HOLD_OPT_STEP, help=f"Step Max Hold Days (default {settings.MAX_HOLD_OPT_STEP})")
+    
+    # Min Profit Optimization
+    parser.add_argument("--min-profit", type=float, default=settings.MIN_PROFIT_OPT_MIN, help=f"Min Profit Yield (default {settings.MIN_PROFIT_OPT_MIN})")
+    parser.add_argument("--max-profit", type=float, default=settings.MIN_PROFIT_OPT_MAX, help=f"Max Profit Yield (default {settings.MIN_PROFIT_OPT_MAX})")
+    parser.add_argument("--step-profit", type=float, default=settings.MIN_PROFIT_OPT_STEP, help=f"Step Profit Yield (default {settings.MIN_PROFIT_OPT_STEP})")
     
     args = parser.parse_args()
     
@@ -266,6 +349,8 @@ def main():
         run_rsi_optimize(target_code, args)
     elif args.mode == "pnl_maxhold_optimize":
         run_pnl_maxhold_optimize(target_code, args)
+    elif args.mode == "min_profit_optimize":
+        run_min_profit_optimize(target_code, args)
 
 if __name__ == "__main__":
     main()

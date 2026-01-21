@@ -44,6 +44,8 @@ RSI_OVERSOLD_MAP = {
 STOP_LOSS_PCT = -5.0  # -3.0%
 TAKE_PROFIT_PCT = 12.0  # 35.0%
 MAX_HOLD_DAYS = 5
+MAX_HOLD_MAX_DAYS = 10 # Hard Limit
+MIN_PROFIT_YIELD = 3.0 # Minimum profit % required to exit at MAX_HOLD_DAYS
 STOP_LOSS_COOLDOWN_DAYS = 3
 INITIAL_CAPITAL = 1000000  # 1 Million KRW
  
@@ -71,6 +73,11 @@ TAKE_PROFIT_OPT_STEP = 2.0
 MAX_HOLD_OPT_MIN = 1
 MAX_HOLD_OPT_MAX = 5
 MAX_HOLD_OPT_STEP = 1
+
+# Min Profit Optimization Defaults
+MIN_PROFIT_OPT_MIN = 0.0
+MIN_PROFIT_OPT_MAX = 4.0
+MIN_PROFIT_OPT_STEP = 0.5
 
 # Target Stocks
 # Sajo Seafood, Eugene Tech, Eugene Robot
@@ -102,7 +109,26 @@ TARGET_STOCKS = [
     "383220", # F&F
     "074600", # 원익QnC
     "027710", # 팜스토리
-    "005930"  # 삼성전자
+    "005930", # 삼성전자
+    "006400", # 삼성SDI
+    "373220", # LG에너지솔루션
+    "126340", # 비나텍
+    "083650", # 비에이치아이
+    "034020", # 두산에너빌리티
+    "336260", # 두산퓨얼셀
+    "178320", # 서진시스템
+    "416180", # 신성에스티
+    "100840", # SNT에너지
+    "107640", # 한중엔시에스
+    "089890", # 코세스
+    "365340", # 성일하이텍
+    "267270", # HD현대건설기계
+    "003670", # 포스코퓨처엠
+    "247540", # 에코프로비엠
+    "066970", # 엘앤에프
+    "086520", # 에코프로
+    "357580", # 아모센스
+    "452280"  # 한선엔지니어링
 ]
 
 STOCK_NAMES = {
@@ -133,7 +159,26 @@ STOCK_NAMES = {
     "383220": "F&F",
     "074600": "원익QnC",
     "027710": "팜스토리",
-    "005930": "삼성전자"
+    "005930": "삼성전자",
+    "006400": "삼성SDI",
+    "373220": "LG에너지솔루션",
+    "126340": "비나텍",
+    "083650": "비에이치아이",
+    "034020": "두산에너빌리티",
+    "336260": "두산퓨얼셀",
+    "178320": "서진시스템",
+    "416180": "신성에스티",
+    "100840": "SNT에너지",
+    "107640": "한중엔시에스",
+    "089890": "코세스",
+    "365340": "성일하이텍",
+    "267270": "HD현대건설기계",
+    "003670": "포스코퓨처엠",
+    "247540": "에코프로비엠",
+    "066970": "엘앤에프",
+    "086520": "에코프로",
+    "357580": "아모센스",
+    "452280": "한선엔지니어링"
 }
 
 # Reverse mapping for CLI

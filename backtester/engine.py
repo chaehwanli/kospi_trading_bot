@@ -10,7 +10,7 @@ from utils.price_utils import get_tick_size
 logger = setup_logger("Backtester")
 
 class BacktestEngine:
-    def __init__(self, strategy, rsi_oversold=None, stop_loss_pct=None, take_profit_pct=None, max_hold_days=None):
+    def __init__(self, strategy, rsi_oversold=None, stop_loss_pct=None, take_profit_pct=None, max_hold_days=None, min_profit_yield=None, max_hold_max_days=None):
         self.strategy = strategy
         self.initial_capital = settings.INITIAL_CAPITAL
         self.balance = self.initial_capital
@@ -22,6 +22,8 @@ class BacktestEngine:
         self.stop_loss_pct = stop_loss_pct if stop_loss_pct is not None else settings.STOP_LOSS_PCT
         self.take_profit_pct = take_profit_pct if take_profit_pct is not None else settings.TAKE_PROFIT_PCT
         self.max_hold_days = max_hold_days if max_hold_days is not None else settings.MAX_HOLD_DAYS
+        self.min_profit_yield = min_profit_yield if min_profit_yield is not None else settings.MIN_PROFIT_YIELD
+        self.max_hold_max_days = max_hold_max_days if max_hold_max_days is not None else settings.MAX_HOLD_MAX_DAYS
         
         # Fees
         self.fee_buy = 0.00015 # 0.015%
@@ -112,10 +114,20 @@ class BacktestEngine:
         if isinstance(entry_time, str):
             entry_time = pd.to_datetime(entry_time) # robust check
             
-        if get_trading_days_diff(entry_time, current_time) >= self.max_hold_days:
+        days_held = get_trading_days_diff(entry_time, current_time)
+        
+        if days_held >= self.max_hold_max_days:
             status = "PROFIT" if pnl_pct >= 0 else "LOSS"
-            self._sell(row, f"Max Hold Reached ({status})", current_time)
+            self._sell(row, f"Max Hold Limit Reached ({status})", current_time)
             return
+        elif days_held >= self.max_hold_days:
+            if pnl_pct >= self.min_profit_yield:
+                self._sell(row, f"Max Hold (Profit Met)", current_time)
+                return
+            else:
+                # Extending holding
+                logger.debug(f"Holding extended: {days_held} days, PnL {pnl_pct:.2f}% < {self.min_profit_yield}%")
+                return
             
     def _check_entry_conditions(self, row, index, df, current_time):
         # We need to check if the Strategy signal fired.
@@ -280,8 +292,8 @@ class BacktestEngine:
         # Calculate Reason Counts
         count_sl = len([t for t in self.trades if "Stop Loss" in t['reason']])
         count_tp = len([t for t in self.trades if "Take Profit" in t['reason']])
-        count_mh_win = len([t for t in self.trades if "Max Hold" in t['reason'] and "PROFIT" in t['reason']])
-        count_mh_loss = len([t for t in self.trades if "Max Hold" in t['reason'] and "LOSS" in t['reason']])
+        count_mh_win = len([t for t in self.trades if "Max Hold" in t['reason'] and t['pnl'] > 0])
+        count_mh_loss = len([t for t in self.trades if "Max Hold" in t['reason'] and t['pnl'] <= 0])
         
         return {
             'final_balance': final_balance,
