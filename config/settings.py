@@ -196,6 +196,15 @@ NAME_TO_CODE = {v: k for k, v in STOCK_NAMES.items()}
 # Timeframes
 TIMEFRAME = "1H" # 1 Hour
 
+# Stock-Specific Timeframe Settings (Hybrid Strategy)
+# Default is TIMEFRAME (1H). Specific stocks use shorter timeframes.
+TIMEFRAME_MAP = {
+    "089890": "30", # Koses (Returns 44% -> 161%)
+    "034020": "30", # Doosan Enerbility (Returns 48% -> 82%)
+    "005930": "30", # Samsung Electronics (Returns 82% -> 98%)
+    "007660": "30"  # Isu Petasys (Returns 56% -> 75%)
+}
+
 # Telegram
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")

@@ -131,13 +131,16 @@ class TradingBot:
 
     def process_stock(self, code, balance):
         # Fetch Data
-        # We need enough history for indicators (at least ~50-100 hours)
+        # Determine Timeframe
+        timeframe = settings.TIMEFRAME_MAP.get(code, "60") # Default to 60 (1H)
+        
+        # We need enough history for indicators (at least ~50-100 bars)
         # get_ohlcv implementation in api might need to return enough rows.
         # Assuming get_ohlcv returns latest 100 rows or so.
-        data = self.api.get_ohlcv(code, "60")
+        data = self.api.get_ohlcv(code, timeframe)
         
         if not data:
-            logger.warning(f"No data for {code}")
+            logger.warning(f"No data for {code} ({timeframe}M)")
             return
             
         df = pd.DataFrame(data)
