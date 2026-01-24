@@ -10,34 +10,31 @@ logger = setup_logger("DataManager")
 
 class DataManager:
     def __init__(self, use_api=True):
-        self.api = KiwoomAPI() if use_api else None
+        # User requested to use REAL server for data fetching.
+        # "PROD" mode uses real server.
+        self.api = KiwoomAPI(mode="PROD") if use_api else None
         self.strategy = RsiMacdStrategy()
         self.data_dir = "data_storage"
         if not os.path.exists(self.data_dir):
             os.makedirs(self.data_dir)
 
-    def fetch_and_save_data(self, code, period_days=365):
+    def _get_filename(self, code, time_unit):
+        # Map 60 to 1H for backward compatibility
+        suffix = "1H" if str(time_unit) == "60" else f"{time_unit}M"
+        return f"{self.data_dir}/{code}_{suffix}.csv"
+
+    def fetch_and_save_data(self, code, period_days=365, time_unit="60"):
         """
         Fetch data for 'period_days' and save to CSV.
-        Since the API limit for intraday might be short, we'll try to fetch as much as possible.
         """
-        logger.info(f"Fetching data for {code}...")
-        
-        # Note: API get_ohlcv implementation in api/kiwoom.py fetches a single batch.
-        # Ideally, we need a loop here with pagination if the API supports it.
-        # For this implementation, assuming get_ohlcv fetches the latest batch.
-        # Does it support 'next'? I need to check headers/response in api/kiwoom.py.
-        # As I haven't implemented pagination in api/kiwoom.py, I will start with a single fetch.
-        # But to be robust, I'll save what we get.
-        
-        # TODO: Enhance api/kiwoom.py for pagination to get full 1 year.
-        # For now, fetching what is available.
+        logger.info(f"Fetching {time_unit}M data for {code}...")
         
         if not self.api:
             logger.error("API not initialized. Cannot fetch data.")
             return
-
-        data = self.api.get_ohlcv(code, time_unit="60", days=period_days) # 60 might mean 60 minute
+            
+        # time_unit is passed directly (e.g., "60" or "30")
+        data = self.api.get_ohlcv(code, time_unit=str(time_unit), days=period_days)
         
         if not data:
             logger.error("No data fetched.")
@@ -55,13 +52,13 @@ class DataManager:
         end_date = df['time'].iloc[-1]
         logger.info(f"Fetched {len(df)} rows. Range: {start_date} ~ {end_date}")
         
-        filename = f"{self.data_dir}/{code}_{settings.TIMEFRAME}.csv"
+        filename = self._get_filename(code, time_unit)
         df.to_csv(filename, index=False)
         logger.info(f"Saved to {filename}")
         return df
 
-    def load_data(self, code):
-        filename = f"{self.data_dir}/{code}_{settings.TIMEFRAME}.csv"
+    def load_data(self, code, time_unit="60"):
+        filename = self._get_filename(code, time_unit)
         if os.path.exists(filename):
             return pd.read_csv(filename)
         return None

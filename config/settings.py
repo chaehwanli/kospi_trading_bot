@@ -6,15 +6,24 @@ load_dotenv()
 # Account Settings
 MODE = os.getenv("MODE", "PAPER") # PROD or PAPER
 
-# Account Settings
+# Raw Keys (Exported for Cross-Mode Usage)
+APP_KEY_PAPER = os.getenv("APP_KEY_PAPER", "")
+APP_SECRET_PAPER = os.getenv("APP_SECRET_PAPER", "")
+ACCOUNT_NO_PAPER = os.getenv("ACCOUNT_NO_PAPER", "")
+
+APP_KEY_REAL = os.getenv("APP_KEY_REAL", "")
+APP_SECRET_REAL = os.getenv("APP_SECRET_REAL", "")
+ACCOUNT_NO_REAL = os.getenv("ACCOUNT_NO_REAL", "")
+
+# Active Keys based on MODE
 if MODE == "PAPER":
-    APP_KEY = os.getenv("APP_KEY_PAPER", "")
-    APP_SECRET = os.getenv("APP_SECRET_PAPER", "")
-    ACCOUNT_NO = os.getenv("ACCOUNT_NO_PAPER", "")
+    APP_KEY = APP_KEY_PAPER
+    APP_SECRET = APP_SECRET_PAPER
+    ACCOUNT_NO = ACCOUNT_NO_PAPER
 else:
-    APP_KEY = os.getenv("APP_KEY_REAL", "")
-    APP_SECRET = os.getenv("APP_SECRET_REAL", "")
-    ACCOUNT_NO = os.getenv("ACCOUNT_NO_REAL", "")
+    APP_KEY = APP_KEY_REAL
+    APP_SECRET = APP_SECRET_REAL
+    ACCOUNT_NO = ACCOUNT_NO_REAL
 
 # Kiwoom REST API URLs
 URL_REAL = "https://api.kiwoom.com"

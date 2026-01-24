@@ -29,19 +29,61 @@ from kiwoom_rest_api.config import get_base_url # Import getter
 logger = setup_logger("KiwoomAPI")
 
 class KiwoomAPI:
-    def __init__(self):
+    def __init__(self, mode=None):
         # Initialize Library Components
         try:
+            # 1. Determine Mode (Override or Default)
+            target_mode = mode if mode else settings.MODE
+            
+            # 2. Configure Library Config dynamically
+            # We must set this BEFORE creating TokenManager
+            kiwoom_rest_api.config.USE_SANDBOX = True if target_mode == "PAPER" else False
+            
+            if target_mode == "PAPER":
+                kiwoom_rest_api.config.API_KEY = settings.APP_KEY # This maps to PAPER key in settings if MODE=PAPER, but wait.
+                # settings.APP_KEY is already resolved based on settings.MODE.
+                # If we want to support REAL mode while settings.MODE is PAPER, we need raw keys.
+                # Check settings.py again.
+                # settings.py exports APP_KEY based on MODE.
+                # We need access to BOTH keys if we want to switch.
+                pass
+            else:
+                # If requesting REAL mode, we need REAL keys.
+                # But settings.py might only have exported PAPER keys if MODE=PAPER.
+                # We need to import raw env vars or modify settings.py to export both sets.
+                pass
+
+            # Update: modifying logic to rely on raw env vars here would be cleaner, 
+            # but for now let's assume settings.py exports specific keys we need.
+            # Actually, settings.py exports APP_KEY/SECRET based on MODE. 
+            # So if MODE=PAPER, settings.APP_KEY is PAPER key.
+            # If we force REAL mode here, we need REAL keys.
+            
+            # Re-read keys from env to be safe
+            if target_mode == "PAPER":
+                 kiwoom_rest_api.config.API_KEY = os.getenv("APP_KEY_PAPER", "")
+                 kiwoom_rest_api.config.API_SECRET = os.getenv("APP_SECRET_PAPER", "")
+            else:
+                 kiwoom_rest_api.config.API_KEY = os.getenv("APP_KEY_REAL", "")
+                 kiwoom_rest_api.config.API_SECRET = os.getenv("APP_SECRET_REAL", "")
+            
+            # Force base URL update
+            if kiwoom_rest_api.config.USE_SANDBOX:
+                kiwoom_rest_api.config.DEFAULT_BASE_URL = kiwoom_rest_api.config.SANDBOX_BASE_URL
+            else:
+                kiwoom_rest_api.config.DEFAULT_BASE_URL = "https://api.kiwoom.com"
+
             self.token_manager = TokenManager()
             
             # Explicitly get base_url to prevent double-slash issue in library
-            # When base_url is None, KiwoomBaseAPI defaults to relative path which causes //api/...
             base_url = get_base_url()
             
             self.chart = Chart(token_manager=self.token_manager, base_url=base_url)
             self.order = Order(token_manager=self.token_manager, base_url=base_url)
             self.account = Account(token_manager=self.token_manager, base_url=base_url)
-            logger.info("Kiwoom API initialized with kiwoom-rest-api library.")
+            
+            logger.info(f"Kiwoom API initialized in {target_mode} mode.")
+            
         except Exception as e:
             logger.error(f"Failed to initialize Kiwoom API components: {e}")
             raise
