@@ -44,6 +44,7 @@ class BacktestEngine:
         self.last_exit = None # { 'time': datetime, 'reason': str }
         self.cooldown_days = settings.STOP_LOSS_COOLDOWN_DAYS
         self.total_fees = 0.0
+        self.market_type = settings.MARKET_TYPE_MAP.get(code, "KOSPI")
         
         if not os.path.exists(self.result_dir):
             os.makedirs(self.result_dir)
@@ -94,7 +95,7 @@ class BacktestEngine:
         
         # PnL %
         # Slippage: Sell at -Tick Size
-        tick = get_tick_size(current_price)
+        tick = get_tick_size(current_price, self.market_type)
         current_sell_price = current_price - tick
         pnl_pct = (current_sell_price - entry_price) / entry_price * 100
         
@@ -173,7 +174,7 @@ class BacktestEngine:
         # Qty = Balance / (Price * (1 + fee))
         
         # Slippage: Buy at +Tick Size
-        tick = get_tick_size(price)
+        tick = get_tick_size(price, self.market_type)
         buy_price = price + tick
         qty = int(max_buy_amt / (buy_price * (1 + self.fee_buy)))
         
@@ -196,7 +197,7 @@ class BacktestEngine:
     def _sell(self, row, reason, current_time):
         price = row['close']
         # Slippage: Sell at -Tick Size
-        tick = get_tick_size(price)
+        tick = get_tick_size(price, self.market_type)
         sell_price = price - tick
         qty = self.position['qty']
         

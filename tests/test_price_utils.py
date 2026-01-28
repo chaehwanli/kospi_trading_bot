@@ -31,5 +31,16 @@ class TestPriceUtils(unittest.TestCase):
         self.assertEqual(get_tick_size(500000), 1000)
         self.assertEqual(get_tick_size(1000000), 1000)
 
+    def test_tick_ranges_kosdaq(self):
+        # KOSDAQ: 5,000 ~ 50,000 (Same)
+        self.assertEqual(get_tick_size(5000, "KOSDAQ"), 10)
+        self.assertEqual(get_tick_size(10000, "KOSDAQ"), 50)
+        
+        # KOSDAQ: >= 50,000 (Always 100)
+        self.assertEqual(get_tick_size(50000, "KOSDAQ"), 100)
+        self.assertEqual(get_tick_size(100000, "KOSDAQ"), 100)
+        self.assertEqual(get_tick_size(500000, "KOSDAQ"), 100)
+        self.assertEqual(get_tick_size(1000000, "KOSDAQ"), 100)
+
 if __name__ == '__main__':
     unittest.main()

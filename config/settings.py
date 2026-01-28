@@ -137,7 +137,8 @@ TARGET_STOCKS = [
     "066970", # 엘앤에프
     "086520", # 에코프로
     "357580", # 아모센스
-    "452280"  # 한선엔지니어링
+    "452280", # 한선엔지니어링
+    "211270"  # AP위성 (KOSDAQ)
 ]
 
 STOCK_NAMES = {
@@ -187,7 +188,8 @@ STOCK_NAMES = {
     "066970": "엘앤에프",
     "086520": "에코프로",
     "357580": "아모센스",
-    "452280": "한선엔지니어링"
+    "452280": "한선엔지니어링",
+    "211270": "AP위성"
 }
 
 # Reverse mapping for CLI
@@ -203,6 +205,11 @@ TIMEFRAME_MAP = {
     "034020": "30", # Doosan Enerbility (Returns 48% -> 82%)
     "005930": "30", # Samsung Electronics (Returns 82% -> 98%)
     "007660": "30"  # Isu Petasys (Returns 56% -> 75%)
+}
+
+# Market Type Map (Default: KOSPI)
+MARKET_TYPE_MAP = {
+    "211270": "KOSDAQ"
 }
 
 # Telegram

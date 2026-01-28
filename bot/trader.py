@@ -193,7 +193,8 @@ class TradingBot:
             entry_time = datetime.now() # Fallback if parsing fails to avoid crash
         
         # Slippage: Sell at -Tick Size
-        tick = get_tick_size(current_price)
+        market_type = settings.MARKET_TYPE_MAP.get(code, "KOSPI")
+        tick = get_tick_size(current_price, market_type)
         sell_price = current_price - tick
         pnl_pct = (sell_price - entry_price) / entry_price * 100
         
@@ -243,7 +244,8 @@ class TradingBot:
             
         fee_rate = 0.00015
         # Slippage: Buy at +Tick Size
-        tick = get_tick_size(price)
+        market_type = settings.MARKET_TYPE_MAP.get(code, "KOSPI")
+        tick = get_tick_size(price, market_type)
         buy_price = price + tick
         qty = int(invest_amount / (buy_price * (1 + fee_rate)))
         
@@ -265,7 +267,8 @@ class TradingBot:
     def execute_sell(self, code, qty, price, reason):
         res = self.api.place_order(code, qty, "SELL", 0) # Market Order
         if res:
-            tick = get_tick_size(price)
+            market_type = settings.MARKET_TYPE_MAP.get(code, "KOSPI")
+            tick = get_tick_size(price, market_type)
             sell_price = price - tick
             pnl_pct = (sell_price - self.positions[code]['price']) / self.positions[code]['price'] * 100
             prefix = self._get_msg_prefix(code)
