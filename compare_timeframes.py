@@ -23,24 +23,7 @@ settings.STOP_LOSS_COOLDOWN_DAYS = 3
 settings.INITIAL_CAPITAL = 1000000
 
 # 2. Define Stocks (Top Winners + Others from User List)
-target_stocks = [
-    "298380", # ABL Bio
-    "084370", # Eugene Tech
-    "014710", # Sajo Seafood
-    "056080", # Eugene Robot
-    "117730", # T-Robotics
-    "005930", # Samsung Electronics
-    "083650", # BHI
-    "358570", # GI Innovation
-    "007660", # Isu Petasys
-    "336260", # Doosan Fuel Cell
-    "432720", # Qualitas Semiconductor
-    "034020", # Doosan Enerbility
-    "247540", # Ecopro BM
-    "089890", # Koses
-    "336370", # Solus Advanced Materials
-    "041830"  # InBody
-]
+target_stocks = settings.TARGET_STOCKS
 
 def run_comparison():
     # 3. Initialize

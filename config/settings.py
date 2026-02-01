@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Account Settings
-MODE = os.getenv("MODE", "PAPER") # PROD or PAPER
+MODE = os.getenv("MODE", "REAL") # REAL or PAPER
 
 # Raw Keys (Exported for Cross-Mode Usage)
 APP_KEY_PAPER = os.getenv("APP_KEY_PAPER", "")

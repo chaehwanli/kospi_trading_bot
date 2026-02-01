@@ -122,7 +122,13 @@ class KiwoomAPI:
                     is_success = True
                     
                 if not is_success:
+                    ret_msg = res.get('return_msg', '')
                     logger.error(f"OHLCV Error: {res}")
+                    
+                    if '8001' in ret_msg or '8005' in ret_msg:
+                        logger.error("CRITICAL: Authentication failed. Please check your APP_KEY and APP_SECRET in .env file.")
+                        logger.error("If the keys are correct, the token might be expired or the server might be rate-limiting.")
+                    
                     break
                     
                 # output2 has list. Sometimes key is 'stk_min_pole_chart_qry'
