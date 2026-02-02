@@ -8,7 +8,7 @@ class TrendType(Enum):
     SIDEWAYS = "SIDEWAYS"
 
 class TrendAnalyzer:
-    def __init__(self, conflict_threshold=0.0005):
+    def __init__(self, conflict_threshold=0.00005):
         """
         :param conflict_threshold: Slope threshold to decide localized trend vs sideways.
                                    Slope > threshold -> Uptrend

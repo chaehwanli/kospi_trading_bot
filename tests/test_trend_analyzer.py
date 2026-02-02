@@ -5,7 +5,7 @@ from utils.trend_analyzer import TrendAnalyzer, TrendType
 
 class TestTrendAnalyzer(unittest.TestCase):
     def setUp(self):
-        self.analyzer = TrendAnalyzer(conflict_threshold=0.0005)
+        self.analyzer = TrendAnalyzer(conflict_threshold=0.00005)
 
     def test_uptrend(self):
         # Create a clear uptrend: 1% increase over 100 bars
@@ -20,7 +20,7 @@ class TestTrendAnalyzer(unittest.TestCase):
         
         result = self.analyzer.calculate_trend(df)
         self.assertEqual(result['trend'], TrendType.UPTREND)
-        self.assertGreater(result['slope'], 0.0005)
+        self.assertGreater(result['slope'], 0.00005)
 
     def test_downtrend(self):
         # Create a clear downtrend: 100 -> 90 over 100 bars
@@ -31,14 +31,14 @@ class TestTrendAnalyzer(unittest.TestCase):
         
         result = self.analyzer.calculate_trend(df)
         self.assertEqual(result['trend'], TrendType.DOWNTREND)
-        self.assertLess(result['slope'], -0.0005)
+        self.assertLess(result['slope'], -0.00005)
 
     def test_sideways(self):
-        # Create a sideways trend: 100 -> 100.2 over 100 bars
-        # Slope: (1.002 - 1.0) / 100 = 0.00002
-        # 0.00002 < 0.0005 -> Sideways
+        # Create a sideways trend: 100 -> 100.003 over 100 bars
+        # Slope: (1.00003 - 1.0) / 100 = 0.0000003
+        # 0.0000003 < 0.00005 -> Sideways
         
-        prices = np.linspace(100, 100.2, 100)
+        prices = np.linspace(100, 100.003, 100)
         df = pd.DataFrame({'close': prices})
         
         result = self.analyzer.calculate_trend(df)
