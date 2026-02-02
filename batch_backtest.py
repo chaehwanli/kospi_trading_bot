@@ -42,11 +42,12 @@ def run_batch_backtest():
     
     # Print Table
     print("\n" + "="*135)
-    print(f"{'Code':<8} | {'Name':<15} | {'TF':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4} | {'SL':<4} | {'TP':<4} | {'MH(W)':<5} | {'MH(L)':<5} | {'Fees':<7}")
-    print("-" * 135)
+    print(f"{'Code':<8} | {'Name':<15} | {'TF':<4} | {'Return':<9} | {'Trades':<6} | {'Win':<4} | {'Trend':<10} | {'SL':<4} | {'TP':<4} | {'MH(W)':<5} | {'MH(L)':<5} | {'Fees':<7}")
+    print("-" * 145)
     
     for r in results:
-         print(f"{r['code']:<8} | {r['name']:<15} | {r['tf']:<4} | {r['return']:>7.2f}%  | {r['total_trades']:<6} | {r['win_trades']:<4} | {r['count_sl']:<4} | {r['count_tp']:<4} | {r['count_mh_win']:<5} | {r['count_mh_loss']:<5} | {r['total_fees']:<7}")
+         trend_str = r.get('trend', 'N/A')
+         print(f"{r['code']:<8} | {r['name']:<15} | {r['tf']:<4} | {r['return']:>7.2f}%  | {r['total_trades']:<6} | {r['win_trades']:<4} | {trend_str:<10} | {r['count_sl']:<4} | {r['count_tp']:<4} | {r['count_mh_win']:<5} | {r['count_mh_loss']:<5} | {r['total_fees']:<7}")
     
     print("="*125 + "\n")
 

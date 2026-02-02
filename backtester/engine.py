@@ -6,6 +6,7 @@ from config import settings
 from utils.logger import setup_logger
 from utils.market_time import get_trading_days_diff
 from utils.price_utils import get_tick_size
+from utils.trend_analyzer import TrendAnalyzer, TrendType
 
 logger = setup_logger("Backtester")
 
@@ -36,6 +37,7 @@ class BacktestEngine:
         self.balance = self.initial_capital
         self.save_results = save_results
         self.position = None
+        self.df = df # Store DF for trend analysis
         self.trades = []
         self.start_date = None
         self.end_date = None
@@ -308,3 +310,16 @@ class BacktestEngine:
             'count_mh_loss': count_mh_loss,
             'total_fees': int(self.total_fees)
         }
+        
+        # Calculate Trend
+        trend_analyzer = TrendAnalyzer()
+        trend_result = trend_analyzer.calculate_trend(self.df)
+        result['trend'] = trend_result['trend'].value
+        result['slope'] = trend_result['slope']
+        
+        # Update Summary File with Trend info
+        if self.save_results and os.path.exists(summary_file):
+             with open(summary_file, 'a') as f:
+                f.write(f"Trend: {trend_result['trend'].value} (Slope: {trend_result['slope']:.6f})\n")
+        
+        return result
