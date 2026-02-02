@@ -298,7 +298,7 @@ class BacktestEngine:
         count_mh_win = len([t for t in self.trades if "Max Hold" in t['reason'] and t['pnl'] > 0])
         count_mh_loss = len([t for t in self.trades if "Max Hold" in t['reason'] and t['pnl'] <= 0])
         
-        return {
+        result = {
             'final_balance': final_balance,
             'return': total_return,
             'total_trades': len(self.trades),
