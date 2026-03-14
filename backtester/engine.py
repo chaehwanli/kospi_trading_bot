@@ -20,6 +20,11 @@ class BacktestEngine:
         
         self.fixed_rsi = rsi_oversold
         self.rsi_oversold = rsi_oversold if rsi_oversold is not None else settings.RSI_OVERSOLD
+        
+        self.fixed_stop_loss_pct = stop_loss_pct
+        self.fixed_take_profit_pct = take_profit_pct
+        self.fixed_max_hold_days = max_hold_days
+        
         self.stop_loss_pct = stop_loss_pct if stop_loss_pct is not None else settings.STOP_LOSS_PCT
         self.take_profit_pct = take_profit_pct if take_profit_pct is not None else settings.TAKE_PROFIT_PCT
         self.max_hold_days = max_hold_days if max_hold_days is not None else settings.MAX_HOLD_DAYS
@@ -48,6 +53,15 @@ class BacktestEngine:
         self.total_fees = 0.0
         self.market_type = settings.MARKET_TYPE_MAP.get(code, "KOSPI")
         
+        # Apply Stock-specific PnL parameters if not fixed during initialization
+        pnl_params = getattr(settings, 'PNL_PARAM_MAP', {}).get(code, {})
+        if self.fixed_stop_loss_pct is None:
+            self.stop_loss_pct = pnl_params.get("stop_loss", settings.STOP_LOSS_PCT)
+        if self.fixed_take_profit_pct is None:
+            self.take_profit_pct = pnl_params.get("take_profit", settings.TAKE_PROFIT_PCT)
+        if self.fixed_max_hold_days is None:
+            self.max_hold_days = pnl_params.get("max_hold", settings.MAX_HOLD_DAYS)
+            
         if not os.path.exists(self.result_dir):
             os.makedirs(self.result_dir)
         

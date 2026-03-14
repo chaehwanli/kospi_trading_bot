@@ -201,13 +201,18 @@ class TradingBot:
         reason = None
         days_held = get_trading_days_diff(entry_time, current_time)
         
-        if pnl_pct <= settings.STOP_LOSS_PCT:
+        pnl_params = getattr(settings, 'PNL_PARAM_MAP', {}).get(code, {})
+        stop_loss_pct = pnl_params.get("stop_loss", settings.STOP_LOSS_PCT)
+        take_profit_pct = pnl_params.get("take_profit", settings.TAKE_PROFIT_PCT)
+        max_hold_days = pnl_params.get("max_hold", settings.MAX_HOLD_DAYS)
+        
+        if pnl_pct <= stop_loss_pct:
             reason = "Stop Loss"
-        elif pnl_pct >= settings.TAKE_PROFIT_PCT:
+        elif pnl_pct >= take_profit_pct:
             reason = "Take Profit"
         elif days_held >= settings.MAX_HOLD_MAX_DAYS:
             reason = f"Max Hold Limit Reached ({days_held} days)"
-        elif days_held >= settings.MAX_HOLD_DAYS:
+        elif days_held >= max_hold_days:
             if pnl_pct >= settings.MIN_PROFIT_YIELD:
                 reason = f"Max Hold (Profit Met {pnl_pct:.2f}%)"
             else:

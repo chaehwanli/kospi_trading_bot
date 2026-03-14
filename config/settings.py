@@ -55,6 +55,14 @@ TAKE_PROFIT_PCT = 12.0  # 35.0%
 MAX_HOLD_DAYS = 5
 MAX_HOLD_MAX_DAYS = 10 # Hard Limit
 MIN_PROFIT_YIELD = 3.0 # Minimum profit % required to exit at MAX_HOLD_DAYS
+
+# Stock-Specific PnL Parameters (Overrides default STOP_LOSS_PCT, TAKE_PROFIT_PCT, MAX_HOLD_DAYS)
+PNL_PARAM_MAP = {
+    "000660": {"stop_loss": -4.0, "take_profit": 14.0, "max_hold": 5}, # SK Hynix (Return: 85.70%)
+    "005380": {"stop_loss": -3.0, "take_profit": 4.0, "max_hold": 3},  # Hyundai Motor (Return: 39.58%)
+    "005930": {"stop_loss": -5.0, "take_profit": 10.0, "max_hold": 5}, # Samsung Electronics (Return: 135.89%)
+}
+
 STOP_LOSS_COOLDOWN_DAYS = 3
 INITIAL_CAPITAL = 1000000  # 1 Million KRW
  
@@ -158,7 +166,8 @@ TARGET_STOCKS = [
     "272210", # 한화시스템
     "012450", # 한화에어로스페이스
     "329180", # HD현대중공업
-    "064400"  # LG씨엔에스
+    "064400", # LG씨엔에스
+    "000660"  # SK하이닉스
 ]
 
 STOCK_NAMES = {
@@ -226,7 +235,8 @@ STOCK_NAMES = {
     "272210": "한화시스템",
     "012450": "한화에어로스페이스",
     "329180": "HD현대중공업",
-    "064400": "LG씨엔에스"
+    "064400": "LG씨엔에스",
+    "000660": "SK하이닉스"
 }
 
 # Reverse mapping for CLI
@@ -254,7 +264,6 @@ TIMEFRAME_MAP = {
     "307950": "30", # Hyundai AutoEver (1H: -6% -> 30M: 74%)
     "457190": "30", # Isu Specialty Chemical (1H: -10% -> 30M: 27%)
     "010130": "30", # Korea Zinc (1H: -6% -> 30M: 42%)
-    "005380": "30", # Hyundai Motor (1H: 13% -> 30M: 14%)
     "454910": "30", # Doosan Robotics (1H: -31% -> 30M: 12%)
     "000720": "30", # Hyundai E&C (1H: -17% -> 30M: 68%)
     "012450": "30", # Hanwha Aerospace (1H: 10% -> 30M: 32%)

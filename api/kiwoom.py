@@ -204,7 +204,7 @@ class KiwoomAPI:
                 domestic_exchange_type="KRX"
             )
             
-            if not res or res.get('rt_cd') != '0':
+            if not res or (str(res.get('rt_cd', '')) != '0' and str(res.get('return_code', '')) != '0'):
                 logger.error(f"Holdings Error: {res}")
                 return {}
                 
@@ -259,7 +259,7 @@ class KiwoomAPI:
                 domestic_exchange_type="KRX"
             )
             
-            if not res or res.get('rt_cd') != '0':
+            if not res or (str(res.get('rt_cd', '')) != '0' and str(res.get('return_code', '')) != '0'):
                 logger.error(f"Balance Error: {res}")
                 return None
                 

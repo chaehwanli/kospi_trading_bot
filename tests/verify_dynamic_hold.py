@@ -22,6 +22,7 @@ class TestDynamicHolding(unittest.TestCase):
         self.mock_settings.MAX_HOLD_DAYS = 5
         self.mock_settings.MAX_HOLD_MAX_DAYS = 10
         self.mock_settings.MIN_PROFIT_YIELD = 1.0
+        self.mock_settings.PNL_PARAM_MAP = {}
         self.mock_settings.TELEGRAM_BOT_TOKEN = "TEST"
         self.mock_settings.TELEGRAM_CHAT_ID = "TEST"
         self.mock_settings.TARGET_STOCKS = []

@@ -285,6 +285,23 @@ python main.py min_profit_optimize --code "삼성전자"
 # 범위 직접 지정
 python main.py min_profit_optimize --code "005930" --min-profit 0.5 --max-profit 3.0 --step-profit 0.5
 ```
+
+#### 5) Timeframe Comparison (`compare_timeframes.py`)
+1시간 분봉(기본)과 30분 분봉의 거래 횟수 및 백테스트 수익률을 비교하는 테스트 스크립트입니다. 설정(`TARGET_STOCKS`)에 지정된 타겟 종목들에 대해 두 분봉 데이터를 각각 다운로드하고 백테스트하여 결과를 한눈에 쉽게 비교할 수 있게 표 형태로 출력합니다.
+
+**명령어**:
+```bash
+# 전체 타겟 종목에 대한 1H vs 30M 결과 한꺼번에 비교 실행
+python compare_timeframes.py
+```
+
+#### 6) Volatility Evaluation (`evaluate_volatility.py`)
+현재 설정된 타겟 종목들의 가격 변동성을 분석하여 표 형태로 출력합니다. 평균 봉 변동폭, 수익률 표준편차, 최대 낙폭(MDD) 등을 계산하여 변동성(표준편차)이 가장 큰 종목순으로 정렬합니다.
+
+**명령어**:
+```bash
+# 전체 타겟 종목에 대한 변동성 평가 결과 출력
+python evaluate_volatility.py
 ```
 
 **설정 (config/settings.py)**:
